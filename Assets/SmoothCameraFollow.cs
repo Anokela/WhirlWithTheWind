@@ -8,7 +8,7 @@ public class SmoothCameraFollow : MonoBehaviour
      private Vector3 velocity = Vector3.zero;
      public Transform target;
  
-     // Update is called once per frame
+     // Update is called once per frame if behaviour is enabled
      void LateUpdate () 
      {
          if (target)
