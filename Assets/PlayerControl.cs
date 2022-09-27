@@ -31,4 +31,13 @@ public class PlayerControl : MonoBehaviour
     {
         rb.AddForce(new Vector3(horizontalMovement * Time.deltaTime * speed, 0), ForceMode2D.Impulse);
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "LeftWall")
+        {
+            Debug.Log("You crashed the left wall");
+            rb.AddForce(new Vector3(1 * Time.deltaTime * 500, 0), ForceMode2D.Impulse);
+        }
+    }
 }
