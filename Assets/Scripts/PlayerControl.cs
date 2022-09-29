@@ -5,8 +5,8 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody2D rb;
     private float horizontalMovement;
     private bool controlsDisabled = false;
-    public float speed = 15f;
-    public float maxVelocity = 7.5f;
+    private float speed = 200f;
+    private float maxVelocity = 5.0f;
     
     // Start is called before the first frame update
     void Start()
@@ -41,22 +41,26 @@ public class PlayerControl : MonoBehaviour
         //Destroy the ligtPoint if Object tagged Player comes in contact with it
         if (c2d.CompareTag("LeftWall"))
         {
+            maxVelocity = 25;
             controlsDisabled = true;
             Debug.Log("You crashed the left wall");
             rb.AddForce(Vector3.right * 25, ForceMode2D.Impulse);
             Invoke("ActivateControls", 0.5f);
+            
         }
         if (c2d.CompareTag("RightWall"))
         {
+            maxVelocity = 25;
             controlsDisabled = true;
             Debug.Log("You crashed the right wall");
-            rb.AddForce(Vector3.left * 50, ForceMode2D.Impulse);
+            rb.AddForce(Vector3.left * 25, ForceMode2D.Impulse);
             Invoke("ActivateControls", 0.5f);
         }
     }
 
     void ActivateControls()
     {
+        maxVelocity = 5f;
         controlsDisabled = false;
     }
 
