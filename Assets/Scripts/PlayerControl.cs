@@ -50,7 +50,7 @@ public class PlayerControl : MonoBehaviour
         {
             controlsDisabled = true;
             Debug.Log("You crashed the right wall");
-            rb.AddForce(Vector3.left * 25, ForceMode2D.Impulse);
+            rb.AddForce(Vector3.left * 50, ForceMode2D.Impulse);
             Invoke("ActivateControls", 0.5f);
         }
     }
@@ -58,5 +58,16 @@ public class PlayerControl : MonoBehaviour
     void ActivateControls()
     {
         controlsDisabled = false;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Mushroom")
+        {
+            controlsDisabled = true;
+            Debug.Log("Bouncy!");
+            rb.AddForce(Vector3.up * 50, ForceMode2D.Impulse);
+            Invoke("ActivateControls", 0.5f);
+        }
     }
 }
