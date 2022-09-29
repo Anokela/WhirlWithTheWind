@@ -23,5 +23,6 @@ public class ShowPopUp : MonoBehaviour
     public void showPanel()
     { 
         Panel.SetActive(true);
+        Time.timeScale = 0;
     }
 }

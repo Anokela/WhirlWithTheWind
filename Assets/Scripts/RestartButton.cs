@@ -10,5 +10,6 @@ public class RestartButton : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Debug.Log("hohoi se on napista painettu.");
+        Time.timeScale = 1;
     }
 }
