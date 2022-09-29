@@ -21,7 +21,7 @@ public class LightPoint : MonoBehaviour
             //Add lightPoint to counter
             lightPoints++;
             //Test: Print total number of lightPoints
-            Debug.Log("You currently have " + LightPoint.lightPoints + " Light Points.");
+            // Debug.Log("You currently have " + LightPoint.lightPoints + " Light Points.");
             //Destroy lightPoint
             Destroy(gameObject);
             GameObject.Find("CM vcam1").SendMessage("HandleCalculation");
