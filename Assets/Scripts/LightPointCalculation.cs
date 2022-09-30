@@ -12,13 +12,13 @@ public class LightPointCalculation : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		lightPointText.text = ": 0";
+		lightPointText.text = "0";
 	}
 
 
 	void HandleCalculation()
 	{
 		lightPoints += 1;
-		lightPointText.text = ": " + lightPoints;
+		lightPointText.text = lightPoints.ToString();
 	}
 }
