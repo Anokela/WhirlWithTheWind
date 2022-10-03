@@ -7,7 +7,7 @@ public class PlayerControl : MonoBehaviour
     private bool controlsDisabled = false;
     private float speed = 200f;
     private float maxVelocity = 5.0f;
-    private float JumpSpeed = 10.0f;
+    private float JumpSpeed = 100f;
     
     // Start is called before the first frame update
     void Start()
