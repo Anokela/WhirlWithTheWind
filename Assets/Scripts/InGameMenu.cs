@@ -10,6 +10,6 @@ public class InGameMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Debug.Log("hohoi se on napista painettu.");
-        Time.timeScale = 1;
+        // Time.timeScale = 1;
     }
 }
