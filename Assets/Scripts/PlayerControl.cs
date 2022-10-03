@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour
     private bool controlsDisabled = false;
     private float speed = 200f;
     private float maxVelocity = 5.0f;
+    private float JumpSpeed = 10.0f;
     
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,10 @@ public class PlayerControl : MonoBehaviour
         if (rb.velocity.x < -maxVelocity)
         {
             rb.velocity = new(-maxVelocity, rb.velocity.y);
+        }
+          if(Input.GetButtonDown("Jump"))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
         }
     }
 
