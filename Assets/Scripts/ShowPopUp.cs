@@ -8,7 +8,7 @@ public class ShowPopUp : MonoBehaviour
 
     void Start()
     {
-        Panel = GameObject.Find("PopUp");
+        Panel = GameObject.Find("RestartMenu");
         Panel.SetActive(false);
     }
 
