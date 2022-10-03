@@ -26,9 +26,19 @@ public class WindObstacle : MonoBehaviour
     {
         if (c2d.CompareTag("Player"))
         {
-            rb.AddForce(Vector3.right * windForce, ForceMode2D.Force);
-            // rb.AddForce(new Vector3(windDirection.x * Time.deltaTime * windForce, 0), ForceMode2D.Force);
-            Debug.Log("Testi");
+            if ( windDirection.x > 0)
+            {
+                rb.AddForce(Vector3.right * windForce, ForceMode2D.Force);
+                // rb.AddForce(new Vector3(windDirection.x * Time.deltaTime * windForce, 0), ForceMode2D.Force);
+                Debug.Log("Testi");
+            }
+
+            if (windDirection.x < 0)
+            {
+                rb.AddForce(Vector3.left * windForce, ForceMode2D.Force);
+                // rb.AddForce(new Vector3(windDirection.x * Time.deltaTime * windForce, 0), ForceMode2D.Force);
+                Debug.Log("Testi");
+            }
         }
     }
 }

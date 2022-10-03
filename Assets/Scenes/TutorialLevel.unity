@@ -2168,7 +2168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27c840cd1b785ba4987215dd2e9e0a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windDirection: {x: -1, y: 0, z: 0}
+  windDirection: {x: 1, y: 0, z: 0}
   windForce: 80
 --- !u!61 &1222007631
 BoxCollider2D:
@@ -2316,7 +2316,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5629887, y: 1}
+    m_SensorSize: {x: 0.5618615, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
