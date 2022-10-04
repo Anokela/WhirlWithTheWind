@@ -5,9 +5,12 @@ using UnityEngine;
 public class TapToPlay : MonoBehaviour
 {
     private GameObject Panel;
+    private GameObject ControlCanvas;
     // Start is called before the first frame update
     void Start()
     {
+        ControlCanvas = GameObject.Find("ControlCanvas");
+        ControlCanvas.SetActive(false);
         Panel = GameObject.Find("TapToPlay");
         Time.timeScale = 0;
     }
@@ -22,5 +25,7 @@ public class TapToPlay : MonoBehaviour
     {
         Time.timeScale = 1;
         Panel.SetActive(false);
+        ControlCanvas.SetActive(true);
+
     }
 }

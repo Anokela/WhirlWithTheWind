@@ -1,4 +1,6 @@
+using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -8,11 +10,14 @@ public class PlayerControl : MonoBehaviour
     private float speed = 200f;
     private float maxVelocity = 5.0f;
     private float JumpSpeed = 100f;
-    
+    public bool isLeftHeldDown = false;
+    public bool isRightHeldDown = false;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -38,6 +43,17 @@ public class PlayerControl : MonoBehaviour
     {
         if (!controlsDisabled) 
         {
+            Debug.Log(isRightHeldDown);
+            if (isLeftHeldDown)
+            {
+                rb.AddForce(new Vector3(1f * Time.deltaTime * speed, 0), ForceMode2D.Impulse);
+            }
+
+            if (isRightHeldDown)
+            {
+                rb.AddForce(new Vector3(-1f * Time.deltaTime * speed, 0), ForceMode2D.Impulse);
+            }
+
             rb.AddForce(new Vector3(horizontalMovement * Time.deltaTime * speed, 0), ForceMode2D.Impulse);
         }
     }
@@ -78,5 +94,25 @@ public class PlayerControl : MonoBehaviour
             rb.AddForce(Vector3.up * 50, ForceMode2D.Impulse);
             Invoke("ActivateControls", 0.5f);
         }
+    }
+
+    public void LeftButtonPressed() 
+    {
+        isLeftHeldDown = true;
+    }
+
+    public void RightButtonPressed()
+    {
+        isRightHeldDown = true;
+    }
+
+    public void ButtonReleaseRight()
+    {
+        isRightHeldDown = false;
+    }
+
+    public void ButtonReleaseLeft()
+    {
+        isLeftHeldDown = false;
     }
 }
