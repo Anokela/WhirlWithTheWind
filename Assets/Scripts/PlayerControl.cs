@@ -44,7 +44,6 @@ public class PlayerControl : MonoBehaviour
     {
         if (!controlsDisabled) 
         {
-            Debug.Log(isRightHeldDown);
             if (isLeftHeldDown)
             {
                 rb.AddForce(new Vector3(1f * Time.deltaTime * speed, 0), ForceMode2D.Impulse);
@@ -60,12 +59,10 @@ public class PlayerControl : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D c2d)
     {
-        //Destroy the ligtPoint if Object tagged Player comes in contact with it
         if (c2d.CompareTag("LeftWall"))
         {
             maxVelocity = 1f;
             controlsDisabled = true;
-            Debug.Log("You crashed the left wall");
             rb.AddForce(Vector3.right * 0.6f, ForceMode2D.Impulse);
             Invoke("ActivateControls", 0.5f);
             
@@ -74,7 +71,6 @@ public class PlayerControl : MonoBehaviour
         {
             maxVelocity = 1f;
             controlsDisabled = true;
-            Debug.Log("You crashed the right wall");
             rb.AddForce(Vector3.left * 0.6f, ForceMode2D.Impulse);
             Invoke("ActivateControls", 0.5f);
         }
@@ -91,7 +87,6 @@ public class PlayerControl : MonoBehaviour
         if (collision.gameObject.tag == "Mushroom")
         {
             controlsDisabled = true;
-            Debug.Log("Bouncy!");
             rb.AddForce(Vector3.up * bouncePower, ForceMode2D.Impulse);
             Invoke("ActivateControls", 0.5f);
         }

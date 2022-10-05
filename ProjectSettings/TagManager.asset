@@ -8,6 +8,7 @@ TagManager:
   - LP
   - RightWall
   - Mushroom
+  - Branch
   layers:
   - Default
   - TransparentFX

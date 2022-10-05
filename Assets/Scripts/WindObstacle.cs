@@ -13,7 +13,6 @@ public class WindObstacle : MonoBehaviour
     {
         player = GameObject.Find("PlayerChar");
         rb = player.GetComponent<Rigidbody2D>();
-        Debug.Log(rb);
     }
 
     // Update is called once per frame
