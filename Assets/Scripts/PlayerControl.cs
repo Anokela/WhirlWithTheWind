@@ -91,7 +91,7 @@ public class PlayerControl : MonoBehaviour
         {
             controlsDisabled = true;
             Debug.Log("Bouncy!");
-            rb.AddForce(Vector3.up * 50, ForceMode2D.Impulse);
+            rb.AddForce(Vector3.up * 0.02f, ForceMode2D.Impulse);
             Invoke("ActivateControls", 0.5f);
         }
     }
