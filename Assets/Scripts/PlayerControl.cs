@@ -10,8 +10,9 @@ public class PlayerControl : MonoBehaviour
     public float speed = 1f;
     public float maxVelocity = 0.75f;
     public float JumpSpeed = 1f;
-    public bool isLeftHeldDown = false;
-    public bool isRightHeldDown = false;
+    public float bouncePower = 0.15f;
+    private bool isLeftHeldDown = false;
+    private bool isRightHeldDown = false;
 
     // Start is called before the first frame update
     void Start()
@@ -91,7 +92,7 @@ public class PlayerControl : MonoBehaviour
         {
             controlsDisabled = true;
             Debug.Log("Bouncy!");
-            rb.AddForce(Vector3.up * 0.02f, ForceMode2D.Impulse);
+            rb.AddForce(Vector3.up * bouncePower, ForceMode2D.Impulse);
             Invoke("ActivateControls", 0.5f);
         }
     }
