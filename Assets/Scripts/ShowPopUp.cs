@@ -5,9 +5,13 @@ using UnityEngine;
 public class ShowPopUp : MonoBehaviour
 {
     private GameObject Panel;
+    private GameObject pc;
+    private Rigidbody2D rb;
 
     void Start()
     {
+        pc = GameObject.FindGameObjectWithTag("Player");
+        rb = pc.GetComponent<Rigidbody2D>();
         Panel = GameObject.Find("RestartMenu");
         Panel.SetActive(false);
     }
@@ -21,8 +25,8 @@ public class ShowPopUp : MonoBehaviour
     }
 
     public void showPanel()
-    { 
+    {
+        rb.simulated = false;
         Panel.SetActive(true);
-        Time.timeScale = 0;
     }
 }

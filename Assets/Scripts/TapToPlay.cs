@@ -6,24 +6,22 @@ public class TapToPlay : MonoBehaviour
 {
     private GameObject Panel;
     private GameObject ControlCanvas;
+    private GameObject pc;
+    private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
         ControlCanvas = GameObject.Find("ControlCanvas");
         ControlCanvas.SetActive(false);
         Panel = GameObject.Find("TapToPlay");
-        Time.timeScale = 0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        pc = GameObject.FindGameObjectWithTag("Player");
+        rb = pc.GetComponent<Rigidbody2D>();
+        rb.simulated = false;
     }
 
     public void StartScene()
     {
-        Time.timeScale = 1;
+        rb.simulated = true;
         Panel.SetActive(false);
         ControlCanvas.SetActive(true);
 
