@@ -19,6 +19,7 @@ public class RespawnPlayer : MonoBehaviour
     {
         if (col.CompareTag("Branch"))
         {
+            rb.velocity = Vector2.zero;
             player.transform.position = spawnpoint;
             Panel.SetActive(true);
             rb.simulated = false;

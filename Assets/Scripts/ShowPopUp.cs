@@ -26,6 +26,7 @@ public class ShowPopUp : MonoBehaviour
 
     public void showPanel()
     {
+        rb.velocity = Vector2.zero;
         rb.simulated = false;
         Panel.SetActive(true);
     }
