@@ -21,6 +21,7 @@ public class TapToPlay : MonoBehaviour
 
     public void StartScene()
     {
+        rb.velocity = Vector2.zero;
         rb.simulated = true;
         Panel.SetActive(false);
         ControlCanvas.SetActive(true);
