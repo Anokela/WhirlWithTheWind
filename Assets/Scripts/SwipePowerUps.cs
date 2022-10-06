@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwipeControls : MonoBehaviour
+public class SwipePowerUps : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float ogGravity;
@@ -14,6 +14,11 @@ public class SwipeControls : MonoBehaviour
     public float invokeDelaySeconds = 0.8f;
     public float swipeLength = 200f;
     public float swipeAxisRestricor = 100f;
+
+    public bool dashUpPowerUp = false;
+    public bool dashDownPowerUp = false;
+    public bool dashRightPowerUp = true;
+    public bool dashLeftPowerUp = true;
 
     // Start is called before the first frame update
     void Start()
@@ -73,7 +78,7 @@ public class SwipeControls : MonoBehaviour
             Debug.Log(direction.x);
             // absolute value of the reduction, if y > 100, horizontal swipe doesn't happen
             // makes sure of the intended direction of the swipe
-            if(Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x > swipeLength)
+            if(Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x > swipeLength && dashRightPowerUp)
             {
                 rb.gravityScale = 0;
                 rb.AddForce(Vector3.right * dashSpeed, ForceMode2D.Impulse);
@@ -81,7 +86,7 @@ public class SwipeControls : MonoBehaviour
                 Invoke("NormalizeGravity", invokeDelaySeconds);
                 direction = Vector3.zero;
             }
-            if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x < -swipeLength)
+            if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x < -swipeLength && dashLeftPowerUp)
             {
                 rb.gravityScale = 0;
                 rb.AddForce(Vector3.left * dashSpeed, ForceMode2D.Impulse);
@@ -89,7 +94,7 @@ public class SwipeControls : MonoBehaviour
                 Invoke("NormalizeGravity", invokeDelaySeconds);
                 direction = Vector3.zero;
             }
-            if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y < -swipeLength)
+            if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y < -swipeLength && dashDownPowerUp)
             {
                 rb.gravityScale = 0;
                 rb.AddForce(Vector3.down * dashSpeed, ForceMode2D.Impulse);
@@ -97,7 +102,7 @@ public class SwipeControls : MonoBehaviour
                 Invoke("NormalizeGravity", invokeDelaySeconds);
                 direction = Vector3.zero;
             }
-            if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y > swipeLength)
+            if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y > swipeLength && dashUpPowerUp)
             {
                 rb.gravityScale = 0;
                 rb.AddForce(Vector3.up * dashSpeed, ForceMode2D.Impulse);
@@ -112,48 +117,3 @@ public class SwipeControls : MonoBehaviour
         rb.gravityScale = ogGravity;
     }
 }  
-
-
-
-
-
-
-
-
-
-    // Update is called once per frame
-/*    private void Update()
-    {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-        {
-            startTouchPosition = Input.GetTouch(0).position;
-        }
-
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
-        {
-            SubX = endTouchPosition.x - startTouchPosition.x;
-            SubY = endTouchPosition.y - startTouchPosition.y;
-            endTouchPosition = Input.GetTouch(0).position;
-            //left swipe
-            if(endTouchPosition.x < startTouchPosition.x && (SubY) > (SubX))
-            {
-                rb.AddForce(new Vector3(-1 * Time.deltaTime * 2f, 0), ForceMode2D.Impulse);
-            }
-
-            if (endTouchPosition.x > startTouchPosition.x && (SubY) > (SubX))
-            {
-                rb.AddForce(new Vector3(1 * Time.deltaTime * 2f, 0), ForceMode2D.Impulse);
-            }
-
-            if (endTouchPosition.y < startTouchPosition.y && (SubY) > (SubX))
-            {
-                rb.AddForce(new Vector3(0, -1 * Time.deltaTime * 2f), ForceMode2D.Impulse);
-            }
-
-            if (endTouchPosition.y > startTouchPosition.y && (SubY) > (SubX))
-            {
-                rb.AddForce(new Vector3(0, 1 * Time.deltaTime * 2f), ForceMode2D.Impulse);
-            }
-        }
-    }*/
-//}
