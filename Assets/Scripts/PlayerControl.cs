@@ -13,6 +13,11 @@ public class PlayerControl : MonoBehaviour
     public float bouncePower = 0.15f;
     private bool isLeftHeldDown = false;
     private bool isRightHeldDown = false;
+    private float Dive = -10f;
+
+    public float CoolDownTime = 2;
+    private float NextJumpTime = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,10 +39,21 @@ public class PlayerControl : MonoBehaviour
         {
             rb.velocity = new(-maxVelocity, rb.velocity.y);
         }
+        if (Time.time > NextJumpTime)
+         {
           if(Input.GetButtonDown("Jump"))
+            {
+                rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
+                NextJumpTime = Time.time + CoolDownTime;
+            }
+            if (Input.GetButtonDown("Vertical"))
         {
-            rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
+            rb.velocity = new(rb.velocity.x, Dive);
+            rb.velocity = new Vector2(rb.velocity.x, Dive);
         }
+
+        }
+
     }
 
     private void FixedUpdate()
