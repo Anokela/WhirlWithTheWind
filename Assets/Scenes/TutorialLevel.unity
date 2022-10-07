@@ -1435,6 +1435,34 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2042992570983335746, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042992570983335746, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 2042992570983335746, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
+      propertyPath: m_Color.b
+      value: 0.76792455
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042992570983335746, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
+      propertyPath: m_Color.g
+      value: 0.95805866
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042992570983335746, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042992570983335746, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042992570983335747, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.117249995
+      objectReference: {fileID: 0}
     - target: {fileID: 2042992571039911454, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1442,6 +1470,14 @@ PrefabInstance:
     - target: {fileID: 2042992571039911454, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: FadeIn
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042992571039911455, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 48.227154
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042992571039911455, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1222
       objectReference: {fileID: 0}
     - target: {fileID: 2042992571157369537, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
       propertyPath: m_Texture
@@ -1462,6 +1498,14 @@ PrefabInstance:
     - target: {fileID: 2042992571634828953, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: FadeIn
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042992571634828958, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50.967495
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042992571634828958, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1086
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
