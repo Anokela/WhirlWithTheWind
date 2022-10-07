@@ -18,8 +18,7 @@ public class FadingCanvas : MonoBehaviour
     {
         if (isFadingIn)
         {
-            
-            Invoke("hidePanel", 0);
+            Panel.SetActive(false);
             if (myUIGroup.alpha < 1)
             {
                 myUIGroup.alpha += 0.025f;
@@ -29,9 +28,5 @@ public class FadingCanvas : MonoBehaviour
                 }
             }
         }
-    }
-    public void hidePanel()
-    {
-        Panel.SetActive(false);
     }
 }

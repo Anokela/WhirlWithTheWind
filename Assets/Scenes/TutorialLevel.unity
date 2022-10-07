@@ -398,7 +398,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235163992}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.47054267, y: 0.82516825, z: 0}
+  m_LocalPosition: {x: -0.00015360117, y: 0.7724614, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -435,7 +435,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.2225237, y: 1}
+    m_SensorSize: {x: 0.47368422, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1105,11 +1105,11 @@ PrefabInstance:
     - target: {fileID: 806461620266731485, guid: 983c1b67d92765045a425dd64d71557d, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1149338101}
+      objectReference: {fileID: 0}
     - target: {fileID: 806461620266731485, guid: 983c1b67d92765045a425dd64d71557d, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1149338101}
+      objectReference: {fileID: 0}
     - target: {fileID: 806461620266731485, guid: 983c1b67d92765045a425dd64d71557d, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RightButtonPressed
@@ -1121,11 +1121,11 @@ PrefabInstance:
     - target: {fileID: 806461620827415898, guid: 983c1b67d92765045a425dd64d71557d, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1149338101}
+      objectReference: {fileID: 0}
     - target: {fileID: 806461620827415898, guid: 983c1b67d92765045a425dd64d71557d, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1149338101}
+      objectReference: {fileID: 0}
     - target: {fileID: 806461620827415898, guid: 983c1b67d92765045a425dd64d71557d, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LeftButtonPressed
@@ -1934,17 +1934,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6608692875354288479, guid: 75ed6670e453f6b449681a9cceaea494, type: 3}
   m_PrefabInstance: {fileID: 6608692874355945644}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1149338101 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6608692875354288473, guid: 75ed6670e453f6b449681a9cceaea494, type: 3}
-  m_PrefabInstance: {fileID: 6608692874355945644}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1515797637}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fe6d22a8cb47474bb7f2d83def4a530, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1185555620
 GameObject:
   m_ObjectHideFlags: 0
@@ -2312,8 +2301,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.7
   maxVelocity: 1
-  movementDelay: 0.1
-  movementStartTime: 0.1
+  movementDelay: 0.3
+  movementStartTime: 0.3
 --- !u!1 &1592466909
 GameObject:
   m_ObjectHideFlags: 0
@@ -2668,7 +2657,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858954725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3014574, y: 0.3878318, z: -10}
+  m_LocalPosition: {x: -0.6878464, y: 0.44053864, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2875,7 +2864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6608692875354288479, guid: 75ed6670e453f6b449681a9cceaea494, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.772
+      value: -0.688
       objectReference: {fileID: 0}
     - target: {fileID: 6608692875354288479, guid: 75ed6670e453f6b449681a9cceaea494, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2913,5 +2902,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6608692875354288473, guid: 75ed6670e453f6b449681a9cceaea494, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 75ed6670e453f6b449681a9cceaea494, type: 3}
