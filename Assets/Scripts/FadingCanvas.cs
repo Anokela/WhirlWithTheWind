@@ -6,18 +6,20 @@ using UnityEngine.SceneManagement;
 public class FadingCanvas : MonoBehaviour
 {
     [SerializeField] private CanvasGroup myUIGroup;
-
+    private GameObject Panel;
     private bool isFadingIn = false;
-
     public void FadeIn()
     {
         isFadingIn = true;
+        Panel = GameObject.Find("RestartMenu");
     }
 
     private void Update()
     {
         if (isFadingIn)
         {
+            
+            Invoke("hidePanel", 0);
             if (myUIGroup.alpha < 1)
             {
                 myUIGroup.alpha += 0.025f;
@@ -27,5 +29,9 @@ public class FadingCanvas : MonoBehaviour
                 }
             }
         }
+    }
+    public void hidePanel()
+    {
+        Panel.SetActive(false);
     }
 }

@@ -398,7 +398,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235163992}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.29333353, y: 0.7721795, z: 0}
+  m_LocalPosition: {x: 0.47054267, y: 0.82516825, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -435,7 +435,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8715523, y: 1}
+    m_SensorSize: {x: 3.2225237, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1044,7 +1044,7 @@ GameObject:
   - component: {fileID: 800604216}
   - component: {fileID: 800604215}
   m_Layer: 0
-  m_Name: LevelFloor
+  m_Name: LevelCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1430,6 +1430,10 @@ PrefabInstance:
     - target: {fileID: 2042992570805887431, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 617.9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042992570983335744, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2042992571039911454, guid: 54128a24db65aba4786fd1feede6ea12, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2290,8 +2294,8 @@ MonoBehaviour:
   invokeDelaySeconds: 0.8
   swipeLength: 200
   swipeAxisRestricor: 100
-  dashUpPowerUp: 0
-  dashDownPowerUp: 0
+  dashUpPowerUp: 1
+  dashDownPowerUp: 1
   dashRightPowerUp: 1
   dashLeftPowerUp: 1
 --- !u!114 &1515797648
@@ -2664,7 +2668,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858954725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.4786665, y: 0.44082057, z: -10}
+  m_LocalPosition: {x: 2.3014574, y: 0.3878318, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
