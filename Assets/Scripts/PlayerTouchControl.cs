@@ -46,11 +46,11 @@ public class PlayerTouchControl : MonoBehaviour
                 }
                 if (touchPoint.x < pc.transform.position.x)
                 {
-                    rb.AddForce(new Vector3(1f * speed * Time.deltaTime, 0), ForceMode2D.Impulse);
+                    rb.AddForce(new Vector3(1f * speed * Time.deltaTime, 0), ForceMode2D.Force);
                 }
                 if (touchPoint.x > pc.transform.position.x)
                 {
-                    rb.AddForce(new Vector3(-1f * speed * Time.deltaTime, 0), ForceMode2D.Impulse);
+                    rb.AddForce(new Vector3(-1f * speed * Time.deltaTime, 0), ForceMode2D.Force);
                 }
             }
             
