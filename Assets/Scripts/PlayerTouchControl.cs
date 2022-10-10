@@ -61,19 +61,19 @@ public class PlayerTouchControl : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D c2d)
+    void OnTriggerStay2D(Collider2D c2d)
     {
         if (c2d.CompareTag("LeftWall"))
         {
             controlsDisabled = true;
-            rb.AddForce(Vector3.right * 0.01f, ForceMode2D.Impulse);
+            rb.AddForce(Vector3.right * 0.005f, ForceMode2D.Impulse);
             Invoke("ActivateControls", 0.5f);
 
         }
         if (c2d.CompareTag("RightWall"))
         {
             controlsDisabled = true;
-            rb.AddForce(Vector3.left * 0.01f, ForceMode2D.Impulse);
+            rb.AddForce(Vector3.left * 0.005f, ForceMode2D.Impulse);
             Invoke("ActivateControls", 0.5f);
         }
     }
