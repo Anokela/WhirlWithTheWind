@@ -5,8 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour   
 {
-    public void StartGame() 
+    [SerializeField] private CanvasGroup myUIGroup;
+    private bool isFadingIn = false;
+    public void FadeIn()
+    {
+        isFadingIn = true;
+    }
+
+    private void Update()
+    {
+        if (isFadingIn)
         {
-        SceneManager.LoadScene("TutorialLevel");
+            if (myUIGroup.alpha < 1)
+            {
+                myUIGroup.alpha += 0.025f;
+                if (myUIGroup.alpha >= 1)
+                {
+                    SceneManager.LoadScene("TutorialLevel");                }
+            }
         }
+    }
 }
