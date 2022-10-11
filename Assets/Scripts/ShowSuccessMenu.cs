@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShowPopUp : MonoBehaviour
+public class ShowSuccessMenu : MonoBehaviour
 {
     private GameObject Panel;
     private GameObject pc;
     private Rigidbody2D rb;
-
+    private GameObject sprout;
+ 
     void Start()
     {
         pc = GameObject.FindGameObjectWithTag("Player");
         rb = pc.GetComponent<Rigidbody2D>();
-        Panel = GameObject.Find("RestartMenu");
+        sprout = GameObject.Find("Sprout");
+        Panel = GameObject.Find("SuccessMenu");
         Panel.SetActive(false);
+        sprout.SetActive(false);
     }
 
     void OnTriggerEnter2D(Collider2D c2d)
@@ -29,5 +32,7 @@ public class ShowPopUp : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.simulated = false;
         Panel.SetActive(true);
+        sprout.SetActive(true);
+        pc.SetActive(false);
     }
 }
