@@ -26,10 +26,10 @@ public class ChoosePowerUp : MonoBehaviour
     { 
             pc.SetActive(true);
             pc.transform.position = spawnpoint;
-            menu.SetActive(false);
+            confirmMenu.SetActive(false);
             sprout.SetActive(false);
             ttp.SetActive(true);
-            confirmMenu.SetActive(false);
+            menu.SetActive(false);
     }
 
     public void CancelPress()
