@@ -19,12 +19,14 @@ public class SwipePowerUps : MonoBehaviour
     public bool dashDownPowerUp = false;
     public bool dashRightPowerUp = true;
     public bool dashLeftPowerUp = true;
+    private Animator m_anim;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         ogGravity = rb.gravityScale;
+        m_anim = GetComponent<Animator>();
     }
     
     void Update()
@@ -70,6 +72,7 @@ public class SwipePowerUps : MonoBehaviour
                     break;
             }
         }
+       
         if (directionChosen)
         {
             // Something that uses the chosen direction...
@@ -81,18 +84,24 @@ public class SwipePowerUps : MonoBehaviour
             if(Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x > swipeLength && dashRightPowerUp)
             {
                 rb.gravityScale = 0;
-                rb.AddForce(Vector3.right * dashSpeed, ForceMode2D.Impulse);
+                //rb.AddForce(Vector3.right * dashSpeed, ForceMode2D.Impulse);
+                Invoke("DashRight", 0.35f);
                 directionChosen = false;
                 Invoke("NormalizeGravity", invokeDelaySeconds);
                 direction = Vector3.zero;
+                m_anim.SetBool("DashRight", true);
+                Invoke("resetAnimation", 0.5f);
             }
             if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x < -swipeLength && dashLeftPowerUp)
             {
                 rb.gravityScale = 0;
-                rb.AddForce(Vector3.left * dashSpeed, ForceMode2D.Impulse);
+                //rb.AddForce(Vector3.left * dashSpeed, ForceMode2D.Impulse);
+                Invoke("DashLeft", 0.35f);
                 directionChosen = false;
                 Invoke("NormalizeGravity", invokeDelaySeconds);
                 direction = Vector3.zero;
+                m_anim.SetBool("DashLeft", true);
+                Invoke("resetAnimation", 0.5f);
             }
             if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y < -swipeLength && dashDownPowerUp)
             {
@@ -115,5 +124,21 @@ public class SwipePowerUps : MonoBehaviour
     private void NormalizeGravity()
     {
         rb.gravityScale = ogGravity;
+    }
+
+    private void resetAnimation()
+    {
+        m_anim.SetBool("DashRight", false);
+        m_anim.SetBool("DashLeft", false);
+    }
+
+    private void DashRight()
+    {
+        rb.AddForce(Vector3.right * dashSpeed, ForceMode2D.Impulse);
+    }
+
+    private void DashLeft()
+    {
+        rb.AddForce(Vector3.left * dashSpeed, ForceMode2D.Impulse);
     }
 }  
