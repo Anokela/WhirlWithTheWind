@@ -11,8 +11,6 @@ public class TapToPlay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ControlCanvas = GameObject.Find("ControlCanvas");
-        ControlCanvas.SetActive(false);
         Panel = GameObject.Find("TapToPlay");
         pc = GameObject.FindGameObjectWithTag("Player");
         rb = pc.GetComponent<Rigidbody2D>();
@@ -24,7 +22,5 @@ public class TapToPlay : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.simulated = true;
         Panel.SetActive(false);
-        ControlCanvas.SetActive(true);
-
     }
 }
