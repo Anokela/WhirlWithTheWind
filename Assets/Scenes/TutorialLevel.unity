@@ -953,7 +953,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 15
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1b120ec99e2ee4f47b781bf5e32ca031, type: 2}
   m_sharedMaterial: {fileID: 5778470108688246122, guid: 1b120ec99e2ee4f47b781bf5e32ca031, type: 2}
@@ -1643,6 +1643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbf05c8e5ecd9c74db4092db334eaa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priceText: {fileID: 568165266}
   upDashPrice: 5
 --- !u!114 &837857014
 MonoBehaviour:

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ChoosePowerUp : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class ChoosePowerUp : MonoBehaviour
     private GameObject sprout;
     private GameObject ttp;
     private GameObject confirmMenu;
+    public TextMeshProUGUI priceText;
     private int totalLightPoints;
     public int upDashPrice = 15;
 
@@ -20,6 +22,7 @@ public class ChoosePowerUp : MonoBehaviour
         {
             totalLightPoints = PlayerPrefs.GetInt("LightPoints");
         }*/
+        priceText.text = upDashPrice.ToString();
         pc = GameObject.FindGameObjectWithTag("Player");
         spawnpoint = pc.transform.position;
         menu = GameObject.Find("SuccessMenu");
