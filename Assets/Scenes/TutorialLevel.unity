@@ -636,7 +636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightPointText: {fileID: 2042992569918821325}
-  resetPrefs: 1
+  resetPrefs: 0
 --- !u!1 &272080042
 GameObject:
   m_ObjectHideFlags: 0
@@ -2364,7 +2364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 506084bae55af1a4198cb7176f939454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocity: 1
+  maxVelocity: 2
   dashSpeed: 0.1
   invokeDelaySeconds: 0.8
   swipeLength: 200

@@ -21,7 +21,6 @@ public class LightPointCalculation : MonoBehaviour
 		if(PlayerPrefs.HasKey("LightPoints"))
         {
 			lightPoints = PlayerPrefs.GetInt("LightPoints");
-			Debug.Log("HEI!!!");
 			Debug.Log(lightPoints);
 			lightPointText.text = lightPoints.ToString();
 		}
