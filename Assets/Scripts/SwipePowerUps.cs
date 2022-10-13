@@ -24,6 +24,13 @@ public class SwipePowerUps : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /*if (PlayerPrefs.HasKey("UpDashActive"))
+        {
+            if (PlayerPrefs.GetInt("UpDashActive") == 1)
+            {
+                dashUpPowerUp = true;
+            }
+        }*/
         rb = GetComponent<Rigidbody2D>();
         ogGravity = rb.gravityScale;
         m_anim = GetComponent<Animator>();
@@ -31,6 +38,13 @@ public class SwipePowerUps : MonoBehaviour
     
     void Update()
     {
+        if (PlayerPrefs.HasKey("UpDashActive"))
+        {
+            if (PlayerPrefs.GetInt("UpDashActive") == 1)
+            {
+                dashUpPowerUp = true;
+            }
+        }
         if (rb.velocity.x > maxVelocity)
         {
             rb.velocity = new(maxVelocity, rb.velocity.y);
