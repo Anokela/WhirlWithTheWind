@@ -6,6 +6,7 @@ public class LightPoint : MonoBehaviour
 {
     //Keep track of total picked lightPoints (Since the value is static, it can be accessed at "LightPoint.lightPoints" from any script)
     public static int lightPoints = 0;
+    public GameObject cam;
 
     void Awake()
     {
@@ -24,7 +25,8 @@ public class LightPoint : MonoBehaviour
             // Debug.Log("You currently have " + LightPoint.lightPoints + " Light Points.");
             //Destroy lightPoint
             Destroy(gameObject);
-            GameObject.Find("CM vcam1").SendMessage("HandleCalculation");
+            //GameObject.Find("CM vcam1").SendMessage("HandleCalculation");
+            cam.SendMessage("HandleCalculation");
         }
     }
 }

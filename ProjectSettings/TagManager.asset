@@ -49,6 +49,9 @@ TagManager:
   - name: Player
     uniqueID: 785369271
     locked: 0
-  - name: New Layer 2
+  - name: BackGround
     uniqueID: 2657197501
+    locked: 0
+  - name: New Layer 3
+    uniqueID: 1677930067
     locked: 0
