@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class LightPoint : MonoBehaviour
 {
-    //Keep track of total picked lightPoints (Since the value is static, it can be accessed at "LightPoint.lightPoints" from any script)
-    public static int lightPoints = 0;
     public int index;
     // private GameObject manager;
     public LightPointManager manager;
@@ -22,15 +20,11 @@ public class LightPoint : MonoBehaviour
         if (c2d.CompareTag("Player"))
         {
             Debug.Log("Index is " + index);
-            // Debug.Log(tosiHupsuManager.LevelLightPoints[index].isCollected);
             //Add lightPoint to counter
-            lightPoints++;
-            //Test: Print total number of lightPoints
-            // Debug.Log("You currently have " + LightPoint.lightPoints + " Light Points.");
+            PlayerInfo.LightPoints++;
             //Destroy lightPoint
             manager.LevelLightPoints[index].isCollected = true;
             Destroy(gameObject);
-            //GameObject.Find("CM vcam1").SendMessage("HandleCalculation");
             manager.SendMessage("HandleCalculation");
         }
     }

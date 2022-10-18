@@ -13,36 +13,20 @@ public class LightPointCalculation : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+		lightPointText.text = PlayerInfo.LightPoints.ToString();
 		if (resetPrefs)
         {
 			PlayerPrefs.SetInt("LightPoints", 0);
 			PlayerPrefs.SetInt("UpDashActive", 0);
 			PlayerPrefs.Save();
 		}
-		/*if(PlayerPrefs.HasKey("LightPoints"))
-        {
-			lightPoints = PlayerPrefs.GetInt("LightPoints");
-			Debug.Log(lightPoints);
-			lightPointText.text = lightPoints.ToString();
-		}*/
-	}
-
-    void Update()
-    {
-		if (PlayerPrefs.HasKey("LightPoints"))
-		{
-			lightPoints = PlayerPrefs.GetInt("LightPoints");
-			Debug.Log(lightPoints);
-			lightPointText.text = lightPoints.ToString();
-		}
-	}
-
+    }
 
     void HandleCalculation()
 	{
 		Debug.Log("Calculation");
-		lightPoints += 1;
-		lightPointText.text = lightPoints.ToString();
+		// lightPoints += 1;
+		lightPointText.text = PlayerInfo.LightPoints.ToString();
 		PlayerPrefs.SetInt("LightPoints", lightPoints);
 		PlayerPrefs.Save();
 	}

@@ -12,7 +12,6 @@ public class ChoosePowerUp : MonoBehaviour
     public GameObject ttp;
     private GameObject confirmMenu;
     public TextMeshProUGUI priceText;
-    private int totalLightPoints;
     public int upDashPrice = 15;
 
     // Start is called before the first frame update
@@ -23,35 +22,18 @@ public class ChoosePowerUp : MonoBehaviour
 
     void Start()
     {
-        /*if (PlayerPrefs.HasKey("LightPoints"))
-        {
-            totalLightPoints = PlayerPrefs.GetInt("LightPoints");
-        }*/
         priceText.text = upDashPrice.ToString();
-        // pc = GameObject.FindGameObjectWithTag("Player");
-        // spawnpoint = pc.transform.position;
         menu = GameObject.Find("SuccessMenu");
         // sprout = GameObject.Find("Sprout");
-        // ttp = GameObject.Find("TapToPlay");
         confirmMenu = GameObject.Find("PowerUpConfirmation");
     }
 
-    private void Update()
-    {
-        if (PlayerPrefs.HasKey("LightPoints"))
-        {
-            totalLightPoints = PlayerPrefs.GetInt("LightPoints");
-        }
-    }
-    // Update is called once per frame
     public void OKPress()
     { 
-        if (totalLightPoints >= upDashPrice)
+        if (PlayerInfo.LightPoints >= upDashPrice)
         {
-
-            PlayerPrefs.SetInt("LightPoints", totalLightPoints - upDashPrice);
-            PlayerPrefs.SetInt("UpDashActive", 1);
-            PlayerPrefs.Save();
+            PlayerInfo.LightPoints = PlayerInfo.LightPoints - upDashPrice;
+            PlayerInfo.UpDashActive = 1;
             pc.SetActive(true);
             pc.transform.position = spawnpoint;
             confirmMenu.SetActive(false);
