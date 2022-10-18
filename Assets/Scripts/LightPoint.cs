@@ -16,11 +16,6 @@ public class LightPoint : MonoBehaviour
         GetComponent<Collider2D>().isTrigger = true;
     }
 
-    private void Start()
-    {
-        // manager = GameObject.Find("LightPointManager");
-    }
-
     void OnTriggerEnter2D(Collider2D c2d)
     {
         //Destroy the ligtPoint if Object tagged Player comes in contact with it
