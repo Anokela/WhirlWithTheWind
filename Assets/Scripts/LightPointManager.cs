@@ -23,7 +23,7 @@ public class LightPointManager : MonoBehaviour
                 GameObject point = Instantiate(lp, lightPoint.position, Quaternion.identity);
                 LightPoint script = point.GetComponent<LightPoint>();
                 script.index = i;
-                script.tosiHupsuManager = this;
+                script.manager = this;
             }
             i++;
         }
