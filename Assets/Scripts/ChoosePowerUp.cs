@@ -5,17 +5,22 @@ using TMPro;
 
 public class ChoosePowerUp : MonoBehaviour
 {
-    private GameObject pc;
+    public GameObject pc;
     private Vector3 spawnpoint;
     private GameObject menu;
-    private GameObject sprout;
-    private GameObject ttp;
+    // private GameObject sprout;
+    public GameObject ttp;
     private GameObject confirmMenu;
     public TextMeshProUGUI priceText;
     private int totalLightPoints;
     public int upDashPrice = 15;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        spawnpoint = pc.transform.position;
+    }
+
     void Start()
     {
         /*if (PlayerPrefs.HasKey("LightPoints"))
@@ -23,11 +28,11 @@ public class ChoosePowerUp : MonoBehaviour
             totalLightPoints = PlayerPrefs.GetInt("LightPoints");
         }*/
         priceText.text = upDashPrice.ToString();
-        pc = GameObject.FindGameObjectWithTag("Player");
-        spawnpoint = pc.transform.position;
+        // pc = GameObject.FindGameObjectWithTag("Player");
+        // spawnpoint = pc.transform.position;
         menu = GameObject.Find("SuccessMenu");
-        sprout = GameObject.Find("Sprout");
-        ttp = GameObject.Find("TapToPlay");
+        // sprout = GameObject.Find("Sprout");
+        // ttp = GameObject.Find("TapToPlay");
         confirmMenu = GameObject.Find("PowerUpConfirmation");
     }
 
@@ -50,7 +55,7 @@ public class ChoosePowerUp : MonoBehaviour
             pc.SetActive(true);
             pc.transform.position = spawnpoint;
             confirmMenu.SetActive(false);
-            sprout.SetActive(false);
+            // sprout.SetActive(false);
             ttp.SetActive(true);
             menu.SetActive(false);
         }
