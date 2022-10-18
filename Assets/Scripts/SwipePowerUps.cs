@@ -120,17 +120,23 @@ public class SwipePowerUps : MonoBehaviour
             if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y < -swipeLength && dashDownPowerUp)
             {
                 rb.gravityScale = 0;
-                rb.AddForce(Vector3.down * dashSpeed, ForceMode2D.Impulse);
+                // rb.AddForce(Vector3.down * dashSpeed, ForceMode2D.Impulse);
+                Invoke("DashDown", 0.45f);
                 directionChosen = false;
                 Invoke("NormalizeGravity", invokeDelaySeconds);
+                m_anim.SetBool("DashDown", true);
+                Invoke("resetAnimation", 0.55f);
                 direction = Vector3.zero;
             }
             if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y > swipeLength && dashUpPowerUp)
             {
                 rb.gravityScale = 0;
-                rb.AddForce(Vector3.up * dashSpeed, ForceMode2D.Impulse);
+                // rb.AddForce(Vector3.up * dashSpeed, ForceMode2D.Impulse);
+                Invoke("DashUp", 0.5f);
                 directionChosen = false;
+                m_anim.SetBool("DashUp", true);
                 Invoke("NormalizeGravity", invokeDelaySeconds);
+                Invoke("resetAnimation", 0.55f);
                 direction = Vector3.zero;
             }
         }
@@ -144,6 +150,8 @@ public class SwipePowerUps : MonoBehaviour
     {
         m_anim.SetBool("DashRight", false);
         m_anim.SetBool("DashLeft", false);
+        m_anim.SetBool("DashDown", false);
+        m_anim.SetBool("DashUp", false);
     }
 
     private void DashRight()
@@ -154,5 +162,15 @@ public class SwipePowerUps : MonoBehaviour
     private void DashLeft()
     {
         rb.AddForce(Vector3.left * dashSpeed, ForceMode2D.Impulse);
+    }
+
+    private void DashDown()
+    {
+        rb.AddForce(Vector3.down * dashSpeed, ForceMode2D.Impulse);
+    }
+
+    private void DashUp()
+    {
+        rb.AddForce(Vector3.up * dashSpeed, ForceMode2D.Impulse);
     }
 }  
