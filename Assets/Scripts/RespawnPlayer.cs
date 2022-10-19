@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RespawnPlayer : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class RespawnPlayer : MonoBehaviour
     private Vector3 spawnpoint;
     private GameObject Panel;
     private Rigidbody2D rb;
+    public Text ttp;
 
 
     private void Start()
@@ -22,6 +24,7 @@ public class RespawnPlayer : MonoBehaviour
             player.transform.position = spawnpoint;
             Panel.SetActive(true);
             rb.simulated = false;
+            ttp.SendMessage("StartBlinking");
         }
     }
 }

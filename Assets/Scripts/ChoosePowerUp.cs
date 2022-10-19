@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class ChoosePowerUp : MonoBehaviour
 {
@@ -10,9 +11,11 @@ public class ChoosePowerUp : MonoBehaviour
     private GameObject menu;
     // private GameObject sprout;
     public GameObject ttp;
-    private GameObject confirmMenu;
+    public Text ttpText;
+    public GameObject confirmMenu;
     public TextMeshProUGUI priceText;
     public int upDashPrice = 15;
+    public Text blinking;
 
     // Start is called before the first frame update
     private void Awake()
@@ -25,7 +28,7 @@ public class ChoosePowerUp : MonoBehaviour
         priceText.text = upDashPrice.ToString();
         menu = GameObject.Find("SuccessMenu");
         // sprout = GameObject.Find("Sprout");
-        confirmMenu = GameObject.Find("PowerUpConfirmation");
+        // confirmMenu = GameObject.Find("PowerUpConfirmation");
     }
 
     public void OKPress()
@@ -39,6 +42,7 @@ public class ChoosePowerUp : MonoBehaviour
             confirmMenu.SetActive(false);
             // sprout.SetActive(false);
             ttp.SetActive(true);
+            blinking.SendMessage("StartBlinking");
             menu.SetActive(false);
         }
         else

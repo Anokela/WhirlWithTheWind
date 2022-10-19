@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
                 myUIGroup.alpha += 0.025f;
                 if (myUIGroup.alpha >= 1)
                 {
-                    SceneManager.LoadScene("TutorialLevel");                }
+                    SceneManager.LoadScene("Level1");                }
             }
         }
     }
