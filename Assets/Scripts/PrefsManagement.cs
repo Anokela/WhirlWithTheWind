@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class PrefsManagement : MonoBehaviour
 {
+    public bool resetPrefs = false;
     void Awake()
     {
+        if (resetPrefs)
+        {
+            PlayerPrefs.SetInt("LightPoints", 0);
+            PlayerPrefs.SetInt("UpDashActive", 0);
+            PlayerPrefs.Save();
+        }
         PlayerInfo.LightPoints = PlayerPrefs.GetInt("LightPoints");
         PlayerInfo.UpDashActive = PlayerPrefs.GetInt("UpDashActive");
     }
