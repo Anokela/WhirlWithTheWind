@@ -9,11 +9,12 @@ public class ChoosePowerUp : MonoBehaviour
     private GameObject menu;
     // private GameObject sprout;
     public GameObject ttp;
-    public Text ttpText;
     public GameObject confirmMenu;
     public TextMeshProUGUI priceText;
     public int upDashPrice = 15;
     public Text blinking;
+    public GameObject spawnManager;
+    public int nextSpawnpointIndex;
 
     void Start()
     {
@@ -29,9 +30,9 @@ public class ChoosePowerUp : MonoBehaviour
         {
             PlayerInfo.LightPoints = PlayerInfo.LightPoints - upDashPrice;
             PlayerInfo.UpDashActive = 1;
-            PlayerInfo.CurrentSpawnPoint = 1;
+            PlayerInfo.CurrentSpawnPoint = nextSpawnpointIndex;
             pc.SetActive(true);
-            pc.SendMessage("SpawnPlayer");
+            spawnManager.SendMessage("SpawnPlayer");
             // pc.transform.position = spawnpoint;
             confirmMenu.SetActive(false);
             // sprout.SetActive(false);

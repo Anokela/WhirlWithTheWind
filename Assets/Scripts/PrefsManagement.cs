@@ -17,6 +17,7 @@ public class PrefsManagement : MonoBehaviour
         PlayerInfo.LightPoints = PlayerPrefs.GetInt("LightPoints");
         PlayerInfo.UpDashActive = PlayerPrefs.GetInt("UpDashActive");
         PlayerInfo.CurrentSpawnPoint = PlayerPrefs.GetInt("CurrentSpawnPoint");
+        Debug.Log(PlayerInfo.CurrentSpawnPoint);
     }
 
     // Update is called once per frame
