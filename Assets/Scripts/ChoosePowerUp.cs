@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -17,12 +15,6 @@ public class ChoosePowerUp : MonoBehaviour
     public int upDashPrice = 15;
     public Text blinking;
 
-    // Start is called before the first frame update
-    private void Awake()
-    {
-        spawnpoint = pc.transform.position;
-    }
-
     void Start()
     {
         priceText.text = upDashPrice.ToString();
@@ -32,13 +24,15 @@ public class ChoosePowerUp : MonoBehaviour
     }
 
     public void OKPress()
-    { 
+    {
         if (PlayerInfo.LightPoints >= upDashPrice)
         {
             PlayerInfo.LightPoints = PlayerInfo.LightPoints - upDashPrice;
             PlayerInfo.UpDashActive = 1;
+            PlayerInfo.CurrentSpawnPoint = 1;
             pc.SetActive(true);
-            pc.transform.position = spawnpoint;
+            pc.SendMessage("SpawnPlayer");
+            // pc.transform.position = spawnpoint;
             confirmMenu.SetActive(false);
             // sprout.SetActive(false);
             ttp.SetActive(true);

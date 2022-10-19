@@ -3,6 +3,7 @@ public class PlayerInfo
 {
     private static int lightPoints;
     private static int isUpDashActive;
+    private static int currentSpawnPoint;
 
 
     public static int LightPoints
@@ -26,6 +27,18 @@ public class PlayerInfo
         set
         {
             isUpDashActive = value;
+        }
+    }
+
+    public static int CurrentSpawnPoint
+    {
+        get
+        {
+            return currentSpawnPoint;
+        }
+        set
+        {
+            currentSpawnPoint = value;
         }
     }
 }

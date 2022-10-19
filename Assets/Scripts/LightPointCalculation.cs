@@ -18,9 +18,6 @@ public class LightPointCalculation : MonoBehaviour
     void HandleCalculation()
 	{
 		Debug.Log("Calculation");
-		// lightPoints += 1;
 		lightPointText.text = PlayerInfo.LightPoints.ToString();
-		/*PlayerPrefs.SetInt("LightPoints", lightPoints);
-		PlayerPrefs.Save();*/
 	}
 }
