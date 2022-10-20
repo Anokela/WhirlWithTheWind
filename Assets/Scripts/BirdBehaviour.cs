@@ -11,5 +11,14 @@ public class BirdBehaviour : MonoBehaviour
     
     void Update() {
          transform.position = Vector3.Lerp (pos1, pos2, Mathf.PingPong(Time.time*speed, 1.0f));
+             if (transform.position = pos2)
+             {
+               SpriteRenderer.flipX;
+               }
+                if (transform.position = pos1)
+             {
+               SpriteRenderer.flipX;
+               }
+               
      }
 }
