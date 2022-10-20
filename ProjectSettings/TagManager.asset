@@ -9,6 +9,8 @@ TagManager:
   - RightWall
   - Mushroom
   - Branch
+  - Bird
+  - Beetle
   layers:
   - Default
   - TransparentFX
