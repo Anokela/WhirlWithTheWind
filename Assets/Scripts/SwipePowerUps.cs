@@ -17,8 +17,7 @@ public class SwipePowerUps : MonoBehaviour
 
     public bool dashUpPowerUp = false;
     public bool dashDownPowerUp = false;
-    public bool dashRightPowerUp = true;
-    public bool dashLeftPowerUp = true;
+    public bool sideDashPowerUp = false;
     private Animator m_anim;
 
     // Start is called before the first frame update
@@ -81,7 +80,7 @@ public class SwipePowerUps : MonoBehaviour
             Debug.Log(direction.x);
             // absolute value of the reduction, if y > 100, horizontal swipe doesn't happen
             // makes sure of the intended direction of the swipe
-            if(Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x > swipeLength && dashRightPowerUp)
+            if(Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x > swipeLength && PlayerInfo.SideDashActive == 1)
             {
                 rb.gravityScale = 0;
                 //rb.AddForce(Vector3.right * dashSpeed, ForceMode2D.Impulse);
@@ -92,7 +91,7 @@ public class SwipePowerUps : MonoBehaviour
                 m_anim.SetBool("DashRight", true);
                 Invoke("resetAnimation", 0.5f);
             }
-            if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x < -swipeLength && dashLeftPowerUp)
+            if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x < -swipeLength && PlayerInfo.SideDashActive == 1)
             {
                 rb.gravityScale = 0;
                 //rb.AddForce(Vector3.left * dashSpeed, ForceMode2D.Impulse);
@@ -103,7 +102,7 @@ public class SwipePowerUps : MonoBehaviour
                 m_anim.SetBool("DashLeft", true);
                 Invoke("resetAnimation", 0.5f);
             }
-            if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y < -swipeLength && dashDownPowerUp)
+            if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y < -swipeLength && PlayerInfo.DownDashActive == 1)
             {
                 rb.gravityScale = 0;
                 // rb.AddForce(Vector3.down * dashSpeed, ForceMode2D.Impulse);
