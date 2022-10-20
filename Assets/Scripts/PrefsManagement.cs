@@ -11,15 +11,11 @@ public class PrefsManagement : MonoBehaviour
         {
             PlayerPrefs.SetInt("LightPoints", 0);
             PlayerPrefs.SetInt("UpDashActive", 0);
-            PlayerPrefs.SetInt("DownDashActive", 0);
-            PlayerPrefs.SetInt("SideDashActive", 0);
             PlayerPrefs.SetInt("CurrentSpawnPoint", 0);
             PlayerPrefs.Save();
         }
         PlayerInfo.LightPoints = PlayerPrefs.GetInt("LightPoints");
         PlayerInfo.UpDashActive = PlayerPrefs.GetInt("UpDashActive");
-        PlayerInfo.DownDashActive = PlayerPrefs.GetInt("DownDashActive");
-        PlayerInfo.SideDashActive = PlayerPrefs.GetInt("SideDashActive");
         PlayerInfo.CurrentSpawnPoint = PlayerPrefs.GetInt("CurrentSpawnPoint");
         Debug.Log(PlayerInfo.CurrentSpawnPoint);
     }
@@ -31,8 +27,6 @@ public class PrefsManagement : MonoBehaviour
         Debug.Log("OnApplicationQuit");
         PlayerPrefs.SetInt("LightPoints", PlayerInfo.LightPoints);
         PlayerPrefs.SetInt("UpDashActive", PlayerInfo.UpDashActive);
-        PlayerPrefs.SetInt("DownDashActive", PlayerInfo.DownDashActive);
-        PlayerPrefs.SetInt("SideDashActive", PlayerInfo.SideDashActive);
         PlayerPrefs.SetInt("CurrentSpawnPoint", PlayerInfo.CurrentSpawnPoint);
         PlayerPrefs.Save();
     }

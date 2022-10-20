@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 public class ChoosePowerUp : MonoBehaviour
 {
@@ -27,7 +26,6 @@ public class ChoosePowerUp : MonoBehaviour
 
     public void OKPress()
     {
-        Debug.Log(EventSystem.current.currentSelectedGameObject.name);
         if (PlayerInfo.LightPoints >= upDashPrice)
         {
             PlayerInfo.LightPoints = PlayerInfo.LightPoints - upDashPrice;
