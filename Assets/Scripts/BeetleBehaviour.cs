@@ -6,6 +6,7 @@ public class BeetleBehaviour : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5f;
     Rigidbody2D rb;
+    // public GameObject beetle;
     Transform target;
     Vector2 moveDirection;
 
@@ -32,7 +33,7 @@ public class BeetleBehaviour : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (target)
+        if (rb.bodyType == RigidbodyType2D.Dynamic && target)
         {
             rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
         }
