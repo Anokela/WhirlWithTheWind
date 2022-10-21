@@ -14,10 +14,6 @@ public class PlayerBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
-    void Update()
-    {
-       
-    }
 
     void FreezePlayer()
     {
