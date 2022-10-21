@@ -866,7 +866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8216075185580880266}
   levelSpawnPoints:
-  - spawnPoint: {x: 5.44, y: 1.43, z: 0}
+  - spawnPoint: {x: 10.737, y: 6.597, z: 0}
     index: 0
   - spawnPoint: {x: 7.846, y: 6.62, z: 0}
     index: 1
