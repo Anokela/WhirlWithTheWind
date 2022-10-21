@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PrefsManagement : MonoBehaviour
 {
@@ -41,5 +42,18 @@ public class PrefsManagement : MonoBehaviour
         PlayerPrefs.SetInt("AntiWebActive", PlayerInfo.AntiWebActive);
         PlayerPrefs.SetInt("CurrentSpawnPoint", PlayerInfo.CurrentSpawnPoint);
         PlayerPrefs.Save();
+    }
+
+    public void ResetPrefs()
+    {
+        PlayerPrefs.SetInt("LightPoints", 0);
+        PlayerPrefs.SetInt("UpDashActive", 0);
+        PlayerPrefs.SetInt("DownDashActive", 0);
+        PlayerPrefs.SetInt("SideDashActive", 0);
+        PlayerPrefs.SetInt("AntiBirdActive", 0);
+        PlayerPrefs.SetInt("AntiWebActive", 0);
+        PlayerPrefs.SetInt("CurrentSpawnPoint", 0);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("Level1");
     }
 }
