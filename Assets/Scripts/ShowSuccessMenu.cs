@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +9,8 @@ public class ShowSuccessMenu : MonoBehaviour
     public Button downDashButton;
     public Button upDashButton;
     public Button sideDashButton;
+    public Button antiBirdButton;
+    public Button antiWebButton;
     // private GameObject sprout;
 
     void Start()
@@ -18,7 +18,7 @@ public class ShowSuccessMenu : MonoBehaviour
         pc = GameObject.FindGameObjectWithTag("Player");
         rb = pc.GetComponent<Rigidbody2D>();
         // sprout = GameObject.Find("Sprout");
-        Panel = GameObject.Find("SuccessMenu");
+        // Panel = GameObject.Find("SuccessMenu");
         Panel.SetActive(false);
         // sprout.SetActive(false);
     }
@@ -43,20 +43,44 @@ public class ShowSuccessMenu : MonoBehaviour
 
     private void AreButtonsInactive()
     {
-
-        if (PlayerInfo.UpDashActive == 1 || PlayerInfo.LightPoints < PowerUps.UpDashPrice)
+        if (upDashButton)
         {
-            upDashButton.GetComponent<Button>().interactable = false;
+            if (PlayerInfo.UpDashActive == 1 || PlayerInfo.LightPoints < PowerUps.UpDashPrice)
+            {
+                upDashButton.GetComponent<Button>().interactable = false;
+            }
+        }
+        
+        if(downDashButton)
+        {
+            if (PlayerInfo.DownDashActive == 1 || PlayerInfo.LightPoints < PowerUps.DownDashPrice)
+            {
+                downDashButton.GetComponent<Button>().interactable = false;
+            }
+        }
+       
+        if (sideDashButton)
+        {
+            if (PlayerInfo.SideDashActive == 1 || PlayerInfo.LightPoints < PowerUps.SideDashPrice)
+            {
+                sideDashButton.GetComponent<Button>().interactable = false;
+            }
         }
 
-        if (PlayerInfo.DownDashActive == 1 || PlayerInfo.LightPoints < PowerUps.DownDashPrice)
+        if (antiBirdButton)
         {
-            downDashButton.GetComponent<Button>().interactable = false;
+            if (PlayerInfo.AntiBirdActive == 1 || PlayerInfo.LightPoints < PowerUps.AntiBirdPrice)
+            {
+                antiBirdButton.GetComponent<Button>().interactable = false;
+            }
         }
 
-        if (PlayerInfo.SideDashActive == 1 || PlayerInfo.LightPoints < PowerUps.SideDashPrice)
+        if (antiWebButton)
         {
-            sideDashButton.GetComponent<Button>().interactable = false;
+            if (PlayerInfo.AntiBirdActive == 1 || PlayerInfo.LightPoints < PowerUps.AntiBirdPrice)
+            {
+                antiWebButton.GetComponent<Button>().interactable = false;
+            }
         }
     }
 }

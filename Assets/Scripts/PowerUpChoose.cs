@@ -30,6 +30,18 @@ public class PowerUpChoose : MonoBehaviour
         {
             priceText.text = PowerUps.SideDashPrice.ToString();
         }
+
+        if (thisPowerUpName == "antiBird")
+        {
+            priceText.text = PowerUps.AntiBirdPrice.ToString();
+        }
+
+        if (thisPowerUpName == "antiWeb")
+        {
+            priceText.text = PowerUps.AntiWebPrice.ToString();
+        }
+
+        
     }
     public void BuyPowerUp () 
     {
@@ -51,44 +63,26 @@ public class PowerUpChoose : MonoBehaviour
                 PlayerInfo.LightPoints = PlayerInfo.LightPoints - PowerUps.SideDashPrice;
                 PlayerInfo.SideDashActive = 1;
             }
+
+            if (EventSystem.current.currentSelectedGameObject.name == "AntiBirdPU")
+            {
+                PlayerInfo.LightPoints = PlayerInfo.LightPoints - PowerUps.SideDashPrice;
+                PlayerInfo.AntiBirdActive = 1;
+            }
+
+            if (EventSystem.current.currentSelectedGameObject.name == "AntiWebPU")
+            {
+                PlayerInfo.LightPoints = PlayerInfo.LightPoints - PowerUps.AntiWebPrice;
+                PlayerInfo.AntiWebActive = 1;
+            }
             // Invoke("AreButtonsInactive", 0);
-            Debug.Log("OSTO");
+            // Debug.Log("OSTO");
             PlayerInfo.CurrentSpawnPoint++;
             pc.SetActive(true);
             spawnManager.SendMessage("SpawnPlayer");
             ttp.SetActive(true);
             blinking.SendMessage("StartBlinking");
             menu.SetActive(false);
-        }
-    }
-
-    public void AreButtonsInactive ()
-    {
-        if (thisPowerUpName == "upDash")
-        {
-            priceText.text = PowerUps.UpDashPrice.ToString();
-           /* if (PlayerInfo.UpDashActive == 1 || PlayerInfo.LightPoints < PowerUps.UpDashPrice)
-            {
-                thisButton.GetComponent<Button>().interactable = false;
-            }*/
-        }
-
-        if (thisPowerUpName == "downDash")
-        {
-            priceText.text = PowerUps.DownDashPrice.ToString();
-            /*if (PlayerInfo.DownDashActive == 1 || PlayerInfo.LightPoints < PowerUps.DownDashPrice)
-            {
-                thisButton.GetComponent<Button>().interactable = false;
-            }*/
-        }
-
-        if (thisPowerUpName == "sideDash")
-        {
-            priceText.text = PowerUps.SideDashPrice.ToString();
-            /*if (PlayerInfo.SideDashActive == 1 || PlayerInfo.LightPoints < PowerUps.SideDashPrice)
-            {
-                thisButton.GetComponent<Button>().interactable = false;
-            }*/
         }
     }
 }

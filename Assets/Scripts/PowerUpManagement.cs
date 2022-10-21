@@ -8,11 +8,15 @@ public class PowerUpManagement : MonoBehaviour
     public int downDashPrice;
     public int upDashPrice;
     public int sideDashPrice;
+    public int antiBirdPrice;
+    public int antiWebPrice;
     void Awake()
     {
         PowerUps.DownDashPrice = downDashPrice;
         PowerUps.UpDashPrice = upDashPrice;
         PowerUps.SideDashPrice = sideDashPrice;
+        PowerUps.AntiBirdPrice = antiBirdPrice;
+        PowerUps.AntiWebPrice = antiWebPrice;
 
     }
 }

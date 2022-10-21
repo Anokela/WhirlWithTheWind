@@ -6,6 +6,8 @@ public class PlayerInfo
     private static int isDownDashActive;
     private static int isSideDashActive;
     private static int currentSpawnPoint;
+    private static int isAntiBirdActive;
+    private static int isAntiWebActive;
 
 
     public static int LightPoints
@@ -53,6 +55,32 @@ public class PlayerInfo
         set
         {
             isSideDashActive = value;
+        }
+    }
+
+    public static int AntiBirdActive
+
+    {
+        get
+        {
+            return isAntiBirdActive;
+        }
+        set
+        {
+            isAntiBirdActive = value;
+        }
+    }
+
+    public static int AntiWebActive
+
+    {
+        get
+        {
+            return isAntiWebActive;
+        }
+        set
+        {
+            isAntiWebActive = value;
         }
     }
 
