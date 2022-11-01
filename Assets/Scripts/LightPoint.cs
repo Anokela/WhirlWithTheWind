@@ -8,11 +8,17 @@ public class LightPoint : MonoBehaviour
     // private GameObject manager;
     public LightPointManager manager;
     private GameObject mng;
+    private GameObject lightPoint;
     void Awake()
     {
         //Make Collider2D as trigger 
         GetComponent<Collider2D>().isTrigger = true;
         mng = GameObject.Find("LightPointManager");
+    }
+
+    private void Start()
+    {
+        lightPoint = this.gameObject;
     }
 
     void OnTriggerEnter2D(Collider2D c2d)
@@ -25,10 +31,15 @@ public class LightPoint : MonoBehaviour
             PlayerInfo.LightPoints++;
             //Destroy lightPoint
             // manager.LevelLightPoints[index].isCollected = true;
-            Destroy(gameObject);
+            lightPoint.SetActive(false);
             // manager.SendMessage("HandleCalculation");
             mng.SendMessage("HandleCalculation");
+            Invoke("ActivateLightPoint", 5f);
         }
     }
 
+    void ActivateLightPoint ()
+    {
+        lightPoint.SetActive(true);
+    }
 }
