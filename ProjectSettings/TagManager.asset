@@ -11,6 +11,7 @@ TagManager:
   - Branch
   - Bird
   - Beetle
+  - DeathZone
   layers:
   - Default
   - TransparentFX
