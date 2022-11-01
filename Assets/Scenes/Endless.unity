@@ -196,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Panel: {fileID: 1192745627833037095}
   pc: {fileID: 6821600754661774812}
+  manager: {fileID: 3479170015539942798}
 --- !u!1 &741105734
 GameObject:
   m_ObjectHideFlags: 0

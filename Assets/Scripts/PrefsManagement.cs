@@ -52,6 +52,6 @@ public class PrefsManagement : MonoBehaviour
         PlayerPrefs.SetInt("AntiWebActive", 0);
         PlayerPrefs.SetInt("CurrentSpawnPoint", 0);
         PlayerPrefs.Save();
-        SceneManager.LoadScene("Level1");
+        // SceneManager.LoadScene("Level1");
     }
 }

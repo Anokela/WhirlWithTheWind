@@ -4,6 +4,7 @@ public class OnDeathZoneCollide : MonoBehaviour
 {
     public GameObject Panel;
     public GameObject pc;
+    public GameObject manager;
 
     void Start()
     {
@@ -14,7 +15,7 @@ public class OnDeathZoneCollide : MonoBehaviour
     {
         if (c2d.CompareTag("Player"))
         {
-            PlayerPrefs.Save();
+            manager.SendMessage("OnApplicationQuit");
             Invoke("showPanel", 0);
         }
     }
