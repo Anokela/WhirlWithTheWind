@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     // private Vector3 startPos;
     private bool isMoving = false;
     Vector3 touchPosition, whereToMove;
+    private bool controlsDisabled = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,9 +44,40 @@ public class PlayerMovement : MonoBehaviour
 
             if (isMoving)
             {
-                rb.AddForce(new Vector3(whereToMove.x * Time.deltaTime * moveSpeed, whereToMove.y * Time.deltaTime * moveSpeed), ForceMode2D.Force);
+                if (!controlsDisabled)
+                {
+                    rb.AddForce(new Vector3(whereToMove.x * Time.deltaTime * moveSpeed, whereToMove.y * Time.deltaTime * moveSpeed), ForceMode2D.Force);
+                }   
             }
 
         }
+    }
+    void OnTriggerStay2D(Collider2D c2d)
+    {
+        if (c2d.CompareTag("LeftWall"))
+        {
+            controlsDisabled = true;
+            rb.AddForce(Vector3.right * 0.005f, ForceMode2D.Impulse);
+            Invoke("ActivateControls", 0.5f);
+
+        }
+        if (c2d.CompareTag("RightWall"))
+        {
+            controlsDisabled = true;
+            rb.AddForce(Vector3.left * 0.005f, ForceMode2D.Impulse);
+            Invoke("ActivateControls", 0.5f);
+        }
+
+        if (c2d.CompareTag("LevelFloor"))
+        {
+            controlsDisabled = true;
+            rb.AddForce(Vector3.up * 0.005f, ForceMode2D.Impulse);
+            Invoke("ActivateControls", 0.5f);
+        }
+    }
+
+    void ActivateControls()
+    {
+        controlsDisabled = false;
     }
 }

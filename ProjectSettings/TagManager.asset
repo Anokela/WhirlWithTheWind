@@ -12,6 +12,7 @@ TagManager:
   - Bird
   - Beetle
   - DeathZone
+  - LevelFloor
   layers:
   - Default
   - TransparentFX

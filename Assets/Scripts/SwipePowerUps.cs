@@ -120,7 +120,7 @@ public class SwipePowerUps : MonoBehaviour
                 Invoke("DashUp", 0.5f);
                 directionChosen = false;
                 m_anim.SetBool("DashUp", true);
-                Invoke("NormalizeGravity", invokeDelaySeconds);
+                // Invoke("NormalizeGravity", invokeDelaySeconds);
                 Invoke("resetAnimation", 0.55f);
                 direction = Vector3.zero;
             }
@@ -157,5 +157,6 @@ public class SwipePowerUps : MonoBehaviour
     private void DashUp()
     {
         rb.AddForce(Vector3.up * dashSpeed, ForceMode2D.Impulse);
+        Invoke("NormalizeGravity", invokeDelaySeconds);
     }
 }  
