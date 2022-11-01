@@ -14,6 +14,7 @@ public class OnDeathZoneCollide : MonoBehaviour
     {
         if (c2d.CompareTag("Player"))
         {
+            PlayerPrefs.Save();
             Invoke("showPanel", 0);
         }
     }
