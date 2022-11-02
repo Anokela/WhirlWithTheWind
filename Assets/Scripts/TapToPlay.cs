@@ -7,14 +7,14 @@ public class TapToPlay : MonoBehaviour
     private GameObject Panel;
     // private GameObject ControlCanvas;
     public GameObject pc;
-    private Rigidbody2D rb;
+    // private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 0;
         Panel = GameObject.Find("TapToPlay");
-        pc = GameObject.FindGameObjectWithTag("Player");
-        rb = pc.GetComponent<Rigidbody2D>();
+        // pc = GameObject.FindGameObjectWithTag("Player");
+       // rb = pc.GetComponent<Rigidbody2D>();
         // rb.simulated = false;
     }
 
