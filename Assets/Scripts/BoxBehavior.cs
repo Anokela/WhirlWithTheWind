@@ -6,9 +6,11 @@ public class BoxBehavior : MonoBehaviour
 {
     private GameObject box;
     public float speed;
+    private GameObject BoxSpawner;
     // Start is called before the first frame update
     void Awake()
     {
+        BoxSpawner = GameObject.Find("BoxSpawner");
         box = this.gameObject;
         Debug.Log(box);
     }
@@ -25,6 +27,7 @@ public class BoxBehavior : MonoBehaviour
         if(box.transform.position.y > 2)
         {
             box.SetActive(false);
+            BoxSpawner.SendMessage("CreateBox");
         }
     }
 }
