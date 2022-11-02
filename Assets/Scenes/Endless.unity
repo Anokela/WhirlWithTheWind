@@ -8599,7 +8599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerChar: {fileID: 6821600754661774812}
-  moveSpeed: 1.5
+  moveSpeed: 3
 --- !u!114 &6821600754661774817
 MonoBehaviour:
   m_ObjectHideFlags: 0
