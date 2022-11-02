@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 574063182}
   - component: {fileID: 574063181}
   m_Layer: 0
-  m_Name: Background (2)
+  m_Name: TreeParallaxRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1006,7 +1006,7 @@ GameObject:
   - component: {fileID: 1959259418}
   - component: {fileID: 1959259417}
   m_Layer: 0
-  m_Name: Background (1)
+  m_Name: TreeParallaxLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1020,7 +1020,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959259415}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.92, y: -0.0096, z: 0}
+  m_LocalPosition: {x: -1.93, y: -0.0096, z: 0}
   m_LocalScale: {x: 2.0801225, y: 4, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6666,7 +6666,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00014496}
+  m_AnchoredPosition: {x: 0, y: -0.0001449585}
   m_SizeDelta: {x: 700, y: 1630.8083}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1192745627833037093
