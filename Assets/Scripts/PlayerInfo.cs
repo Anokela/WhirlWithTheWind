@@ -8,6 +8,7 @@ public class PlayerInfo
     private static int currentSpawnPoint;
     private static int isAntiBirdActive;
     private static int isAntiWebActive;
+    private static float boxSpeed;
 
 
     public static int LightPoints
@@ -93,6 +94,18 @@ public class PlayerInfo
         set
         {
             currentSpawnPoint = value;
+        }
+    }
+
+    public static float BoxSpeed
+    {
+        get
+        {
+            return boxSpeed;
+        }
+        set
+        {
+            boxSpeed = value;
         }
     }
 }

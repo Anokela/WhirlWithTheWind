@@ -23,7 +23,7 @@ public class BoxBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        box.transform.Translate(Vector3.up * Time.deltaTime * speed);
+        box.transform.Translate(Vector3.up * Time.deltaTime * PlayerInfo.BoxSpeed);
         if(box.transform.position.y > 2)
         {
             box.SetActive(false);
