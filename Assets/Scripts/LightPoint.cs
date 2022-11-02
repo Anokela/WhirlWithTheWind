@@ -34,7 +34,7 @@ public class LightPoint : MonoBehaviour
             lightPoint.SetActive(false);
             // manager.SendMessage("HandleCalculation");
             mng.SendMessage("HandleCalculation");
-            Invoke("ActivateLightPoint", 5f);
+            Invoke("ActivateLightPoint", 4/PlayerInfo.BoxSpeed);
         }
     }
 

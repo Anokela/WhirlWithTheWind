@@ -24,7 +24,7 @@ public class BoxBehavior : MonoBehaviour
     void Update()
     {
         box.transform.Translate(Vector3.up * Time.deltaTime * PlayerInfo.BoxSpeed);
-        if(box.transform.position.y > 2)
+        if(box.transform.position.y > 4)
         {
             box.SetActive(false);
             BoxSpawner.SendMessage("CreateBox");
