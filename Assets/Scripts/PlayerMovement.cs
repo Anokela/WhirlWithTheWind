@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isMoving = false;
     Vector3 touchPosition, whereToMove;
     private bool controlsDisabled = false;
+    public float bounceForce;
+    public  float movementDelay;
+    private float movementStartTime = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
                 case TouchPhase.Began:
                
                     isMoving = true;
+                    movementStartTime = Time.time + movementDelay;
                     break;
 
                 // Stop player character movement when the finger is lifted.
@@ -39,16 +43,16 @@ public class PlayerMovement : MonoBehaviour
                     break;
             }
             // If player character is moving, move it towards the finger on the screen
-
-            if (isMoving)
-            {
-                Debug.Log("player speed is " + PlayerInfo.BoxSpeed * 6);
-                if (!controlsDisabled)
+                if (isMoving)
                 {
-                    rb.AddForce(new Vector3(whereToMove.x * Time.deltaTime * PlayerInfo.BoxSpeed * 2, whereToMove.y * Time.deltaTime * PlayerInfo.BoxSpeed*2), ForceMode2D.Force);
-                }   
-            }
-
+                    if (!controlsDisabled)
+                    {
+                        if (Time.time > movementStartTime)
+                        {
+                            rb.AddForce(new Vector3(whereToMove.x * Time.deltaTime * PlayerInfo.BoxSpeed * 2, whereToMove.y * Time.deltaTime * PlayerInfo.BoxSpeed * 2), ForceMode2D.Force);
+                        } 
+                    }
+                }
         }
     }
     void OnTriggerStay2D(Collider2D c2d)
@@ -56,21 +60,21 @@ public class PlayerMovement : MonoBehaviour
         if (c2d.CompareTag("LeftWall"))
         {
             controlsDisabled = true;
-            rb.AddForce(Vector3.right * 0.005f, ForceMode2D.Impulse);
+            rb.AddForce(Vector3.right * bounceForce, ForceMode2D.Impulse);
             Invoke("ActivateControls", 0.5f);
 
         }
         if (c2d.CompareTag("RightWall"))
         {
             controlsDisabled = true;
-            rb.AddForce(Vector3.left * 0.005f, ForceMode2D.Impulse);
+            rb.AddForce(Vector3.left * bounceForce, ForceMode2D.Impulse);
             Invoke("ActivateControls", 0.5f);
         }
 
         if (c2d.CompareTag("LevelFloor"))
         {
             controlsDisabled = true;
-            rb.AddForce(Vector3.up * 0.005f, ForceMode2D.Impulse);
+            rb.AddForce(Vector3.up * bounceForce, ForceMode2D.Impulse);
             Invoke("ActivateControls", 0.5f);
         }
     }
@@ -79,4 +83,5 @@ public class PlayerMovement : MonoBehaviour
     {
         controlsDisabled = false;
     }
+
 }

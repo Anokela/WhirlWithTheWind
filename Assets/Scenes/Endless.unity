@@ -8422,7 +8422,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: b4c8bc10db0943f4f8e3a930d873a1ef, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -8599,7 +8599,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerChar: {fileID: 6821600754661774812}
-  moveSpeed: 3
+  bounceForce: 0.000125
+  movementDelay: 0.1
 --- !u!114 &6821600754661774817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8613,8 +8614,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxVelocity: 1.5
-  dashSpeed: 0.1
-  invokeDelaySeconds: 0.8
+  dashSpeed: 0.001
+  invokeDelaySeconds: 0
   swipeLength: 200
   swipeAxisRestricor: 100
   dashUpPowerUp: 0

@@ -9,7 +9,7 @@ public class SwipePowerUps : MonoBehaviour
     private Vector2 startPos;
     private Vector2 direction;
     private bool directionChosen;
-    public float maxVelocity = 1f;
+    public float maxVelocity = 1.5f;
     public float dashSpeed = 0.1f;
     public float invokeDelaySeconds = 0.8f;
     public float swipeLength = 200f;
