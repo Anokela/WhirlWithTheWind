@@ -12,17 +12,13 @@ public class BoxSpeedManager : MonoBehaviour
         PlayerInfo.BoxSpeed = speed;
     }
     // Start is called before the first frame update
-    void Start()
-    {
-        AccelerateBoxSpeed();
-    }
 
     // Update is called once per frame
-    private void AccelerateBoxSpeed()
+    public void AccelerateBoxSpeed()
     {
-        if (PlayerInfo.BoxSpeed < 3)
+        if (PlayerInfo.BoxSpeed < 2)
         {
-            PlayerInfo.BoxSpeed = PlayerInfo.BoxSpeed + 0.009f;
+            PlayerInfo.BoxSpeed = PlayerInfo.BoxSpeed + 0.001f;
             Invoke("AccelerateBoxSpeed", 0.5f);
         }
     }
