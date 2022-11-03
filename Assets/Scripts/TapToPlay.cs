@@ -8,6 +8,7 @@ public class TapToPlay : MonoBehaviour
     // private GameObject ControlCanvas;
     public GameObject pc;
     public GameObject speedManager;
+    public GameObject distanceManager;
     // private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class TapToPlay : MonoBehaviour
     public void StartScene()
     {
         speedManager.SendMessage("AccelerateBoxSpeed");
+        distanceManager.SendMessage("MeasureDistance");
         // rb.velocity = Vector2.zero;
         // rb.simulated = true;
         Panel.SetActive(false);

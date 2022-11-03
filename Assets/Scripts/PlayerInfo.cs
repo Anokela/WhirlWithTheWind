@@ -9,7 +9,7 @@ public class PlayerInfo
     private static int isAntiBirdActive;
     private static int isAntiWebActive;
     private static float boxSpeed;
-
+    private static float distance;
 
     public static int LightPoints
     {
@@ -106,6 +106,18 @@ public class PlayerInfo
         set
         {
             boxSpeed = value;
+        }
+    }
+
+    public static float Distance
+    {
+        get
+        {
+            return distance;
+        }
+        set
+        {
+            distance = value;
         }
     }
 }
