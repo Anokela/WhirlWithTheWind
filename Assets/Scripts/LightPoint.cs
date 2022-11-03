@@ -26,7 +26,7 @@ public class LightPoint : MonoBehaviour
         //Destroy the ligtPoint if Object tagged Player comes in contact with it
         if (c2d.CompareTag("Player"))
         {
-            Debug.Log("Index is " + index);
+            //Debug.Log("Index is " + index);
             //Add lightPoint to counter
             PlayerInfo.LightPoints++;
             //Destroy lightPoint

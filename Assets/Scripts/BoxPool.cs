@@ -42,7 +42,6 @@ public class BoxPool : MonoBehaviour
             if (!pooledObjects[i].activeInHierarchy)
             {
                 freeObjects.Add(pooledObjects[i]);
-                
             }
         }
         int index = Random.Range(0, freeObjects.Count);

@@ -76,8 +76,8 @@ public class SwipePowerUps : MonoBehaviour
         {
             // Something that uses the chosen direction...
             // reduction values for x and y start and end
-            Debug.Log(direction.y);
-            Debug.Log(direction.x);
+            //Debug.Log(direction.y);
+            //Debug.Log(direction.x);
             // absolute value of the reduction, if y > 100, horizontal swipe doesn't happen
             // makes sure of the intended direction of the swipe
             if(Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x > swipeLength && PlayerInfo.SideDashActive == 1)

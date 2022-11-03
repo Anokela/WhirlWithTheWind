@@ -17,7 +17,7 @@ public class LightPointCalculation : MonoBehaviour
 
     void HandleCalculation()
 	{
-		Debug.Log("Calculation");
+		//Debug.Log("Calculation");
 		lightPointText.text = PlayerInfo.LightPoints.ToString();
 	}
 }

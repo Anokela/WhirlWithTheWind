@@ -9,9 +9,9 @@ public class PrefsManagement : MonoBehaviour
         if (resetPrefs)
         {
             PlayerPrefs.SetInt("LightPoints", 0);
-            PlayerPrefs.SetInt("UpDashActive", 1);
-            PlayerPrefs.SetInt("DownDashActive", 1);
-            PlayerPrefs.SetInt("SideDashActive", 1);
+            PlayerPrefs.SetInt("UpDashActive", 0);
+            PlayerPrefs.SetInt("DownDashActive", 0);
+            PlayerPrefs.SetInt("SideDashActive", 0);
             PlayerPrefs.SetInt("AntiBirdActive", 0);
             PlayerPrefs.SetInt("AntiWebActive", 0);
             PlayerPrefs.SetInt("CurrentSpawnPoint", 0);
@@ -24,14 +24,12 @@ public class PrefsManagement : MonoBehaviour
         PlayerInfo.AntiBirdActive = PlayerPrefs.GetInt("AntiBirdActive");
         PlayerInfo.AntiWebActive = PlayerPrefs.GetInt("AntiWebActive");
         PlayerInfo.CurrentSpawnPoint = PlayerPrefs.GetInt("CurrentSpawnPoint");
-        Debug.Log(PlayerInfo.CurrentSpawnPoint);
     }
 
     // Update is called once per frame
 
     private void OnApplicationQuit()
     {
-        Debug.Log("OnApplicationQuit");
         PlayerPrefs.SetInt("LightPoints", PlayerInfo.LightPoints);
         PlayerPrefs.SetInt("UpDashActive", PlayerInfo.UpDashActive);
         PlayerPrefs.SetInt("DownDashActive", PlayerInfo.DownDashActive);

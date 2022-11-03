@@ -5,8 +5,6 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     public GameObject playerChar;
-    [SerializeField] float moveSpeed = 1f;
-    // private Vector3 startPos;
     private bool isMoving = false;
     Vector3 touchPosition, whereToMove;
     private bool controlsDisabled = false;
@@ -44,9 +42,10 @@ public class PlayerMovement : MonoBehaviour
 
             if (isMoving)
             {
+                Debug.Log("player speed is " + PlayerInfo.BoxSpeed * 6);
                 if (!controlsDisabled)
                 {
-                    rb.AddForce(new Vector3(whereToMove.x * Time.deltaTime * moveSpeed, whereToMove.y * Time.deltaTime * moveSpeed), ForceMode2D.Force);
+                    rb.AddForce(new Vector3(whereToMove.x * Time.deltaTime * PlayerInfo.BoxSpeed * 2, whereToMove.y * Time.deltaTime * PlayerInfo.BoxSpeed*2), ForceMode2D.Force);
                 }   
             }
 

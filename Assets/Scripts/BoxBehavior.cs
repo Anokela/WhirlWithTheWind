@@ -12,17 +12,12 @@ public class BoxBehavior : MonoBehaviour
     {
         BoxSpawner = GameObject.Find("BoxSpawner");
         box = this.gameObject;
-        Debug.Log(box);
-    }
-
-    private void Start()
-    {
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(PlayerInfo.BoxSpeed);
         box.transform.Translate(Vector3.up * Time.deltaTime * PlayerInfo.BoxSpeed);
         if(box.transform.position.y > 4)
         {
