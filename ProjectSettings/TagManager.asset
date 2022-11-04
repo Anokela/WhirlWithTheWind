@@ -13,6 +13,7 @@ TagManager:
   - Beetle
   - DeathZone
   - LevelFloor
+  - ObstacleBox
   layers:
   - Default
   - TransparentFX

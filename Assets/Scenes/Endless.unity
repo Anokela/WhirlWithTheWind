@@ -283,7 +283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265809357}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.01, y: 1.55, z: 0}
+  m_LocalPosition: {x: -1.01, y: 0.233, z: 0}
   m_LocalScale: {x: 3.2600002, y: 1.2221193, z: 1.1983206}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -462,7 +462,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceText: {fileID: 193594190}
   pc: {fileID: 6821600754661774812}
-  cam: {fileID: 1802665261}
 --- !u!1 &574063179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,7 +1834,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pc: {fileID: 6821600754661774812}
   speedManager: {fileID: 957786875}
-  distanceManager: {fileID: 492250022}
 --- !u!114 &925297579666612061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8765,7 +8763,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6821600754661774812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.004, y: 1.288, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8863,10 +8861,37 @@ GameObject:
   - component: {fileID: 3595976047642357641}
   - component: {fileID: 5308155750893024042}
   - component: {fileID: 3595976047642357640}
+  - component: {fileID: 8282332174449466821}
   m_Layer: 0
   m_Name: AlkuLaatikko
-  m_TagString: Untagged
+  m_TagString: ObstacleBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!61 &8282332174449466821
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8282332174449466820}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.015621901, y: -0.000023722649}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 6.12, y: 4.08}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.4711795, y: 4.0794363}
+  m_EdgeRadius: 0

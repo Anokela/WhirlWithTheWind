@@ -77,6 +77,10 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector3.up * bounceForce, ForceMode2D.Impulse);
             Invoke("ActivateControls", 0.5f);
         }
+        if (c2d.CompareTag("ObstacleBox"))
+        {
+            PlayerInfo.Distance = (PlayerInfo.BoxSpeed * Time.time) - (2*playerChar.transform.position.y * PlayerInfo.BoxSpeed);
+        }
     }
 
     void ActivateControls()
