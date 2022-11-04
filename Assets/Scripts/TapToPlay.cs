@@ -10,18 +10,16 @@ public class TapToPlay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerInfo.RunLightPoints = 0;
+        PlayerInfo.Distance = 0f;
+        PlayerInfo.BoxSpeed = 0.5f;
         Time.timeScale = 0;
         Panel = GameObject.Find("TapToPlay");
-       
     }
 
     public void StartScene()
     {
         speedManager.SendMessage("AccelerateBoxSpeed");
-        PlayerInfo.RunLightPoints = 0;
-        PlayerInfo.Distance = 0f; 
-        PlayerInfo.BoxSpeed = 0.5f;
         Panel.SetActive(false);
         Time.timeScale = 1;
     }
