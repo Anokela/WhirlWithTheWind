@@ -11,14 +11,12 @@ public class PlayerMovement : MonoBehaviour
     public float bounceForce;
     public  float movementDelay;
     private float movementStartTime = 0.1f;
-    private float startTime = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        startTime = 0;
-        Timer();
+
     }
 
     void Update()
@@ -81,17 +79,12 @@ public class PlayerMovement : MonoBehaviour
         }
         if (c2d.CompareTag("ObstacleBox"))
         {
-            PlayerInfo.Distance = Mathf.Round(10* (PlayerInfo.BoxSpeed * startTime - 1.275f*playerChar.transform.position.y * PlayerInfo.BoxSpeed));
+            PlayerInfo.Distance = Mathf.Round(10* (PlayerInfo.BoxSpeed * Time.timeSinceLevelLoad - 2*playerChar.transform.position.y * PlayerInfo.BoxSpeed));
         }
     }
 
     void ActivateControls()
     {
         controlsDisabled = false;
-    }
-    void Timer()
-    {
-        startTime += 0.001f;
-        Invoke("Timer", 0.001f);
-    }
+    }    
 }
