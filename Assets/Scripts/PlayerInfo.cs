@@ -10,6 +10,8 @@ public class PlayerInfo
     private static int isAntiWebActive;
     private static float boxSpeed;
     private static float distance;
+    private static float highScore;
+    private static int runLightPoints;
 
     public static int LightPoints
     {
@@ -118,6 +120,29 @@ public class PlayerInfo
         set
         {
             distance = value;
+        }
+    }
+
+    public static float HighScore
+    {
+        get
+        {
+            return highScore;
+        }
+        set
+        {
+            highScore = value;
+        }
+    }
+    public static int RunLightPoints
+    {
+        get
+        {
+            return runLightPoints;
+        }
+        set
+        {
+            runLightPoints = value;
         }
     }
 }

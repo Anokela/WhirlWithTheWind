@@ -11,6 +11,6 @@ public class DistanceCalculator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            distanceText.text = (10 * (PlayerInfo.Distance)).ToString("0");
+            distanceText.text = PlayerInfo.Distance.ToString("0");
     }
 }

@@ -5,26 +5,23 @@ using UnityEngine;
 public class TapToPlay : MonoBehaviour
 {
     private GameObject Panel;
-    // private GameObject ControlCanvas;
     public GameObject pc;
     public GameObject speedManager;
-    // private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
         
         Time.timeScale = 0;
         Panel = GameObject.Find("TapToPlay");
-        // pc = GameObject.FindGameObjectWithTag("Player");
-       // rb = pc.GetComponent<Rigidbody2D>();
-        // rb.simulated = false;
+       
     }
 
     public void StartScene()
     {
         speedManager.SendMessage("AccelerateBoxSpeed");
-        // rb.velocity = Vector2.zero;
-        // rb.simulated = true;
+        PlayerInfo.RunLightPoints = 0;
+        PlayerInfo.Distance = 0; 
+        PlayerInfo.BoxSpeed = 0.5f;
         Panel.SetActive(false);
         Time.timeScale = 1;
     }

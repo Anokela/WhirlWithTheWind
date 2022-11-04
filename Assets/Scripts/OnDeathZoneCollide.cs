@@ -17,6 +17,10 @@ public class OnDeathZoneCollide : MonoBehaviour
         {
             manager.SendMessage("OnApplicationQuit");
             Invoke("showPanel", 0);
+            if (PlayerInfo.Distance > PlayerInfo.HighScore)
+            {
+                PlayerInfo.HighScore = PlayerInfo.Distance;
+            }
         }
     }
 
