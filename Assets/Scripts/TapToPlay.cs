@@ -21,7 +21,7 @@ public class TapToPlay : MonoBehaviour
         speedManager.SendMessage("AccelerateBoxSpeed");
         PlayerInfo.RunLightPoints = 0;
         PlayerInfo.Distance = 0; 
-        PlayerInfo.BoxSpeed = 0.5f;
+        PlayerInfo.BoxSpeed = BoxSpeedManager.speed;
         Panel.SetActive(false);
         Time.timeScale = 1;
     }

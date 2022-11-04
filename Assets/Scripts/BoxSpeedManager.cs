@@ -5,7 +5,7 @@ using UnityEngine;
 public class BoxSpeedManager : MonoBehaviour
 {
 
-    public float speed = 1.5f;
+    public static float speed = 1.5f;
 
     void Awake()
     {
