@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SwipePowerUps : MonoBehaviour
@@ -97,7 +95,7 @@ public class SwipePowerUps : MonoBehaviour
                 directionChosen = false;
                 direction = Vector3.zero;
                 m_anim.SetBool("DashRight", true);
-                Invoke("resetAnimation", 0.5f);
+                Invoke("resetAnimation", 0.25f);
             }
             if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x < -swipeLength && PlayerInfo.SideDashActive == 1)
             {
@@ -106,7 +104,7 @@ public class SwipePowerUps : MonoBehaviour
                 directionChosen = false;
                 direction = Vector3.zero;
                 m_anim.SetBool("DashLeft", true);
-                Invoke("resetAnimation", 0.5f);
+                Invoke("resetAnimation", 0.25f);
             }
             if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y < -swipeLength && PlayerInfo.DownDashActive == 1)
             {
@@ -114,7 +112,7 @@ public class SwipePowerUps : MonoBehaviour
                 rb.AddForce(Vector3.down * dashSpeed, ForceMode2D.Impulse);
                 directionChosen = false;
                 m_anim.SetBool("DashDown", true);
-                Invoke("resetAnimation", 0.55f);
+                Invoke("resetAnimation", 0.25f);
                 direction = Vector3.zero;
             }
             if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y > swipeLength && PlayerInfo.UpDashActive == 1)
@@ -123,7 +121,7 @@ public class SwipePowerUps : MonoBehaviour
                 rb.AddForce(Vector3.up * dashSpeed, ForceMode2D.Impulse);
                 directionChosen = false;
                 m_anim.SetBool("DashUp", true);
-                Invoke("resetAnimation", 0.55f);
+                Invoke("resetAnimation", 0.25f);
                 direction = Vector3.zero;
             }
         }
