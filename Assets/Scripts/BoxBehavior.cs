@@ -13,7 +13,7 @@ public class BoxBehavior : MonoBehaviour
         box = this.gameObject;
     }
 
-    // Update is called once per frame
+    // Update is called once per frames
     void Update()
     {
         if(PlayerInfo.GameStarted)
