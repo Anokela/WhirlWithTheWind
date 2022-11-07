@@ -9415,7 +9415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3035ed548702bf647b4ed94d53dfcc39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetPrefs: 0
+  resetPrefs: 1
 --- !u!1 &3479170015539942798
 GameObject:
   m_ObjectHideFlags: 0
@@ -9445,7 +9445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc85c6ed6be3bcf4aae6811b7ee41db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
 --- !u!4 &3595976047642357641
 Transform:
   m_ObjectHideFlags: 0
@@ -9976,7 +9975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerChar: {fileID: 6821600754661774812}
-  bounceForce: 0.000125
+  bounceForce: 0.0002
   movementDelay: 0.1
 --- !u!114 &6821600754661774817
 MonoBehaviour:
@@ -9990,14 +9989,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 506084bae55af1a4198cb7176f939454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocity: 1.5
-  dashSpeed: 0.001
+  dashSpeed: 0.01
   invokeDelaySeconds: 0
   swipeLength: 200
   swipeAxisRestricor: 100
-  dashUpPowerUp: 0
-  dashDownPowerUp: 0
-  sideDashPowerUp: 0
 --- !u!4 &7397001579815152929
 Transform:
   m_ObjectHideFlags: 0

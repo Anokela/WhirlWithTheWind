@@ -5,31 +5,33 @@ using UnityEngine;
 public class SwipePowerUps : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private float ogGravity;
     private Vector2 startPos;
     private Vector2 direction;
     private bool directionChosen;
-    public float maxVelocity = 1.5f;
+    private float maxVelocity = 1.5f;
     public float dashSpeed = 0.1f;
-    public float invokeDelaySeconds = 0.8f;
     public float swipeLength = 200f;
     public float swipeAxisRestricor = 100f;
-
-    public bool dashUpPowerUp = false;
-    public bool dashDownPowerUp = false;
-    public bool sideDashPowerUp = false;
     private Animator m_anim;
+    private bool screenTouchStarted;
+    private float screenTouchTime;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        ogGravity = rb.gravityScale;
         m_anim = GetComponent<Animator>();
+        screenTouchTime = 0;
     }
-    
+
     void Update()
     {
+        if (screenTouchStarted)
+        {
+            screenTouchTime = screenTouchTime + Time.fixedDeltaTime;
+        }
+       
+
         if (rb.velocity.x > maxVelocity)
         {
             rb.velocity = new(maxVelocity, rb.velocity.y);
@@ -57,7 +59,9 @@ public class SwipePowerUps : MonoBehaviour
                 // Record initial touch position.
                 case TouchPhase.Began:
                     startPos = touch.position;
+                    screenTouchStarted = true;
                     directionChosen = false;
+                    //Debug.Log(Time.fixedDeltaTime);
                     break;
 
                 // Determine direction by comparing the current touch position with the initial one.
@@ -67,13 +71,19 @@ public class SwipePowerUps : MonoBehaviour
 
                 // Report that a direction has been chosen when the finger is lifted.
                 case TouchPhase.Ended:
-                    directionChosen = true;
+                    if (screenTouchTime < 1)
+                    {
+                        directionChosen = true;
+                    }
+                    screenTouchTime = 0f;
+                    screenTouchStarted = false;
                     break;
             }
         }
        
         if (directionChosen)
         {
+            maxVelocity = 5f;
             // Something that uses the chosen direction...
             // reduction values for x and y start and end
             //Debug.Log(direction.y);
@@ -83,10 +93,8 @@ public class SwipePowerUps : MonoBehaviour
             if(Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x > swipeLength && PlayerInfo.SideDashActive == 1)
             {
                 rb.gravityScale = 0;
-                //rb.AddForce(Vector3.right * dashSpeed, ForceMode2D.Impulse);
-                Invoke("DashRight", 0.35f);
+                rb.AddForce(Vector3.right * dashSpeed, ForceMode2D.Impulse);
                 directionChosen = false;
-                Invoke("NormalizeGravity", invokeDelaySeconds);
                 direction = Vector3.zero;
                 m_anim.SetBool("DashRight", true);
                 Invoke("resetAnimation", 0.5f);
@@ -94,10 +102,8 @@ public class SwipePowerUps : MonoBehaviour
             if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x < -swipeLength && PlayerInfo.SideDashActive == 1)
             {
                 rb.gravityScale = 0;
-                //rb.AddForce(Vector3.left * dashSpeed, ForceMode2D.Impulse);
-                Invoke("DashLeft", 0.35f);
+                rb.AddForce(Vector3.left * dashSpeed, ForceMode2D.Impulse);
                 directionChosen = false;
-                Invoke("NormalizeGravity", invokeDelaySeconds);
                 direction = Vector3.zero;
                 m_anim.SetBool("DashLeft", true);
                 Invoke("resetAnimation", 0.5f);
@@ -105,10 +111,8 @@ public class SwipePowerUps : MonoBehaviour
             if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y < -swipeLength && PlayerInfo.DownDashActive == 1)
             {
                 rb.gravityScale = 0;
-                // rb.AddForce(Vector3.down * dashSpeed, ForceMode2D.Impulse);
-                Invoke("DashDown", 0.45f);
+                rb.AddForce(Vector3.down * dashSpeed, ForceMode2D.Impulse);
                 directionChosen = false;
-                Invoke("NormalizeGravity", invokeDelaySeconds);
                 m_anim.SetBool("DashDown", true);
                 Invoke("resetAnimation", 0.55f);
                 direction = Vector3.zero;
@@ -116,19 +120,13 @@ public class SwipePowerUps : MonoBehaviour
             if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y > swipeLength && PlayerInfo.UpDashActive == 1)
             {
                 rb.gravityScale = 0;
-                // rb.AddForce(Vector3.up * dashSpeed, ForceMode2D.Impulse);
-                Invoke("DashUp", 0.5f);
+                rb.AddForce(Vector3.up * dashSpeed, ForceMode2D.Impulse);
                 directionChosen = false;
                 m_anim.SetBool("DashUp", true);
-                // Invoke("NormalizeGravity", invokeDelaySeconds);
                 Invoke("resetAnimation", 0.55f);
                 direction = Vector3.zero;
             }
         }
-    }
-    private void NormalizeGravity()
-    {
-        rb.gravityScale = ogGravity;
     }
 
     private void resetAnimation()
@@ -137,26 +135,6 @@ public class SwipePowerUps : MonoBehaviour
         m_anim.SetBool("DashLeft", false);
         m_anim.SetBool("DashDown", false);
         m_anim.SetBool("DashUp", false);
-    }
-
-    private void DashRight()
-    {
-        rb.AddForce(Vector3.right * dashSpeed, ForceMode2D.Impulse);
-    }
-
-    private void DashLeft()
-    {
-        rb.AddForce(Vector3.left * dashSpeed, ForceMode2D.Impulse);
-    }
-
-    private void DashDown()
-    {
-        rb.AddForce(Vector3.down * dashSpeed, ForceMode2D.Impulse);
-    }
-
-    private void DashUp()
-    {
-        rb.AddForce(Vector3.up * dashSpeed, ForceMode2D.Impulse);
-        Invoke("NormalizeGravity", invokeDelaySeconds);
+        maxVelocity = 1.5f;
     }
 }  
