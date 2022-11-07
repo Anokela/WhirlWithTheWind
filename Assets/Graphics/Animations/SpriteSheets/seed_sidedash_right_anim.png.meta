@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0f2b0ffb47b961a49b48865d13dfff0a
+guid: c791ce6fb26b2df4687311340744c612
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,112 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: seed_sidedash_left_anim_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0008bdf075dd08242995e7f66096d417
-      internalID: -1876623197
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: seed_sidedash_left_anim_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 74810b8fc3afe2b44977a9a8fb5fdbc8
-      internalID: 463400988
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: seed_sidedash_left_anim_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6e97c04287064f44d8670e92e378b415
-      internalID: -1746577015
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: seed_sidedash_left_anim_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f5648d8c53af2646a53a8429808944e
-      internalID: -1716423638
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: seed_sidedash_left_anim_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 844d9e2dcba87fe49a995275435ad1b2
-      internalID: 336339069
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: seed_sidedash_left_anim_5
+      name: seed_sidedash_right_anim_5
       rect:
         serializedVersion: 2
         x: 160
@@ -230,20 +125,20 @@ TextureImporter:
         width: 32
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6277568c74ab7c64db564fe89438c63f
-      internalID: 1070166977
+      spriteID: 73a2996aee05a6447819dea85e3af60e
+      internalID: -1184977205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: seed_sidedash_left_anim_6
+      name: seed_sidedash_right_anim_6
       rect:
         serializedVersion: 2
         x: 192
@@ -251,20 +146,20 @@ TextureImporter:
         width: 32
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 656d34dbf45ad654ebe168c775a86e3d
-      internalID: -1313958832
+      spriteID: 192160a3650d88d4fafa7d5d4095b5d0
+      internalID: -454515036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: seed_sidedash_left_anim_7
+      name: seed_sidedash_right_anim_7
       rect:
         serializedVersion: 2
         x: 224
@@ -272,20 +167,20 @@ TextureImporter:
         width: 32
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d54a2bea9414f249969f2b567bac690
-      internalID: 471060264
+      spriteID: 7f0aa1b7f5f4e8c46898d1e793058bdd
+      internalID: 885971939
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: seed_sidedash_left_anim_8
+      name: seed_sidedash_right_anim_8
       rect:
         serializedVersion: 2
         x: 256
@@ -293,20 +188,20 @@ TextureImporter:
         width: 32
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5c5f472c36dc1f4591c14351e2d49f8
-      internalID: 1983862949
+      spriteID: 634ae9b05290d6f4cba023c3fddf8923
+      internalID: 2025996760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: seed_sidedash_left_anim_9
+      name: seed_sidedash_right_anim_9
       rect:
         serializedVersion: 2
         x: 288
@@ -314,20 +209,20 @@ TextureImporter:
         width: 32
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9d15f887955c3041ade9f015969e8fc
-      internalID: -834002464
+      spriteID: 2614b5fe8e0464942816e52071aa09f3
+      internalID: 886013279
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: seed_sidedash_left_anim_10
+      name: seed_sidedash_right_anim_10
       rect:
         serializedVersion: 2
         x: 320
@@ -335,14 +230,14 @@ TextureImporter:
         width: 32
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57c98bb369612c644b2796afd93b441d
-      internalID: -845121698
+      spriteID: 6022b2457a458f942935e229162a23db
+      internalID: 687566330
       vertices: []
       indices: 
       edges: []
@@ -358,17 +253,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      seed_sidedash_left_anim_6: -1313958832
-      seed_sidedash_left_anim_0: -1876623197
-      seed_sidedash_left_anim_4: 336339069
-      seed_sidedash_left_anim_1: 463400988
-      seed_sidedash_left_anim_7: 471060264
-      seed_sidedash_left_anim_8: 1983862949
-      seed_sidedash_left_anim_9: -834002464
-      seed_sidedash_left_anim_5: 1070166977
-      seed_sidedash_left_anim_10: -845121698
-      seed_sidedash_left_anim_2: -1746577015
-      seed_sidedash_left_anim_3: -1716423638
+      seed_sidedash_right_anim_4: -1981311456
+      seed_sidedash_right_anim_1: -297543710
+      seed_sidedash_right_anim_5: -1184977205
+      seed_sidedash_right_anim_7: 885971939
+      seed_sidedash_right_anim_9: 886013279
+      seed_sidedash_right_anim_10: 687566330
+      seed_sidedash_right_anim_3: -680033130
+      seed_sidedash_right_anim_0: -1292404053
+      seed_sidedash_right_anim_6: -454515036
+      seed_sidedash_right_anim_8: 2025996760
+      seed_sidedash_right_anim_2: -1722622401
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 87d2a13a80f4cf64797e328eb86a4560
+guid: 0f2b0ffb47b961a49b48865d13dfff0a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,253 +117,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: seed_updash_anim_0
+      name: seed_sidedash_left_anim_5
       rect:
         serializedVersion: 2
-        x: 3
+        x: 160
         y: 0
-        width: 28
-        height: 14
+        width: 32
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edcb1aa98c2a7394dbded89c14fb1046
-      internalID: 1752272334
+      spriteID: 6277568c74ab7c64db564fe89438c63f
+      internalID: 1070166977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: seed_updash_anim_1
+      name: seed_sidedash_left_anim_6
       rect:
         serializedVersion: 2
-        x: 36
+        x: 192
         y: 0
-        width: 24
-        height: 14
+        width: 32
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ba11791090acf54db54fabc319e11fb
-      internalID: 1247876925
+      spriteID: 656d34dbf45ad654ebe168c775a86e3d
+      internalID: -1313958832
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: seed_updash_anim_2
+      name: seed_sidedash_left_anim_7
       rect:
         serializedVersion: 2
-        x: 66
+        x: 224
         y: 0
-        width: 27
-        height: 14
+        width: 32
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 436763dc67268b5419be57687c98f425
-      internalID: 1334588600
+      spriteID: 5d54a2bea9414f249969f2b567bac690
+      internalID: 471060264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: seed_updash_anim_3
+      name: seed_sidedash_left_anim_8
       rect:
         serializedVersion: 2
-        x: 101
+        x: 256
         y: 0
-        width: 23
-        height: 15
+        width: 32
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5449bd1c46f761d4282828aa51491ab6
-      internalID: -942122926
+      spriteID: d5c5f472c36dc1f4591c14351e2d49f8
+      internalID: 1983862949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: seed_updash_anim_4
+      name: seed_sidedash_left_anim_9
       rect:
         serializedVersion: 2
-        x: 133
+        x: 288
         y: 0
-        width: 21
-        height: 15
+        width: 32
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d58a7f48978c084bbb15ff915842d56
-      internalID: -800797783
+      spriteID: b9d15f887955c3041ade9f015969e8fc
+      internalID: -834002464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: seed_updash_anim_5
+      name: seed_sidedash_left_anim_10
       rect:
         serializedVersion: 2
-        x: 165
+        x: 320
         y: 0
-        width: 17
-        height: 15
+        width: 32
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3db8241cb3c3e1f4d82b6fcd7b21defd
-      internalID: 730970858
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: seed_updash_anim_6
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 0
-        width: 22
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52f7b93a747d24643b0666a0facd2f35
-      internalID: 1586137494
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: seed_updash_anim_7
-      rect:
-        serializedVersion: 2
-        x: 227
-        y: 0
-        width: 27
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8798fb2bc16d81d4fb38daed35a3e00f
-      internalID: -1569298980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: seed_updash_anim_8
-      rect:
-        serializedVersion: 2
-        x: 262
-        y: 0
-        width: 20
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6cc60031bf2de24da78752474feada3
-      internalID: -410738637
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: seed_updash_anim_9
-      rect:
-        serializedVersion: 2
-        x: 294
-        y: 0
-        width: 20
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81e563377cd940548b11c1a9d58f66b4
-      internalID: -861074798
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: seed_updash_anim_10
-      rect:
-        serializedVersion: 2
-        x: 326
-        y: 0
-        width: 20
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0ab8dce7ab7de54585c2ecf0da2270f
-      internalID: -314917080
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: seed_updash_anim_11
-      rect:
-        serializedVersion: 2
-        x: 354
-        y: 0
-        width: 27
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0127aeb7225d4644fb4a87c0dc0ab1d7
-      internalID: 1665141052
+      spriteID: 57c98bb369612c644b2796afd93b441d
+      internalID: -845121698
       vertices: []
       indices: 
       edges: []
@@ -379,18 +253,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      seed_updash_anim_5: 730970858
-      seed_updash_anim_7: -1569298980
-      seed_updash_anim_8: -410738637
-      seed_updash_anim_0: 1752272334
-      seed_updash_anim_9: -861074798
-      seed_updash_anim_6: 1586137494
-      seed_updash_anim_4: -800797783
-      seed_updash_anim_3: -942122926
-      seed_updash_anim_1: 1247876925
-      seed_updash_anim_10: -314917080
-      seed_updash_anim_2: 1334588600
-      seed_updash_anim_11: 1665141052
+      seed_sidedash_left_anim_6: -1313958832
+      seed_sidedash_left_anim_0: -1876623197
+      seed_sidedash_left_anim_4: 336339069
+      seed_sidedash_left_anim_1: 463400988
+      seed_sidedash_left_anim_7: 471060264
+      seed_sidedash_left_anim_8: 1983862949
+      seed_sidedash_left_anim_9: -834002464
+      seed_sidedash_left_anim_5: 1070166977
+      seed_sidedash_left_anim_10: -845121698
+      seed_sidedash_left_anim_2: -1746577015
+      seed_sidedash_left_anim_3: -1716423638
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
