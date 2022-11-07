@@ -18,7 +18,7 @@ public class BoxBehavior : MonoBehaviour
     {
         if(PlayerInfo.GameStarted)
         {
-            box.transform.Translate(Vector3.up * 0.004f * PlayerInfo.BoxSpeed);
+            box.transform.Translate(Vector3.up * Time.deltaTime * PlayerInfo.BoxSpeed);
             if (box.transform.position.y > 4)
             {
                 box.SetActive(false);
