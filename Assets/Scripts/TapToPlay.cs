@@ -10,6 +10,7 @@ public class TapToPlay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerInfo.GameStarted = false;
         PlayerInfo.RunLightPoints = 0;
         PlayerInfo.Distance = 0f;
         PlayerInfo.BoxSpeed = 0.5f;
@@ -22,5 +23,6 @@ public class TapToPlay : MonoBehaviour
         speedManager.SendMessage("AccelerateBoxSpeed");
         Panel.SetActive(false);
         Time.timeScale = 1;
+        PlayerInfo.GameStarted = true;
     }
 }

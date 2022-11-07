@@ -15,6 +15,7 @@ public class OnDeathZoneCollide : MonoBehaviour
     {
         if (c2d.CompareTag("Player"))
         {
+            PlayerInfo.GameStarted = false;
             manager.SendMessage("OnApplicationQuit");
             Invoke("showPanel", 0);
             if (PlayerInfo.Distance > PlayerInfo.HighScore)

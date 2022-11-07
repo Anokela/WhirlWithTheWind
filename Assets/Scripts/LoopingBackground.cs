@@ -9,7 +9,10 @@ public class LoopingBackground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        backgroundSpeed = PlayerInfo.BoxSpeed / 4f;
-        backgroundRenderer.material.mainTextureOffset += new Vector2(0f, -backgroundSpeed * Time.deltaTime);
+        if(PlayerInfo.GameStarted)
+        {
+            backgroundSpeed = PlayerInfo.BoxSpeed / 4f;
+            backgroundRenderer.material.mainTextureOffset += new Vector2(0f, -backgroundSpeed * 0.004f);
+        }
     }
 }

@@ -12,7 +12,7 @@ public class PlayerInfo
     private static float distance;
     private static float highScore;
     private static int runLightPoints;
-
+    private static bool gameStarted;
     public static int LightPoints
     {
         get
@@ -143,6 +143,18 @@ public class PlayerInfo
         set
         {
             runLightPoints = value;
+        }
+    }
+
+    public static bool GameStarted
+    {
+        get
+        {
+            return gameStarted;
+        }
+        set
+        {
+            gameStarted = value;
         }
     }
 }

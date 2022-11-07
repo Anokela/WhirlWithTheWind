@@ -5,7 +5,6 @@ using UnityEngine;
 public class BoxBehavior : MonoBehaviour
 {
     private GameObject box;
-    public float speed;
     private GameObject BoxSpawner;
     // Start is called before the first frame update
     void Awake()
@@ -17,11 +16,14 @@ public class BoxBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        box.transform.Translate(Vector3.up * Time.deltaTime * PlayerInfo.BoxSpeed);
-        if(box.transform.position.y > 4)
+        if(PlayerInfo.GameStarted)
         {
-            box.SetActive(false);
-            BoxSpawner.SendMessage("CreateBox");
+            box.transform.Translate(Vector3.up * 0.004f * PlayerInfo.BoxSpeed);
+            if (box.transform.position.y > 4)
+            {
+                box.SetActive(false);
+                BoxSpawner.SendMessage("CreateBox");
+            }
         }
     }
 }

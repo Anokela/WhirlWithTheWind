@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (c2d.CompareTag("ObstacleBox"))
         {
-            PlayerInfo.Distance = Mathf.Round(10* (PlayerInfo.BoxSpeed * Time.timeSinceLevelLoad - 2*playerChar.transform.position.y * PlayerInfo.BoxSpeed));
+            PlayerInfo.Distance = Mathf.Round(10* (PlayerInfo.BoxSpeed * Time.timeSinceLevelLoad));
         }
     }
 
