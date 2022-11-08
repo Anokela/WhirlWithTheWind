@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
                     {
                         if (Time.time > movementStartTime)
                         {
-                            rb.AddForce(new Vector3(whereToMove.x * Time.deltaTime * PlayerInfo.BoxSpeed * 1.2f, whereToMove.y * Time.deltaTime * PlayerInfo.BoxSpeed * 1.2f), ForceMode2D.Force);
+                            rb.AddForce(new Vector3(whereToMove.x * Time.deltaTime * PlayerInfo.BoxSpeed * 0.4f, whereToMove.y * Time.deltaTime * PlayerInfo.BoxSpeed * 0.2f), ForceMode2D.Force);
                         }
                     }
                 }
