@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,23 +13,20 @@ public class BlinkingText : MonoBehaviour
     {
         /*flashingText = GetComponent<Text>();
         textToBlink = flashingText.text;*/
+        tempColor = ttp.color;
         BlinkTime = 0.5f;
-        StartBlinking();
+        Invoke("alphaZero", BlinkTime);
     }
 
-    IEnumerator BlinkText()
+
+
+    /*IEnumerator BlinkText()
     {
         while (true)
         {
-            tempColor = ttp.color;
-            tempColor.a = 0f;
-            ttp.color = tempColor;
-            // flashingText.text = textToBlink;
+            flashingText.text = textToBlink;
             yield return new WaitForSeconds(BlinkTime);
-            // flashingText.text = string.Empty;
-            tempColor = ttp.color;
-            tempColor.a = 1f;
-            ttp.color = tempColor;
+            flashingText.text = string.Empty;
             yield return new WaitForSeconds(BlinkTime);
         }
     }
@@ -39,5 +34,21 @@ public class BlinkingText : MonoBehaviour
     void StartBlinking()
     {
             StartCoroutine(BlinkText());
+    }*/
+
+    void alphaZero()
+    {
+        tempColor = ttp.color;
+        tempColor.a = 0f;
+        ttp.color = tempColor;
+        Invoke("alphaOne", BlinkTime);
+    }
+
+    void alphaOne()
+    {
+        tempColor = ttp.color;
+        tempColor.a = 1f;
+        ttp.color = tempColor;
+        Invoke("alphaZero", BlinkTime);
     }
 }
