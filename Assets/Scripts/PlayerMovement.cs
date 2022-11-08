@@ -11,38 +11,41 @@ public class PlayerMovement : MonoBehaviour
     public float bounceForce;
     public  float movementDelay;
     private float movementStartTime = 0.1f;
+    private float timer; 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        timer = 0;
     }
 
     void Update()
     {
-        if (Input.touchCount > 0)
+        if (PlayerInfo.GameStarted)
         {
-            Touch touch = Input.GetTouch(0);
-            touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-            whereToMove = (touchPosition - transform.position);
-
-            // Handle finger movements based on touch phase.
-            switch (touch.phase)
+            if (Input.touchCount > 0)
             {
-                // When player touches screen, start player character movement
-                case TouchPhase.Began:
-               
-                    isMoving = true;
-                    movementStartTime = Time.time + movementDelay;
-                    break;
+                Touch touch = Input.GetTouch(0);
+                touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+                whereToMove = (touchPosition - transform.position);
 
-                // Stop player character movement when the finger is lifted.
-                case TouchPhase.Ended:
-                    isMoving = false;
-                    break;
-            }
-            // If player character is moving, move it towards the finger on the screen
+                // Handle finger movements based on touch phase.
+                switch (touch.phase)
+                {
+                    // When player touches screen, start player character movement
+                    case TouchPhase.Began:
+
+                        isMoving = true;
+                        movementStartTime = Time.time + movementDelay;
+                        break;
+
+                    // Stop player character movement when the finger is lifted.
+                    case TouchPhase.Ended:
+                        isMoving = false;
+                        break;
+                }
+                // If player character is moving, move it towards the finger on the screen
                 if (isMoving)
                 {
                     if (!controlsDisabled)
@@ -50,10 +53,12 @@ public class PlayerMovement : MonoBehaviour
                         if (Time.time > movementStartTime)
                         {
                             rb.AddForce(new Vector3(whereToMove.x * Time.deltaTime * PlayerInfo.BoxSpeed * 1.2f, whereToMove.y * Time.deltaTime * PlayerInfo.BoxSpeed * 1.2f), ForceMode2D.Force);
-                        } 
+                        }
                     }
                 }
+            }
         }
+        
     }
     void OnTriggerStay2D(Collider2D c2d)
     {
@@ -79,7 +84,12 @@ public class PlayerMovement : MonoBehaviour
         }
         if (c2d.CompareTag("ObstacleBox"))
         {
-            PlayerInfo.Distance = Mathf.Round(10* (PlayerInfo.BoxSpeed * Time.timeSinceLevelLoad));
+            if (PlayerInfo.GameStarted)
+            {
+                timer = timer + Time.fixedDeltaTime;
+                // PlayerInfo.Distance = Mathf.Round(10 * (PlayerInfo.BoxSpeed * Time.timeSinceLevelLoad));
+                PlayerInfo.Distance = Mathf.Round(10 * (PlayerInfo.BoxSpeed * timer ));
+            }
         }
     }
 

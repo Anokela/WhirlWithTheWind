@@ -24,105 +24,108 @@ public class SwipePowerUps : MonoBehaviour
 
     void Update()
     {
-        if (screenTouchStarted)
+        if (PlayerInfo.GameStarted)
         {
-            screenTouchTime = screenTouchTime + Time.fixedDeltaTime;
-        }
-       
-
-        if (rb.velocity.x > maxVelocity)
-        {
-            rb.velocity = new(maxVelocity, rb.velocity.y);
-        }
-        if (rb.velocity.x < -maxVelocity)
-        {
-            rb.velocity = new(-maxVelocity, rb.velocity.y);
-        }
-        if (rb.velocity.y > maxVelocity)
-        {
-            rb.velocity = new(rb.velocity.x, maxVelocity);
-        }
-        if (rb.velocity.y < -maxVelocity)
-        {
-            rb.velocity = new(rb.velocity.x, -maxVelocity);
-        }
-        // Track a single touch as a direction control.
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-
-            // Handle finger movements based on touch phase.
-            switch (touch.phase)
+            if (screenTouchStarted)
             {
-                // Record initial touch position.
-                case TouchPhase.Began:
-                    startPos = touch.position;
-                    screenTouchStarted = true;
+                screenTouchTime = screenTouchTime + Time.fixedDeltaTime;
+            }
+
+
+            if (rb.velocity.x > maxVelocity)
+            {
+                rb.velocity = new(maxVelocity, rb.velocity.y);
+            }
+            if (rb.velocity.x < -maxVelocity)
+            {
+                rb.velocity = new(-maxVelocity, rb.velocity.y);
+            }
+            if (rb.velocity.y > maxVelocity)
+            {
+                rb.velocity = new(rb.velocity.x, maxVelocity);
+            }
+            if (rb.velocity.y < -maxVelocity)
+            {
+                rb.velocity = new(rb.velocity.x, -maxVelocity);
+            }
+            // Track a single touch as a direction control.
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+
+                // Handle finger movements based on touch phase.
+                switch (touch.phase)
+                {
+                    // Record initial touch position.
+                    case TouchPhase.Began:
+                        startPos = touch.position;
+                        screenTouchStarted = true;
+                        directionChosen = false;
+                        //Debug.Log(Time.fixedDeltaTime);
+                        break;
+
+                    // Determine direction by comparing the current touch position with the initial one.
+                    case TouchPhase.Moved:
+                        direction = touch.position - startPos;
+                        break;
+
+                    // Report that a direction has been chosen when the finger is lifted.
+                    case TouchPhase.Ended:
+                        if (screenTouchTime < 1)
+                        {
+                            directionChosen = true;
+                        }
+                        screenTouchTime = 0f;
+                        screenTouchStarted = false;
+                        break;
+                }
+            }
+
+            if (directionChosen)
+            {
+                maxVelocity = 5f;
+                // Something that uses the chosen direction...
+                // reduction values for x and y start and end
+                //Debug.Log(direction.y);
+                //Debug.Log(direction.x);
+                // absolute value of the reduction, if y > 100, horizontal swipe doesn't happen
+                // makes sure of the intended direction of the swipe
+                if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x > swipeLength && PlayerInfo.SideDashActive == 1)
+                {
+                    rb.gravityScale = 0;
+                    rb.AddForce(Vector3.right * dashSpeed, ForceMode2D.Impulse);
                     directionChosen = false;
-                    //Debug.Log(Time.fixedDeltaTime);
-                    break;
-
-                // Determine direction by comparing the current touch position with the initial one.
-                case TouchPhase.Moved:
-                    direction = touch.position - startPos;
-                    break;
-
-                // Report that a direction has been chosen when the finger is lifted.
-                case TouchPhase.Ended:
-                    if (screenTouchTime < 1)
-                    {
-                        directionChosen = true;
-                    }
-                    screenTouchTime = 0f;
-                    screenTouchStarted = false;
-                    break;
-            }
-        }
-       
-        if (directionChosen)
-        {
-            maxVelocity = 5f;
-            // Something that uses the chosen direction...
-            // reduction values for x and y start and end
-            //Debug.Log(direction.y);
-            //Debug.Log(direction.x);
-            // absolute value of the reduction, if y > 100, horizontal swipe doesn't happen
-            // makes sure of the intended direction of the swipe
-            if(Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x > swipeLength && PlayerInfo.SideDashActive == 1)
-            {
-                rb.gravityScale = 0;
-                rb.AddForce(Vector3.right * dashSpeed, ForceMode2D.Impulse);
-                directionChosen = false;
-                direction = Vector3.zero;
-                m_anim.SetBool("DashRight", true);
-                Invoke("resetAnimation", 0.25f);
-            }
-            if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x < -swipeLength && PlayerInfo.SideDashActive == 1)
-            {
-                rb.gravityScale = 0;
-                rb.AddForce(Vector3.left * dashSpeed, ForceMode2D.Impulse);
-                directionChosen = false;
-                direction = Vector3.zero;
-                m_anim.SetBool("DashLeft", true);
-                Invoke("resetAnimation", 0.25f);
-            }
-            if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y < -swipeLength && PlayerInfo.DownDashActive == 1)
-            {
-                rb.gravityScale = 0;
-                rb.AddForce(Vector3.down * dashSpeed, ForceMode2D.Impulse);
-                directionChosen = false;
-                m_anim.SetBool("DashDown", true);
-                Invoke("resetAnimation", 0.25f);
-                direction = Vector3.zero;
-            }
-            if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y > swipeLength && PlayerInfo.UpDashActive == 1)
-            {
-                rb.gravityScale = 0;
-                rb.AddForce(Vector3.up * dashSpeed, ForceMode2D.Impulse);
-                directionChosen = false;
-                m_anim.SetBool("DashUp", true);
-                Invoke("resetAnimation", 0.25f);
-                direction = Vector3.zero;
+                    direction = Vector3.zero;
+                    m_anim.SetBool("DashRight", true);
+                    Invoke("resetAnimation", 0.25f);
+                }
+                if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x < -swipeLength && PlayerInfo.SideDashActive == 1)
+                {
+                    rb.gravityScale = 0;
+                    rb.AddForce(Vector3.left * dashSpeed, ForceMode2D.Impulse);
+                    directionChosen = false;
+                    direction = Vector3.zero;
+                    m_anim.SetBool("DashLeft", true);
+                    Invoke("resetAnimation", 0.25f);
+                }
+                if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y < -swipeLength && PlayerInfo.DownDashActive == 1)
+                {
+                    rb.gravityScale = 0;
+                    rb.AddForce(Vector3.down * dashSpeed, ForceMode2D.Impulse);
+                    directionChosen = false;
+                    m_anim.SetBool("DashDown", true);
+                    Invoke("resetAnimation", 0.25f);
+                    direction = Vector3.zero;
+                }
+                if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y > swipeLength && PlayerInfo.UpDashActive == 1)
+                {
+                    rb.gravityScale = 0;
+                    rb.AddForce(Vector3.up * dashSpeed, ForceMode2D.Impulse);
+                    directionChosen = false;
+                    m_anim.SetBool("DashUp", true);
+                    Invoke("resetAnimation", 0.25f);
+                    direction = Vector3.zero;
+                }
             }
         }
     }
