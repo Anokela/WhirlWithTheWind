@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class FadingCanvas : MonoBehaviour
 {
     [SerializeField] private CanvasGroup myUIGroup;
-    private GameObject Panel;
+    public GameObject Panel;
     private bool isFadingIn = false;
+
     public void FadeIn()
     {
         isFadingIn = true;
-        Panel = GameObject.Find("RestartMenu");
     }
 
     private void Update()
