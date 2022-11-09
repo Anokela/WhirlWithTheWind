@@ -11,8 +11,8 @@ public class LoopingBackgroundHorizontal : MonoBehaviour
     {
         if(PlayerInfo.GameStarted)
         {
-            backgroundSpeed = PlayerInfo.BoxSpeed / 4f;
-            backgroundRenderer.material.mainTextureOffset += new Vector2(-PlayerInfo.BoxSpeed / 24 * Time.deltaTime, -backgroundSpeed * Time.deltaTime);
+            backgroundSpeed = PlayerInfo.BoxSpeed / 4.8f;
+            backgroundRenderer.material.mainTextureOffset += new Vector2(-PlayerInfo.BoxSpeed / 24f * Time.deltaTime, -backgroundSpeed * Time.deltaTime);
         }
     }
 }

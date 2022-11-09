@@ -11,7 +11,7 @@ public class LoopingBackground : MonoBehaviour
     {
         if(PlayerInfo.GameStarted)
         {
-            backgroundSpeed = PlayerInfo.BoxSpeed / 4f;
+            backgroundSpeed = PlayerInfo.BoxSpeed/0.8f;
             backgroundRenderer.material.mainTextureOffset += new Vector2(0f, -backgroundSpeed * Time.deltaTime);
         }
     }
