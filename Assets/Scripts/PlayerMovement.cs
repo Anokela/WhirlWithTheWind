@@ -11,13 +11,11 @@ public class PlayerMovement : MonoBehaviour
     public float bounceForce;
     public  float movementDelay;
     private float movementStartTime = 0.1f;
-    private float timer; 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        timer = 0;
     }
 
     void Update()
@@ -81,15 +79,6 @@ public class PlayerMovement : MonoBehaviour
             controlsDisabled = true;
             rb.AddForce(Vector3.up * bounceForce, ForceMode2D.Impulse);
             Invoke("ActivateControls", 0.5f);
-        }
-        if (c2d.CompareTag("ObstacleBox"))
-        {
-            if (PlayerInfo.GameStarted)
-            {
-                timer = timer + Time.fixedDeltaTime;
-                // PlayerInfo.Distance = Mathf.Round(10 * (PlayerInfo.BoxSpeed * Time.timeSinceLevelLoad));
-                PlayerInfo.Distance = Mathf.Round(10 * (PlayerInfo.BoxSpeed * timer ));
-            }
         }
     }
 
