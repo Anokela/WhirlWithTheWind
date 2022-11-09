@@ -264,27 +264,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lightpoint_anim_7
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 18
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 72a89df1631c7454c92ce2e3da54f8b8
-      internalID: -2142517668
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: lightpoint_anim_8
       rect:
         serializedVersion: 2
