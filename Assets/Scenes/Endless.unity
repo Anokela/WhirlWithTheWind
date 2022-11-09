@@ -505,7 +505,6 @@ GameObject:
   m_Component:
   - component: {fileID: 265809358}
   - component: {fileID: 265809359}
-  - component: {fileID: 265809360}
   m_Layer: 0
   m_Name: StartTree
   m_TagString: Untagged
@@ -521,7 +520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265809357}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5370679, y: 1.5603858, z: 0}
+  m_LocalPosition: {x: -2.555254, y: 1.5603858, z: 0}
   m_LocalScale: {x: 3.2600002, y: 1.2221193, z: 1.1983206}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -580,21 +579,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &265809360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265809357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed367855aa2b60a4e987e46a8e326b3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  executeInUpdate: 1
-  anchorType: 6
-  anchorOffset: {x: 0.56, y: -0.47, z: 0}
 --- !u!1 &386794874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,7 +1154,6 @@ GameObject:
   - component: {fileID: 574063183}
   - component: {fileID: 574063182}
   - component: {fileID: 574063181}
-  - component: {fileID: 574063184}
   m_Layer: 0
   m_Name: TreeParallaxRight
   m_TagString: Untagged
@@ -1186,7 +1169,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574063179}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.475, y: 0, z: 0}
+  m_LocalPosition: {x: 1.849268, y: 0, z: 0}
   m_LocalScale: {x: 1.1230581, y: 4, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1256,21 +1239,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574063179}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &574063184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 574063179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed367855aa2b60a4e987e46a8e326b3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  executeInUpdate: 1
-  anchorType: 5
-  anchorOffset: {x: 0.35, y: 0, z: 0}
 --- !u!1 &663532290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2955,7 +2923,6 @@ GameObject:
   - component: {fileID: 1959259419}
   - component: {fileID: 1959259418}
   - component: {fileID: 1959259417}
-  - component: {fileID: 1959259420}
   m_Layer: 0
   m_Name: TreeParallaxLeft
   m_TagString: Untagged
@@ -2971,7 +2938,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959259415}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.475, y: 0, z: 0}
+  m_LocalPosition: {x: -1.849268, y: 0, z: 0}
   m_LocalScale: {x: 1.0827037, y: 4, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3041,21 +3008,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959259415}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1959259420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1959259415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed367855aa2b60a4e987e46a8e326b3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  executeInUpdate: 1
-  anchorType: 3
-  anchorOffset: {x: -0.35, y: 0, z: 0}
 --- !u!1 &2077412910
 GameObject:
   m_ObjectHideFlags: 0
