@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 239057650}
   - component: {fileID: 239057653}
   - component: {fileID: 239057652}
-  - component: {fileID: 239057651}
+  - component: {fileID: 239057654}
   m_Layer: 0
   m_Name: BlueSkyBg
   m_TagString: Untagged
@@ -427,19 +427,6 @@ Transform:
   m_Father: {fileID: 741105735}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &239057651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239057649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73b7c349a86cccf44b3d231353bb53c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundRenderer: {fileID: 239057652}
 --- !u!23 &239057652
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -490,6 +477,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239057649}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &239057654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239057649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00068d90d083d9e4cbfeda8c69ee9612, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundRenderer: {fileID: 239057652}
 --- !u!4 &240456810 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4529489443781847738, guid: 6c4792722dbf7df4cb9b93cfc2f9d631, type: 3}
