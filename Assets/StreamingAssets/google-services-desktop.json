@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "650739181855",
+    "project_id": "seedfallanalytics",
+    "storage_bucket": "seedfallanalytics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650739181855:android:ff2f6e3f63c3f6a9f4282a",
+        "android_client_info": {
+          "package_name": "com.JananasGames.SeedFall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "650739181855-at3q56l5fkd50knh6rmv95qlls7mh0jt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0Sb1D4M7JeX_nutw-woO2njQP9GB0diE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "650739181855-at3q56l5fkd50knh6rmv95qlls7mh0jt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
