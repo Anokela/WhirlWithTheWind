@@ -249,8 +249,8 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/nokel/.android/debug.keystore
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: '{inproject}: user.store.keystore'
+  AndroidKeyaliasName: seedfall
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
