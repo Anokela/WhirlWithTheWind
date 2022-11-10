@@ -18,12 +18,12 @@ public class OnDeathZoneCollide : MonoBehaviour
         {
             PlayerInfo.GameStarted = false;
             counter.SetActive(false);
-            manager.SendMessage("OnApplicationQuit");
             Invoke("showPanel", 0);
             if (PlayerInfo.Distance > PlayerInfo.HighScore)
             {
                 PlayerInfo.HighScore = PlayerInfo.Distance;
             }
+            manager.SendMessage("OnApplicationQuit");
         }
     }
 
