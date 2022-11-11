@@ -132,7 +132,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8659950}
-  - component: {fileID: 8659951}
   m_Layer: 5
   m_Name: ToMainmenuBtnContainer
   m_TagString: Untagged
@@ -161,19 +160,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.5, y: -1.5}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8659951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8659949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87a91eb840a6cf44aba9d3624f7311f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myUIGroup: {fileID: 4837475085431636983}
 --- !u!1 &69991114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,7 +1755,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8659951}
+      - m_Target: {fileID: 925297579666612061}
         m_TargetAssemblyTypeName: BackToMM, Assembly-CSharp
         m_MethodName: FadeIn
         m_Mode: 1
@@ -3952,6 +3938,7 @@ GameObject:
   - component: {fileID: 925297579666612056}
   - component: {fileID: 925297579666612055}
   - component: {fileID: 925297579666612060}
+  - component: {fileID: 925297579666612061}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4060,6 +4047,20 @@ MonoBehaviour:
   pc: {fileID: 6821600754661774812}
   speedManager: {fileID: 957786875}
   counter: {fileID: 1192745627954252124}
+--- !u!114 &925297579666612061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925297579666612054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a91eb840a6cf44aba9d3624f7311f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myUIGroup: {fileID: 4837475085431636983}
+  successMenu: {fileID: 1192745627833037095}
 --- !u!1 &925297579733098480
 GameObject:
   m_ObjectHideFlags: 0
@@ -7372,7 +7373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3035ed548702bf647b4ed94d53dfcc39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetPrefs: 0
+  resetPrefs: 1
 --- !u!1 &3479170015539942798
 GameObject:
   m_ObjectHideFlags: 0
