@@ -1094,6 +1094,7 @@ MonoBehaviour:
   pc: {fileID: 6821600754661774812}
   manager: {fileID: 3479170015539942798}
   counter: {fileID: 1192745627954252124}
+  pauseBtn: {fileID: 2117854168}
 --- !u!1 &470037675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,7 +1448,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 123
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f771f3e4b56b18e46802c38e6fb27018, type: 2}
   m_sharedMaterial: {fileID: 8383618427882095464, guid: f771f3e4b56b18e46802c38e6fb27018, type: 2}
@@ -3611,7 +3612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2117854169
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4231,6 +4232,7 @@ MonoBehaviour:
   pc: {fileID: 6821600754661774812}
   speedManager: {fileID: 957786875}
   counter: {fileID: 1192745627954252124}
+  pauseBtn: {fileID: 2117854168}
 --- !u!114 &925297579666612061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6331,7 +6333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1192745627954252125
 RectTransform:
   m_ObjectHideFlags: 0
