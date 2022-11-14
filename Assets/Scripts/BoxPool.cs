@@ -9,7 +9,7 @@ public class BoxPool : MonoBehaviour
     private List<GameObject> pool2;
     public List<GameObject> objectToPool1;
     public List<GameObject> objectToPool2;
-    public List<GameObject> freeObjects;
+    private List<GameObject> freeObjects;
 
     private void Awake()
     {
