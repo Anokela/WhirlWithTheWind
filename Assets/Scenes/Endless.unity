@@ -1737,8 +1737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a355f1c67838ff349b239543a0108051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObjects: []
-  objectToPool:
+  objectToPool1:
   - {fileID: 5179494349048957619, guid: 6da005be307349c4fac44ee7dd7412b5, type: 3}
   - {fileID: 5179494349048957619, guid: c37b1f7942a79574e8953df6c5d8853a, type: 3}
   - {fileID: 5179494349048957619, guid: ce78553cf47e4094fb8c15494bbd6e1c, type: 3}
@@ -1754,6 +1753,21 @@ MonoBehaviour:
   - {fileID: 5179494349048957619, guid: c92d929b9fde2dc43993f12632072f8f, type: 3}
   - {fileID: 5179494349048957619, guid: fa392ef8dd5008e40bfa5926c30c426b, type: 3}
   - {fileID: 5179494349048957619, guid: b9cb2646088a5a9428c604d43c983c90, type: 3}
+  objectToPool2:
+  - {fileID: 5179494349048957619, guid: 0f417258f617f5740ad58629bbf36f24, type: 3}
+  - {fileID: 5179494349048957619, guid: f1cefaa920afba04c994ddd37930c488, type: 3}
+  - {fileID: 5179494349048957619, guid: 567b25280a2140747bcd9ae76423e22b, type: 3}
+  - {fileID: 5179494349048957619, guid: 28753a7f2f833f1409fff4c58bb6f0bd, type: 3}
+  - {fileID: 5179494349048957619, guid: 8f1fb94fcabb27d4f881ae3fb1e0828f, type: 3}
+  - {fileID: 5179494349048957619, guid: 65a2ad3e7c401aa4bb76fa9a702a4a47, type: 3}
+  - {fileID: 5179494349048957619, guid: 2a981391718ba234dbe7dc4ea3bcfb6d, type: 3}
+  - {fileID: 5179494349048957619, guid: 531c7cd9b97c48c4998454153fba0c0f, type: 3}
+  - {fileID: 5179494349048957619, guid: 25779dd927d45d0499bf74b773991b3b, type: 3}
+  - {fileID: 5179494349048957619, guid: e441d6c36a22b6f4c9fb474b4b1450f7, type: 3}
+  - {fileID: 5179494349048957619, guid: ba9438faa5b8d3c41b750815abb84eab, type: 3}
+  - {fileID: 5179494349048957619, guid: 80d170945a0b25849a3a2e5848c25000, type: 3}
+  - {fileID: 5179494349048957619, guid: 5bfe954339d50e8439d28b6c51408a2b, type: 3}
+  - {fileID: 5179494349048957619, guid: 7e35e3413626235409de0c207001cdbb, type: 3}
   freeObjects: []
 --- !u!1 &742024802
 GameObject:
