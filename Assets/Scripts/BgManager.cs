@@ -10,6 +10,7 @@ public class BgManager : MonoBehaviour
     public GameObject forestBg;
     public GameObject treeTopsBg;
     public GameObject treeTrunksBg;
+    private float treeBGHorizontalPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,9 @@ public class BgManager : MonoBehaviour
         forestBg.SetActive(false);
         treeTopsBg.SetActive(false);
         treeTrunksBg.SetActive(false);
+        treeBGHorizontalPos = Random.Range(-1f, 1f);
+        treeTopsBg.transform.position = new Vector3(treeBGHorizontalPos, 0, 0.5f);
+        treeTrunksBg.transform.position = new Vector3(treeBGHorizontalPos, 0, 0.5f);
     }
 
     // Update is called once per frame
