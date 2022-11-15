@@ -5,12 +5,11 @@ using UnityEngine;
 public class BoxPool : MonoBehaviour
 {
     public static BoxPool SharedInstance;
-    public List<GameObject> pooledObjects;
-    public List<GameObject> objectToPool;
-    public List<GameObject> freeObjects;
-    private int amountToPool;
-    
-
+    private List<GameObject> pool1;
+    private List<GameObject> pool2;
+    public List<GameObject> objectToPool1;
+    public List<GameObject> objectToPool2;
+    private List<GameObject> freeObjects;
 
     private void Awake()
     {
@@ -19,32 +18,52 @@ public class BoxPool : MonoBehaviour
 
     private void Start()
     {
-
-        int poolLength = objectToPool.Count;
-        amountToPool = poolLength;
-        pooledObjects = new List<GameObject>();
+        pool1 = new List<GameObject>();
+        pool1 = GeneratePool(objectToPool1);
+        pool2 = new List<GameObject>();
+        pool2 = GeneratePool(objectToPool2);
         freeObjects = new List<GameObject>();
-        GameObject tmp;
-        for(int i = 0; i < amountToPool; i++)
-        {
-            tmp = Instantiate(objectToPool[i]);
-            tmp.SetActive(false);
-            pooledObjects.Add(tmp);
-        }
     }
 
     public GameObject GetPooledObject()
     {
         freeObjects.Clear();
+        int amountToPool;
+        List<GameObject> poolToUse;
+        if (PlayerInfo.Distance < 500)
+        {
+            poolToUse = pool1;
+            amountToPool = poolToUse.Count;
+        } else
+        {
+            poolToUse = pool2;
+            amountToPool = poolToUse.Count;
+        }
+        
+        
         for(int i = 0; i < amountToPool; i++)
         {
 
-            if (!pooledObjects[i].activeInHierarchy)
+            if (!poolToUse[i].activeInHierarchy)
             {
-                freeObjects.Add(pooledObjects[i]);
+                freeObjects.Add(poolToUse[i]);
             }
         }
         int index = Random.Range(0, freeObjects.Count);
         return freeObjects[index];
+    }
+
+    private List<GameObject> GeneratePool(List<GameObject> list)
+    {
+        List<GameObject> pool;
+        pool = new List<GameObject>(); 
+        GameObject tmp;
+        for(int i = 0; i<list.Count; i++)
+        {
+            tmp = Instantiate(list[i]);
+            tmp.SetActive(false);
+            pool.Add(tmp);
+        }
+        return pool;
     }
 }

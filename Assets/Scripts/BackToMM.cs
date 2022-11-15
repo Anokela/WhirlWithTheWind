@@ -6,10 +6,12 @@ public class BackToMM : MonoBehaviour
     [SerializeField] private CanvasGroup myUIGroup;
 
     private bool isFadingIn = false;
+    public GameObject successMenu;
 
     public void FadeIn()
     {
         isFadingIn = true;
+        successMenu.SetActive(false);
     }
     private void Update()
     {

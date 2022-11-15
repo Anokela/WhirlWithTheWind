@@ -15,7 +15,6 @@ public class BoxSpawner : MonoBehaviour
     // Update is called once per frame
     public void CreateBox()
     {
-        GameObject box2 = BoxPool.SharedInstance.GetPooledObject();
         box = BoxPool.SharedInstance.GetPooledObject();
         if (box != null)
         {

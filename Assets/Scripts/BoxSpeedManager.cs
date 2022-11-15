@@ -9,7 +9,7 @@ public class BoxSpeedManager : MonoBehaviour
     {
         if (PlayerInfo.BoxSpeed < 2)
         {
-            PlayerInfo.BoxSpeed = PlayerInfo.BoxSpeed + 0.002f;
+            PlayerInfo.BoxSpeed = PlayerInfo.BoxSpeed + 0.00075f;
             Invoke("AccelerateBoxSpeed", 0.5f);
         }
     }
