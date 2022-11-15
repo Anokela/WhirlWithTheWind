@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeTop1Round : MonoBehaviour
+public class TreeTrunksLoop : MonoBehaviour
 {
     private float backgroundSpeed;
     public Renderer backgroundRenderer;
@@ -11,7 +11,7 @@ public class TreeTop1Round : MonoBehaviour
     {
         if (PlayerInfo.GameStarted)
         {
-            backgroundSpeed = PlayerInfo.BoxSpeed/12;
+            backgroundSpeed = PlayerInfo.BoxSpeed;
             backgroundRenderer.material.mainTextureOffset += new Vector2(0f, -backgroundSpeed * Time.deltaTime);
         }
     }

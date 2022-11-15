@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeTop1Round : MonoBehaviour
+public class CanopyForest1Round : MonoBehaviour
 {
     private float backgroundSpeed;
     public Renderer backgroundRenderer;
