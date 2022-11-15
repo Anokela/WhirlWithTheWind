@@ -34,19 +34,20 @@ public class BgManager : MonoBehaviour
         {
             skyToCanopyTrans.SetActive(true);
             skyBg.SetActive(false);
+            canopyBg.SetActive(true);
         }
         if (PlayerInfo.Distance > 35)
         {
             cloudsBg.SetActive(false);
         }
-        if (PlayerInfo.Distance > 54)
+        if (PlayerInfo.Distance > 40)
         {
             skyToCanopyTrans.SetActive(false);
-            canopyBg.SetActive(true);
+            
            // treeTrunksBg.SetActive(true);
 
         }
-        if (PlayerInfo.Distance > 80)
+        if (PlayerInfo.Distance > 60.7f)
         {
             treeTopsBg.SetActive(true);
             
@@ -55,13 +56,14 @@ public class BgManager : MonoBehaviour
         if (PlayerInfo.Distance > 90)
         {
             canopyToForestTrans.SetActive(true);
+            forestBg.SetActive(true);
             canopyBg.SetActive(false);
         }
-        if (PlayerInfo.Distance > 155)
+        if (PlayerInfo.Distance > 120)
         {
             treeTrunksBg.SetActive(true);
             treeTopsBg.SetActive(false);
-            forestBg.SetActive(true);
+            
             canopyToForestTrans.SetActive(false);
         }
     }

@@ -11,7 +11,7 @@ public class TreeTop1Round : MonoBehaviour
     {
         if (PlayerInfo.GameStarted)
         {
-            backgroundSpeed = PlayerInfo.BoxSpeed/12;
+            backgroundSpeed = PlayerInfo.BoxSpeed/26.67f;
             backgroundRenderer.material.mainTextureOffset += new Vector2(0f, -backgroundSpeed * Time.deltaTime);
         }
     }
