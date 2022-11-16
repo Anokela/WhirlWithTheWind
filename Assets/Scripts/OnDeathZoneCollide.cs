@@ -8,10 +8,6 @@ public class OnDeathZoneCollide : MonoBehaviour
     public GameObject manager;
     public GameObject counter;
     public GameObject pauseBtn;
-    void Start()
-    {
-        Panel.SetActive(false);
-    }
 
     void OnTriggerEnter2D(Collider2D c2d)
     {
