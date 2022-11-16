@@ -1544,7 +1544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4c9b282a8c364438fa8494a27f6d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceText: {fileID: 46394219}
+  distanceText: {fileID: 663532291}
   pc: {fileID: 6821600754661774812}
 --- !u!1001 &564209162
 PrefabInstance:
@@ -6279,8 +6279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashSpeed: 0.01
-  swipeMinLength: 200
-  swipeAxisRestricor: 100
+  swipeMinLength: 100
+  swipeAxisRestricor: 200
   swipeMaxLength: 400
 --- !u!4 &7397001579815152929
 Transform:
