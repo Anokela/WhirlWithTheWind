@@ -6467,8 +6467,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashSpeed: 0.01
-  swipeLength: 200
+  swipeMinLength: 200
   swipeAxisRestricor: 100
+  swipeMaxLength: 400
 --- !u!4 &7397001579815152929
 Transform:
   m_ObjectHideFlags: 0

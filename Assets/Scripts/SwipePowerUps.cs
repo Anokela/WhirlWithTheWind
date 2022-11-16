@@ -7,9 +7,10 @@ public class SwipePowerUps : MonoBehaviour
     private Vector2 direction;
     private bool directionChosen;
     private float maxVelocity = 1.5f;
-    public float dashSpeed = 0.1f;
-    public float swipeLength = 200f;
-    public float swipeAxisRestricor = 100f;
+    public float dashSpeed;
+    public float swipeMinLength;
+    public float swipeAxisRestricor;
+    public float swipeMaxLength;
     private Animator m_anim;
     private bool screenTouchStarted;
     private float screenTouchTime;
@@ -86,11 +87,11 @@ public class SwipePowerUps : MonoBehaviour
                 maxVelocity = 5f;
                 // Something that uses the chosen direction...
                 // reduction values for x and y start and end
-                //Debug.Log(direction.y);
-                //Debug.Log(direction.x);
+                Debug.Log("y: "+ direction.y);
+                Debug.Log("x: " + direction.x);
                 // absolute value of the reduction, if y > 100, horizontal swipe doesn't happen
                 // makes sure of the intended direction of the swipe
-                if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x > swipeLength && PlayerInfo.SideDashActive == 1)
+                if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x > swipeMinLength && Mathf.Abs(direction.x) < swipeMaxLength && PlayerInfo.SideDashActive == 1)
                 {
                     rb.gravityScale = 0;
                     rb.AddForce(Vector3.right * dashSpeed, ForceMode2D.Impulse);
@@ -99,7 +100,7 @@ public class SwipePowerUps : MonoBehaviour
                     m_anim.SetBool("DashRight", true);
                     Invoke("resetAnimation", 0.25f);
                 }
-                if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x < -swipeLength && PlayerInfo.SideDashActive == 1)
+                if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x < -swipeMinLength && Mathf.Abs(direction.x) < swipeMaxLength && PlayerInfo.SideDashActive == 1)
                 {
                     rb.gravityScale = 0;
                     rb.AddForce(Vector3.left * dashSpeed, ForceMode2D.Impulse);
@@ -108,7 +109,7 @@ public class SwipePowerUps : MonoBehaviour
                     m_anim.SetBool("DashLeft", true);
                     Invoke("resetAnimation", 0.25f);
                 }
-                if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y < -swipeLength && PlayerInfo.DownDashActive == 1)
+                if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y < -swipeMinLength && Mathf.Abs(direction.y) < swipeMaxLength && PlayerInfo.DownDashActive == 1)
                 {
                     rb.gravityScale = 0;
                     rb.AddForce(Vector3.down * dashSpeed, ForceMode2D.Impulse);
@@ -117,7 +118,7 @@ public class SwipePowerUps : MonoBehaviour
                     Invoke("resetAnimation", 0.25f);
                     direction = Vector3.zero;
                 }
-                if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y > swipeLength && PlayerInfo.UpDashActive == 1)
+                if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y > swipeMinLength && Mathf.Abs(direction.y) < swipeMaxLength && PlayerInfo.UpDashActive == 1)
                 {
                     rb.gravityScale = 0;
                     rb.AddForce(Vector3.up * dashSpeed, ForceMode2D.Impulse);
