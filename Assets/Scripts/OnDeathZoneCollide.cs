@@ -1,4 +1,5 @@
 using UnityEngine;
+using Firebase.Analytics;
 
 public class OnDeathZoneCollide : MonoBehaviour
 {
@@ -7,10 +8,6 @@ public class OnDeathZoneCollide : MonoBehaviour
     public GameObject manager;
     public GameObject counter;
     public GameObject pauseBtn;
-    void Start()
-    {
-        Panel.SetActive(false);
-    }
 
     void OnTriggerEnter2D(Collider2D c2d)
     {
@@ -24,6 +21,8 @@ public class OnDeathZoneCollide : MonoBehaviour
                 PlayerInfo.HighScore = PlayerInfo.Distance;
             }
             manager.SendMessage("OnApplicationQuit");
+               FirebaseAnalytics.LogEvent(name:"player_distance", parameterName:"distance_travelled", parameterValue: PlayerInfo.Distance);
+            //FirepaseAnalytics.LogEvent(name: "Player_distance", params parameteres: new parameter(parameterName:"string", parameterValue: "Distance"));
         }
     }
 
