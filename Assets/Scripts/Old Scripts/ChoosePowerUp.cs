@@ -19,7 +19,7 @@ public class ChoosePowerUp : MonoBehaviour
     void Start()
     {
         priceText.text = upDashPrice.ToString();
-        menu = GameObject.Find("SuccessMenu");
+       // menu = GameObject.Find("SuccessMenu");
         // sprout = GameObject.Find("Sprout");
         // confirmMenu = GameObject.Find("PowerUpConfirmation");
     }
@@ -38,7 +38,7 @@ public class ChoosePowerUp : MonoBehaviour
             // sprout.SetActive(false);
             ttp.SetActive(true);
             blinking.SendMessage("StartBlinking");
-            menu.SetActive(false);
+            //menu.SetActive(false);
         }
         else
         {
