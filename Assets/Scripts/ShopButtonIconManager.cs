@@ -15,7 +15,7 @@ public class ShopButtonIconManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PowerUps.PowerUpsPrice < PlayerInfo.LightPoints)
+        if (PowerUps.PowerUpsPrice <= PlayerInfo.LightPoints)
         {
             shopButton.image.sprite = newItemsButtonIcon;
         }
