@@ -7,6 +7,7 @@ public class PowerUps
     private static int sideDashPrice;
     private static int antiBirdPrice;
     private static int antiWebPrice;
+    private static int powerUpsPrice;
     public static int DownDashPrice
     {
         get
@@ -64,4 +65,18 @@ public class PowerUps
             antiWebPrice = value;
         }
     }
+
+    public static int PowerUpsPrice
+    {
+        get
+        {
+            return powerUpsPrice;
+        }
+        set
+        {
+            powerUpsPrice = value;
+        }
+    }
+
+
 }

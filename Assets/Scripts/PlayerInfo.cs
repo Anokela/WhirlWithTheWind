@@ -13,6 +13,8 @@ public class PlayerInfo
     private static float highScore;
     private static int runLightPoints;
     private static bool gameStarted;
+    private static int powerUpsInUse;
+
     public static int LightPoints
     {
         get
@@ -157,4 +159,17 @@ public class PlayerInfo
             gameStarted = value;
         }
     }
+
+    public static int PowerUpsInUse
+    {
+        get
+        {
+            return powerUpsInUse;
+        }
+        set
+        {
+            powerUpsInUse = value;
+        }
+    }
+
 }

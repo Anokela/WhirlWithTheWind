@@ -15,6 +15,7 @@ public class PrefsManagement : MonoBehaviour
             PlayerPrefs.SetInt("AntiBirdActive", 0);
             PlayerPrefs.SetInt("AntiWebActive", 0);
             PlayerPrefs.SetInt("CurrentSpawnPoint", 0);
+            PlayerPrefs.SetInt("PowerUpsInUse", 0);
             //PlayerPrefs.SetFloat("HighScore", 0);
             PlayerPrefs.Save();
         }
@@ -26,6 +27,7 @@ public class PrefsManagement : MonoBehaviour
         PlayerInfo.AntiWebActive = PlayerPrefs.GetInt("AntiWebActive");
         PlayerInfo.CurrentSpawnPoint = PlayerPrefs.GetInt("CurrentSpawnPoint");
         PlayerInfo.HighScore =  PlayerPrefs.GetFloat("HighScore");
+        PlayerInfo.PowerUpsInUse = PlayerPrefs.GetInt("PowerUpsInUse");
     }
 
     // Update is called once per frame
@@ -40,6 +42,7 @@ public class PrefsManagement : MonoBehaviour
         PlayerPrefs.SetInt("AntiWebActive", PlayerInfo.AntiWebActive);
         PlayerPrefs.SetInt("CurrentSpawnPoint", PlayerInfo.CurrentSpawnPoint);
         PlayerPrefs.SetFloat("HighScore", PlayerInfo.HighScore);
+        PlayerPrefs.SetInt("PowerUpsInUse", PlayerInfo.PowerUpsInUse);
         PlayerPrefs.Save();
     }
 
@@ -53,6 +56,7 @@ public class PrefsManagement : MonoBehaviour
         PlayerPrefs.SetInt("AntiWebActive", 0);
         PlayerPrefs.SetInt("CurrentSpawnPoint", 0);
         PlayerPrefs.SetFloat("HighScore", 0);
+        PlayerPrefs.SetInt("PowerUpsInUse", 0);
         PlayerPrefs.Save();
         // SceneManager.LoadScene("Level1");
     }
