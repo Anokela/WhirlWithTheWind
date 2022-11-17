@@ -21,8 +21,8 @@ public class OnDeathZoneCollide : MonoBehaviour
                 PlayerInfo.HighScore = PlayerInfo.Distance;
             }
             manager.SendMessage("OnApplicationQuit");
-               FirebaseAnalytics.LogEvent(name:"player_distance", parameterName:"distance_travelled", parameterValue: PlayerInfo.Distance);
-            //FirepaseAnalytics.LogEvent(name: "Player_distance", params parameteres: new parameter(parameterName:"string", parameterValue: "Distance"));
+            FirebaseAnalytics.LogEvent(name:"player_distance", parameterName:"distance_travelled", parameterValue: PlayerInfo.Distance);
+            FirebaseAnalytics.LogEvent(name: "player_lightpoint_in_one_run", parameterName: "player_lightpoint_in_one_run", parameterValue: PlayerInfo.RunLightPoints);
         }
     }
 
