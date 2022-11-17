@@ -36,13 +36,13 @@ public class BoxPool : MonoBehaviour
         List<GameObject> poolToUse;
         
 
-         if (PlayerInfo.Distance > 60f )
+         if (PlayerInfo.Distance > 1160f )
         {
             poolToUse = pool3;
             amountToPool = poolToUse.Count;
         }
 
-        else if (PlayerInfo.Distance > 30f && PlayerInfo.Distance < 60f)
+        else if (PlayerInfo.Distance > 635f && PlayerInfo.Distance < 1160f)
         {
             poolToUse = pool2;
             amountToPool = poolToUse.Count;
