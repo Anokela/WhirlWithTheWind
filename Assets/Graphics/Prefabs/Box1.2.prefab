@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 253983574373022790}
   - component: {fileID: 6877686401436196122}
   - component: {fileID: 230039847858762665}
+  - component: {fileID: 801409677420787409}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Bird
@@ -236,7 +237,7 @@ Transform:
   m_GameObject: {fileID: 7838458629068479932}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.1848392, y: -0.8243931, z: 0}
-  m_LocalScale: {x: 4.1309, y: 1.4715415, z: 1.1297418}
+  m_LocalScale: {x: 3.218095, y: 1.1463751, z: 0.88010275}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 357748895220283646}
@@ -331,8 +332,34 @@ MonoBehaviour:
   - {fileID: 1952656028801575846}
   - {fileID: 4622395391414987943}
   - {fileID: 5102579992613325150}
-  objectSpeed: 3
+  objectSpeed: 2
   Bird: {fileID: 7838458629068479932}
+--- !u!61 &801409677420787409
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7838458629068479932}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.04949011, y: -0.07812307}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.56, y: 0.31}
+    newSize: {x: 0.56, y: 0.31}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.36203912, y: 0.09423162}
+  m_EdgeRadius: 0
 --- !u!1 &8836668005917093795
 GameObject:
   m_ObjectHideFlags: 0
