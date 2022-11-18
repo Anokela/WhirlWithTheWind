@@ -5,12 +5,13 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     public GameObject playerChar;
-    private bool isMoving = false;
-    Vector3 touchPosition, whereToMove;
+    // private bool isMoving = false;
+    // Vector3 touchPosition, whereToMove;
     private bool controlsDisabled = false;
     public float bounceForce;
     public  float movementDelay;
     private float movementStartTime = 0.1f;
+    public FixedJoystick joyStick;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (PlayerInfo.GameStarted)
         {
-            if (Input.touchCount > 0)
+            if (!controlsDisabled)
+            {
+                if (Time.time > movementStartTime)
+                {
+                    rb.AddForce(new Vector3(joyStick.Horizontal * Time.deltaTime * PlayerInfo.BoxSpeed * 0.4f, joyStick.Vertical * Time.deltaTime * PlayerInfo.BoxSpeed * 0.2f), ForceMode2D.Force);
+                }
+            }
+            /*if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
                 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
@@ -50,11 +58,11 @@ public class PlayerMovement : MonoBehaviour
                     {
                         if (Time.time > movementStartTime)
                         {
-                            rb.AddForce(new Vector3(whereToMove.x * Time.deltaTime * PlayerInfo.BoxSpeed * 0.4f, whereToMove.y * Time.deltaTime * PlayerInfo.BoxSpeed * 0.2f), ForceMode2D.Force);
+                            rb.AddForce(new Vector3(joyStick.Horizontal * Time.deltaTime * PlayerInfo.BoxSpeed * 0.4f, joyStick.Vertical * Time.deltaTime * PlayerInfo.BoxSpeed * 0.2f), ForceMode2D.Force);
                         }
                     }
                 }
-            }
+            }*/
         }
         
     }
