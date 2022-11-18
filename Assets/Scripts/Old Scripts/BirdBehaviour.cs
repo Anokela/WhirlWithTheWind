@@ -4,38 +4,48 @@ using UnityEngine;
 
 public class BirdBehaviour : MonoBehaviour
 {
+    [SerializeField] Transform[] Positions;
+    [SerializeField] float objectSpeed;
+    public GameObject Bird;
+    int nextPosIndex;
+    Transform nextPos;
+    private SpriteRenderer spriteRenderer;
 
-    public Vector3 pos1;
-    public Vector3 pos2;
-    public float speed = 0.05f;
-    public GameObject bird;
-    private bool m_FacingRight = true;
+    private void Awake()
+    {
+        this.spriteRenderer = this.GetComponent<SpriteRenderer>();
 
+    }
+    // Start is called before the first frame update
     void Start()
     {
-        bird = GameObject.FindGameObjectWithTag("Bird");
-    }
-    void FixedUpdate() {
-         transform.position = Vector3.Lerp (pos1, pos2, Mathf.PingPong(Time.time * speed, 1.0f));
+        nextPos = Positions[0];
+        Bird = GameObject.FindWithTag("Bird");
 
-        if (bird.transform.position == pos2)
-        {
-            Flip();
-        }
-        if (bird.transform.position == pos1)
-        {
-            Flip();
-        }
     }
 
-    void Flip()
+    // Update is called once per frame
+    void Update()
     {
-       
-        m_FacingRight = !m_FacingRight;
+        MoveGameObject();
+    }
 
-     
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
+    void MoveGameObject()
+    {
+        if (transform.localPosition == nextPos.localPosition)
+        {
+            nextPosIndex++;
+
+            if (nextPosIndex >= Positions.Length)
+            {
+                nextPosIndex = 0;
+            }
+            nextPos = Positions[nextPosIndex];
+        }
+        else
+        {
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, nextPos.localPosition, objectSpeed * Time.deltaTime);
+        }
+        this.spriteRenderer.flipX = Bird.transform.localPosition.x > nextPos.transform.localPosition.x;
     }
 }
