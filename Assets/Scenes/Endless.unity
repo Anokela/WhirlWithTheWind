@@ -7241,7 +7241,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myUIGroup: {fileID: 4837475085431636983}
   Panel: {fileID: 1825656379}
-  pauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 2117854168}
+  prefManager: {fileID: 1765677308}
 --- !u!224 &4837475085431636979
 RectTransform:
   m_ObjectHideFlags: 0
