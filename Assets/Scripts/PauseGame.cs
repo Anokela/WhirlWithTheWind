@@ -5,6 +5,7 @@ using UnityEngine;
 public class PauseGame : MonoBehaviour
 {
     private bool isTimeStopped;
+    public GameObject pauseMenu;
 
     private void Start()
     {
@@ -12,9 +13,19 @@ public class PauseGame : MonoBehaviour
     }
     public void Pause()
     {
-        PlayerInfo.GameStarted = !PlayerInfo.GameStarted;
-        isTimeStopped = !isTimeStopped;
+        pauseMenu.SetActive(true);
+        PlayerInfo.GameStarted = false;
+        isTimeStopped = true;
     }
+
+    public void UnPause()
+    {
+        pauseMenu.SetActive(false);
+        PlayerInfo.GameStarted = true;
+        isTimeStopped = false;
+    }
+
+
 
     private void Update()
     {
@@ -25,5 +36,15 @@ public class PauseGame : MonoBehaviour
         {
             Time.timeScale = 1;
         }
+
+        // Make sure user is on Android platform
+
+            // Check if Back was pressed this frame
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+
+                // Quit the application
+                Pause();
+            }
     }
 }

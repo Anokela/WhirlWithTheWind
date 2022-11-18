@@ -7,8 +7,10 @@ public class BoxPool : MonoBehaviour
     public static BoxPool SharedInstance;
     private List<GameObject> pool1;
     private List<GameObject> pool2;
+    private List<GameObject> pool3;
     public List<GameObject> objectToPool1;
     public List<GameObject> objectToPool2;
+    public List<GameObject> objectToPool3;
     private List<GameObject> freeObjects;
 
     private void Awake()
@@ -22,6 +24,8 @@ public class BoxPool : MonoBehaviour
         pool1 = GeneratePool(objectToPool1);
         pool2 = new List<GameObject>();
         pool2 = GeneratePool(objectToPool2);
+        pool3 = new List<GameObject>();
+        pool3 = GeneratePool(objectToPool3);
         freeObjects = new List<GameObject>();
     }
 
@@ -30,13 +34,23 @@ public class BoxPool : MonoBehaviour
         freeObjects.Clear();
         int amountToPool;
         List<GameObject> poolToUse;
-        if (PlayerInfo.Distance < 500)
+        
+
+         if (PlayerInfo.Distance > 1160f )
         {
-            poolToUse = pool1;
+            poolToUse = pool3;
             amountToPool = poolToUse.Count;
-        } else
+        }
+
+        else if (PlayerInfo.Distance > 635f && PlayerInfo.Distance < 1160f)
         {
             poolToUse = pool2;
+            amountToPool = poolToUse.Count;
+        }
+
+        else
+        {
+            poolToUse = pool1;
             amountToPool = poolToUse.Count;
         }
         

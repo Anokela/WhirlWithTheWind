@@ -7,6 +7,8 @@ public class FadingCanvas : MonoBehaviour
 {
     [SerializeField] private CanvasGroup myUIGroup;
     public GameObject Panel;
+    public GameObject pauseMenu;
+    public GameObject prefManager;
     private bool isFadingIn = false;
 
     public void FadeIn()
@@ -19,11 +21,13 @@ public class FadingCanvas : MonoBehaviour
         if (isFadingIn)
         {
             Panel.SetActive(false);
+            pauseMenu.SetActive(false);
             if (myUIGroup.alpha < 1)
             {
-                myUIGroup.alpha += 0.025f;
+                myUIGroup.alpha += 0.1f;
                 if (myUIGroup.alpha >= 1)
                 {
+                    prefManager.SendMessage("SavePrefs");
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 }
             }
