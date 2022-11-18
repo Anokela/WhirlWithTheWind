@@ -5,6 +5,7 @@ using UnityEngine;
 public class LightPoint : MonoBehaviour
 {
     private GameObject lightPoint;
+    private GameObject soundManager;
     void Awake()
     {
         //Make Collider2D as trigger 
@@ -13,6 +14,7 @@ public class LightPoint : MonoBehaviour
 
     private void Start()
     {
+        soundManager = GameObject.Find("EndlessSoundManager");
         lightPoint = this.gameObject;
     }
 
@@ -24,8 +26,9 @@ public class LightPoint : MonoBehaviour
             //Add lightPoint to counter
             PlayerInfo.RunLightPoints++;
             PlayerInfo.LightPoints++;
+            soundManager.SendMessage("PlaySound");
             lightPoint.SetActive(false);
-            Invoke("ActivateLightPoint", 4/PlayerInfo.BoxSpeed);
+            Invoke("ActivateLightPoint", 4/PlayerInfo.BoxSpeed);   
         }
     }
 

@@ -47,14 +47,14 @@ public class BgManager : MonoBehaviour
         {
             cloudsBg.SetActive(false);
         }
-        if (PlayerInfo.Distance > 1117)
+        if (PlayerInfo.Distance > 1115.1f)
         {
             
             canopyToForestTrans.SetActive(true);
             forestBg.SetActive(true);
             canopyBg.SetActive(false);
         }
-        if (PlayerInfo.Distance > 1160)
+        if (PlayerInfo.Distance > 1200)
         {
             treeTrunksBg.SetActive(true);
             canopyToForestTrans.SetActive(false);
