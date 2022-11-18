@@ -38,8 +38,6 @@ public class PauseGame : MonoBehaviour
         }
 
         // Make sure user is on Android platform
-        if (Application.platform == RuntimePlatform.Android)
-        {
 
             // Check if Back was pressed this frame
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -48,6 +46,5 @@ public class PauseGame : MonoBehaviour
                 // Quit the application
                 Pause();
             }
-        }
     }
 }
