@@ -1346,6 +1346,7 @@ MonoBehaviour:
   pc: {fileID: 6821600754661774812}
   manager: {fileID: 1765677308}
   counter: {fileID: 1192745627954252124}
+  joystick: {fileID: 785071283}
 --- !u!1 &457161261
 GameObject:
   m_ObjectHideFlags: 0
@@ -2828,7 +2829,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &785071284
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6824,6 +6825,7 @@ MonoBehaviour:
   pc: {fileID: 6821600754661774812}
   speedManager: {fileID: 957786875}
   counter: {fileID: 1192745627954252124}
+  joystick: {fileID: 785071283}
 --- !u!114 &925297579666612061
 MonoBehaviour:
   m_ObjectHideFlags: 0

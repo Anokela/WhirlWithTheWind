@@ -7,6 +7,7 @@ public class OnDeathZoneCollide : MonoBehaviour
     public GameObject pc;
     public GameObject manager;
     public GameObject counter;
+    public GameObject joystick;
 
     void OnTriggerEnter2D(Collider2D c2d)
     {
@@ -14,6 +15,7 @@ public class OnDeathZoneCollide : MonoBehaviour
         {
             PlayerInfo.GameStarted = false;
             counter.SetActive(false);
+            joystick.SetActive(false);
             Invoke("showPanel", 0);
             if (PlayerInfo.Distance > PlayerInfo.HighScore)
             {

@@ -9,6 +9,7 @@ public class TapToPlay : MonoBehaviour
     private Animator m_anim;
     public GameObject speedManager;
     public GameObject counter;
+
     // Start is called before the first frame update
     void Start()
     {
