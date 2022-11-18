@@ -12,14 +12,10 @@ public class BgManager : MonoBehaviour
     public GameObject skyToCanopyTrans;
     public GameObject canopyToForestTrans;
     private float treeBGHorizontalPos;
+    public GameObject forestShinies;
     // Start is called before the first frame update
     void Start()
     {
-        canopyBg.SetActive(false);
-        forestBg.SetActive(false);
-        treeTrunksBg.SetActive(false);
-        skyToCanopyTrans.SetActive(false);
-        canopyToForestTrans.SetActive(false);
         treeBGHorizontalPos = Random.Range(-1f, 1f);
         treeTrunksBg.transform.position = new Vector3(treeBGHorizontalPos, 0, 0.5f);
         skyBg.transform.position = new Vector3(treeBGHorizontalPos, 0, 1);
@@ -27,6 +23,7 @@ public class BgManager : MonoBehaviour
         forestBg.transform.position = new Vector3(treeBGHorizontalPos, 0, 1);
         skyToCanopyTrans.transform.position = new Vector3(treeBGHorizontalPos, 0, 1);
         canopyToForestTrans.transform.position = new Vector3(treeBGHorizontalPos, 0, 1);
+        forestShinies.transform.position = new Vector3(treeBGHorizontalPos, 0, 0.4f);
     }
 
     // Update is called once per frame
@@ -58,6 +55,7 @@ public class BgManager : MonoBehaviour
         {
             treeTrunksBg.SetActive(true);
             canopyToForestTrans.SetActive(false);
+            forestShinies.SetActive(true);
         }
     }
 }
