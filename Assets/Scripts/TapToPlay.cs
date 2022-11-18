@@ -9,7 +9,6 @@ public class TapToPlay : MonoBehaviour
     private Animator m_anim;
     public GameObject speedManager;
     public GameObject counter;
-    public GameObject pauseBtn;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +28,5 @@ public class TapToPlay : MonoBehaviour
         Panel.SetActive(false);
         m_anim.enabled = true;
         PlayerInfo.GameStarted = true;
-        pauseBtn.SetActive(true);
     }
 }
