@@ -7,7 +7,6 @@ public class OnDeathZoneCollide : MonoBehaviour
     public GameObject pc;
     public GameObject manager;
     public GameObject counter;
-    public GameObject pauseBtn;
 
     void OnTriggerEnter2D(Collider2D c2d)
     {
@@ -30,6 +29,5 @@ public class OnDeathZoneCollide : MonoBehaviour
     {
         Panel.SetActive(true);
         pc.SetActive(false);
-        pauseBtn.SetActive(false);
     }
 }
