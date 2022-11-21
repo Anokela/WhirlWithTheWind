@@ -26,7 +26,7 @@ public class LightPoint : MonoBehaviour
             //Add lightPoint to counter
             PlayerInfo.RunLightPoints++;
             PlayerInfo.LightPoints++;
-            soundManager.SendMessage("PlaySound");
+            soundManager.SendMessage("PlayLightPointSound");
             lightPoint.SetActive(false);
             Invoke("ActivateLightPoint", 4/PlayerInfo.BoxSpeed);   
         }
