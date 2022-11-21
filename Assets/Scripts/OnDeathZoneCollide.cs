@@ -15,6 +15,7 @@ public class OnDeathZoneCollide : MonoBehaviour
         if (c2d.CompareTag("Player"))
         {
             PlayerInfo.GameStarted = false;
+            PlayerInfo.StopLoopingAudio = true;
             shopButtonIconSetter.SendMessage("SetShopButtonIcon");
             counter.SetActive(false);
             joystick.SetActive(false);

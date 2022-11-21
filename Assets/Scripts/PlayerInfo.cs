@@ -14,6 +14,7 @@ public class PlayerInfo
     private static int runLightPoints;
     private static bool gameStarted;
     private static int powerUpsInUse;
+    private static bool stopLoopingAudio;
 
     public static int LightPoints
     {
@@ -169,6 +170,18 @@ public class PlayerInfo
         set
         {
             powerUpsInUse = value;
+        }
+    }
+
+    public static bool StopLoopingAudio
+    {
+        get
+        {
+            return stopLoopingAudio;
+        }
+        set
+        {
+        stopLoopingAudio = value;
         }
     }
 
