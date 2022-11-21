@@ -7,7 +7,8 @@ public class SoundManager : MonoBehaviour
 {
     public List<AudioClip> lightPointSoundList;
     private List<AudioClip> lightPointSounds;
-    public AudioSource AudioSrc;
+    
+    public  AudioSource lightPointAudioSource;
     private AudioClip lightPointHitSound;
     private int index;
     public AudioMixer audioMixer;
@@ -27,10 +28,7 @@ public class SoundManager : MonoBehaviour
 
     // public AudioMixerSnapshot gameSnapshot;
     // public AudioMixerSnapshot pauseSnapshot;
-
-
     public AudioSource AudioSrc;
-
     public List<AudioClip> LeafHitSoundList;
     private List<AudioClip> LeafHitSounds;
     private AudioClip LeafHitSound;
@@ -58,7 +56,7 @@ public class SoundManager : MonoBehaviour
     }
 
 
-}
+
     // Update is called once per frame
 
     public void PlayLightPointSound()
