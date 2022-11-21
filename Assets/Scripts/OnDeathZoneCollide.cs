@@ -8,12 +8,14 @@ public class OnDeathZoneCollide : MonoBehaviour
     public GameObject manager;
     public GameObject counter;
     public GameObject joystick;
+    public GameObject shopButtonIconSetter;
 
     void OnTriggerEnter2D(Collider2D c2d)
     {
         if (c2d.CompareTag("Player"))
         {
             PlayerInfo.GameStarted = false;
+            shopButtonIconSetter.SendMessage("SetShopButtonIcon");
             counter.SetActive(false);
             joystick.SetActive(false);
             Invoke("showPanel", 0);
