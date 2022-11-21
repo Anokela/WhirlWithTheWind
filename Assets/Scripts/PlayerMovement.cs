@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Time.time > movementStartTime)
                 {
-                    rb.AddForce(new Vector3(joyStick.Horizontal * Time.deltaTime * PlayerInfo.BoxSpeed * 0.4f, joyStick.Vertical * Time.deltaTime * PlayerInfo.BoxSpeed * 0.2f), ForceMode2D.Force);
+                    rb.AddForce(new Vector3(joyStick.Horizontal * Time.deltaTime * PlayerInfo.BoxSpeed * 0.4f, joyStick.Vertical * Time.deltaTime * PlayerInfo.BoxSpeed * 0.4f), ForceMode2D.Force);
                 }
             }
             /*if (Input.touchCount > 0)
