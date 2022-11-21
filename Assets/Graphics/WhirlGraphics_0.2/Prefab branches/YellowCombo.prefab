@@ -130,9 +130,10 @@ GameObject:
   - component: {fileID: 1987844219813593362}
   - component: {fileID: 1725234451698298527}
   - component: {fileID: 45843696532578134}
+  - component: {fileID: 1049064268234522617}
   m_Layer: 0
   m_Name: leaves_tiny_yellow_anim_0 (1)
-  m_TagString: Untagged
+  m_TagString: Branch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,6 +225,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1049064268234522617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3499634042751373334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fab0c362bcefbc4892949b548ae0f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3501261024286649159
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,9 +332,10 @@ GameObject:
   - component: {fileID: 2493855011545021425}
   - component: {fileID: 1786187644562114915}
   - component: {fileID: 3919583765237641098}
+  - component: {fileID: 8174067627398159398}
   m_Layer: 0
   m_Name: leaves_small_yellow_anim_0 (1)
-  m_TagString: Untagged
+  m_TagString: Branch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -413,3 +427,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8174067627398159398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9037662135994016378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fab0c362bcefbc4892949b548ae0f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

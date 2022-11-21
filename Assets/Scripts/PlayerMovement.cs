@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+ 
     }
 
     void Update()
@@ -89,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
             Invoke("ActivateControls", 0.5f);
         }
     }
+
 
     void ActivateControls()
     {

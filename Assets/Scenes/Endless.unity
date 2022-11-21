@@ -5264,6 +5264,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0de7bc9963f93a1459fdc62c7dd5e157, type: 3}
   - {fileID: 8300000, guid: b6d4bfd3ef1700b46a269582b17cf017, type: 3}
   AudioSrc: {fileID: 1779564011}
+  LeafHitSoundList:
+  - {fileID: 8300000, guid: dfd150d1ece1bfe4ab38456d5940035e, type: 3}
+  - {fileID: 8300000, guid: 62728d8820cea43499f63ad6cee04f2b, type: 3}
+  - {fileID: 8300000, guid: d7fa310e61cc90d44a7e16c47b62794d, type: 3}
 --- !u!82 &1779564011
 AudioSource:
   m_ObjectHideFlags: 0
