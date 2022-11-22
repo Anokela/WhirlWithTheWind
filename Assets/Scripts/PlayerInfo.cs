@@ -15,6 +15,9 @@ public class PlayerInfo
     private static bool gameStarted;
     private static int powerUpsInUse;
     private static bool stopLoopingAudio;
+    private static float masterVolume;
+    private static float musicVolume;
+    private static float sFXVolume;
 
     public static int LightPoints
     {
@@ -182,6 +185,40 @@ public class PlayerInfo
         set
         {
         stopLoopingAudio = value;
+        }
+    }
+
+    public static float MasterVolume
+    {
+        get
+        {
+            return masterVolume;
+        }
+        set
+        {
+            masterVolume = value;
+        }
+    }
+    public static float MusicVolume
+    {
+        get
+        {
+            return musicVolume;
+        }
+        set
+        {
+            musicVolume = value;
+        }
+    }
+    public static float SFXVolume
+    {
+        get
+        {
+            return sFXVolume;
+        }
+        set
+        {
+            sFXVolume = value;
         }
     }
 

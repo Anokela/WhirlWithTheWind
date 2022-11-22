@@ -11,7 +11,6 @@ public class SoundManager : MonoBehaviour
     public  AudioSource lightPointAudioSource;
     private AudioClip lightPointHitSound;
     private int index;
-    public AudioMixer audioMixer;
     public AudioSource intro;
     public AudioSource loopingAudio1;
     public AudioSource loopingAudio2;
@@ -123,4 +122,5 @@ public class SoundManager : MonoBehaviour
     {
         AudioSrc.Stop();
     }
+
 }

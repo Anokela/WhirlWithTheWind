@@ -28,6 +28,9 @@ public class PrefsManagement : MonoBehaviour
         PlayerInfo.CurrentSpawnPoint = PlayerPrefs.GetInt("CurrentSpawnPoint");
         PlayerInfo.HighScore =  PlayerPrefs.GetFloat("HighScore");
         PlayerInfo.PowerUpsInUse = PlayerPrefs.GetInt("PowerUpsInUse");
+        PlayerInfo.MasterVolume = PlayerPrefs.GetFloat("MasterVolume");
+        PlayerInfo.MusicVolume = PlayerPrefs.GetFloat("MusicVolume");
+        PlayerInfo.SFXVolume = PlayerPrefs.GetFloat("SFXVolume");
     }
 
     // Update is called once per frame
@@ -43,6 +46,9 @@ public class PrefsManagement : MonoBehaviour
         PlayerPrefs.SetInt("CurrentSpawnPoint", PlayerInfo.CurrentSpawnPoint);
         PlayerPrefs.SetFloat("HighScore", PlayerInfo.HighScore);
         PlayerPrefs.SetInt("PowerUpsInUse", PlayerInfo.PowerUpsInUse);
+        PlayerPrefs.SetFloat("MasterVolume", PlayerInfo.MasterVolume);
+        PlayerPrefs.SetFloat("MusicVolume", PlayerInfo.MusicVolume);
+        PlayerPrefs.SetFloat("SFXVolume", PlayerInfo.SFXVolume);
         PlayerPrefs.Save();
     }
 
