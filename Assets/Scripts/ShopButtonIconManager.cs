@@ -13,7 +13,7 @@ public class ShopButtonIconManager : MonoBehaviour
         SetShopButtonIcon();
     }
 
-    private void SetShopButtonIcon()
+    public void SetShopButtonIcon()
     {
         if (PowerUps.PowerUpsPrice <= PlayerInfo.LightPoints)
         {

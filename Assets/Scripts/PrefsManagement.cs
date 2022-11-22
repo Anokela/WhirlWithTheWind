@@ -8,10 +8,10 @@ public class PrefsManagement : MonoBehaviour
     {
         if (resetPrefs)
         {
-            //PlayerPrefs.SetInt("LightPoints", 0);
-            PlayerPrefs.SetInt("UpDashActive", 1);
-            PlayerPrefs.SetInt("DownDashActive", 1);
-            PlayerPrefs.SetInt("SideDashActive", 1);
+            PlayerPrefs.SetInt("LightPoints", 0);
+            PlayerPrefs.SetInt("UpDashActive", 0);
+            PlayerPrefs.SetInt("DownDashActive", 0);
+            PlayerPrefs.SetInt("SideDashActive", 0);
             PlayerPrefs.SetInt("AntiBirdActive", 0);
             PlayerPrefs.SetInt("AntiWebActive", 0);
             PlayerPrefs.SetInt("CurrentSpawnPoint", 0);

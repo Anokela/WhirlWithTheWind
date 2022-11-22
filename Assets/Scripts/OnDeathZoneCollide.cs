@@ -9,6 +9,7 @@ public class OnDeathZoneCollide : MonoBehaviour
     public GameObject counter;
     public GameObject joystick;
     public GameObject shopButtonIconSetter;
+    public GameObject shopManager;
 
     void OnTriggerEnter2D(Collider2D c2d)
     {
@@ -16,10 +17,12 @@ public class OnDeathZoneCollide : MonoBehaviour
         {
             PlayerInfo.GameStarted = false;
             PlayerInfo.StopLoopingAudio = true;
-            shopButtonIconSetter.SendMessage("SetShopButtonIcon");
             counter.SetActive(false);
             joystick.SetActive(false);
             Invoke("showPanel", 0);
+            shopManager.SendMessage("SetShopButtonIcon");
+            shopManager.SendMessage("SetPriceTexts");
+            shopManager.SendMessage("AreButtonsInactive");
             if (PlayerInfo.Distance > PlayerInfo.HighScore)
             {
                 PlayerInfo.HighScore = PlayerInfo.Distance;

@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class BackToMM : MonoBehaviour
 {
     [SerializeField] private CanvasGroup myUIGroup;
+    [SerializeField] GameObject endlessPrefsManager;
 
     private bool isFadingIn = false;
     public GameObject successMenu;
@@ -22,6 +23,7 @@ public class BackToMM : MonoBehaviour
                 myUIGroup.alpha += 0.1f;
                 if (myUIGroup.alpha >= 1)
                 {
+                    endlessPrefsManager.SendMessage("SavePrefs");
                     SceneManager.LoadScene("MainMenu");
                 }
             }

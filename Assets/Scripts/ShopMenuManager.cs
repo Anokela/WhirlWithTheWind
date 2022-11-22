@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoToShopMenu : MonoBehaviour
+public class ShopMenuManager : MonoBehaviour
 {
-    [SerializeField] GameObject shopMenu;
+    public GameObject shopMenu;
 
     public void OnshopButtonPress()
     {
         shopMenu.SetActive(true);
+    }
+
+    public void OnBackButtonPress()
+    {
+        shopMenu.SetActive(false);
+
     }
    
 }
