@@ -113,6 +113,14 @@ public class SoundManager : MonoBehaviour
     {
         LeafHitIndex = Random.Range(0, LeafHitSounds.Count);
         LeafHitSound = LeafHitSounds[LeafHitIndex];
-        AudioSrc.PlayOneShot(LeafHitSound);
+        if(!AudioSrc.isPlaying)
+        {
+            AudioSrc.PlayOneShot(LeafHitSound);
+        } 
+    }
+
+    public void StopLeavesSound()
+    {
+        AudioSrc.Stop();
     }
 }

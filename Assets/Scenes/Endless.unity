@@ -5271,7 +5271,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 34351f0d8de17404b9e60f838e7b9d2f, type: 3}
   - {fileID: 8300000, guid: 0de7bc9963f93a1459fdc62c7dd5e157, type: 3}
   - {fileID: 8300000, guid: b6d4bfd3ef1700b46a269582b17cf017, type: 3}
-  AudioSrc: {fileID: 1779564020}
   lightPointAudioSource: {fileID: 1779564019}
   audioMixer: {fileID: 24100000, guid: b3862be41224364409948ba3681166c0, type: 2}
   intro: {fileID: 1779564018}
@@ -5280,6 +5279,7 @@ MonoBehaviour:
   loopingAudio3: {fileID: 1779564015}
   endingNoMel: {fileID: 1779564014}
   endingNormal: {fileID: 1779564013}
+  AudioSrc: {fileID: 1779564020}
   LeafHitSoundList:
   - {fileID: 8300000, guid: dfd150d1ece1bfe4ab38456d5940035e, type: 3}
   - {fileID: 8300000, guid: 62728d8820cea43499f63ad6cee04f2b, type: 3}
@@ -5967,8 +5967,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6063,8 +6063,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
