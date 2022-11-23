@@ -9,6 +9,7 @@ public class PowerUpShoppingManager : MonoBehaviour
     public TextMeshProUGUI sideDashPrice;
     public TextMeshProUGUI upDashPrice;
     public TextMeshProUGUI downDashPrice;
+    public TextMeshProUGUI lightPointAmount;
     public Button downDashButton;
     public Button upDashButton;
     public Button sideDashButton;
@@ -20,6 +21,7 @@ public class PowerUpShoppingManager : MonoBehaviour
         manager = this.gameObject;
         Invoke("AreButtonsInactive", 0);
         Invoke("SetPriceTexts", 0);
+        lightPointAmount.text = PlayerInfo.LightPoints.ToString();
     }
 
     public void BuyPowerUp()
@@ -50,6 +52,7 @@ public class PowerUpShoppingManager : MonoBehaviour
             Invoke("SetPriceTexts", 0);
             Invoke("AreButtonsInactive", 0);
             manager.SendMessage("SetShopButtonIcon");
+            lightPointAmount.text = PlayerInfo.LightPoints.ToString();
         }
     }
 
