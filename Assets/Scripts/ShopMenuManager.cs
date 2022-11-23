@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShopMenuManager : MonoBehaviour
 {
     public GameObject shopMenu;
+    public GameObject explanationPanel;
 
     public void OnshopButtonPress()
     {
@@ -14,7 +15,13 @@ public class ShopMenuManager : MonoBehaviour
     public void OnBackButtonPress()
     {
         shopMenu.SetActive(false);
+        Invoke("ClosePowerUpExplanationPanel", 0);
 
+    }
+
+    public void ClosePowerUpExplanationPanel()
+    {
+        explanationPanel.SetActive(false);
     }
    
 }

@@ -16,6 +16,7 @@ public class PlayerInfo
     private static int powerUpsInUse;
     private static bool stopLoopingAudio;
     private static int powerUpsPrice;
+    private static int powerUpsInShop;
     private static float masterVolume;
     private static float musicVolume;
     private static float sFXVolume;
@@ -198,6 +199,18 @@ public class PlayerInfo
         set
         {
             powerUpsPrice = value;
+        }
+    }
+
+    public static int PowerUpsInShop
+    {
+        get
+        {
+            return powerUpsInShop;
+        }
+        set
+        {
+            powerUpsInShop = value;
         }
     }
 

@@ -10,10 +10,15 @@ public class PowerUpShoppingManager : MonoBehaviour
     public TextMeshProUGUI upDashPrice;
     public TextMeshProUGUI downDashPrice;
     public TextMeshProUGUI lightPointAmount;
+    public TextMeshProUGUI powerUpExpalanationText;
+    public string sideDashExplanationText;
+    public string upDashExplanationText;
+    public string downDashExplanationText;
     public Button downDashButton;
     public Button upDashButton;
     public Button sideDashButton;
     private GameObject manager;
+    public GameObject explanationPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +34,7 @@ public class PowerUpShoppingManager : MonoBehaviour
         {
             if (EventSystem.current.currentSelectedGameObject.name == "UpDashPowerUp")
             {
+                powerUpExpalanationText.text = upDashExplanationText;
                 PlayerInfo.LightPoints = PlayerInfo.LightPoints - PowerUps.PowerUpsPrice;
                 PlayerInfo.UpDashActive = 1;
                 PlayerInfo.PowerUpsInUse++;
@@ -36,6 +42,7 @@ public class PowerUpShoppingManager : MonoBehaviour
 
             if (EventSystem.current.currentSelectedGameObject.name == "DownDashPowerUp")
             {
+                powerUpExpalanationText.text = downDashExplanationText;
                 PlayerInfo.LightPoints = PlayerInfo.LightPoints - PowerUps.PowerUpsPrice;
                 PlayerInfo.DownDashActive = 1;
                 PlayerInfo.PowerUpsInUse++;
@@ -43,6 +50,7 @@ public class PowerUpShoppingManager : MonoBehaviour
 
             if (EventSystem.current.currentSelectedGameObject.name == "SideDashPowerUp")
             {
+                powerUpExpalanationText.text = sideDashExplanationText;
                 PlayerInfo.LightPoints = PlayerInfo.LightPoints - PowerUps.PowerUpsPrice;
                 PlayerInfo.SideDashActive = 1;
                 PlayerInfo.PowerUpsInUse++;
@@ -51,6 +59,7 @@ public class PowerUpShoppingManager : MonoBehaviour
             Invoke("SetPriceTexts", 0);
             Invoke("AreButtonsInactive", 0);
             manager.SendMessage("SetShopButtonIcon");
+            explanationPanel.SetActive(true);
         }
     }
 
@@ -100,6 +109,14 @@ public class PowerUpShoppingManager : MonoBehaviour
 
     public void UpdatePowerUpPrices()
     {
-        PowerUps.PowerUpsPrice = (PlayerInfo.PowerUpsInUse + 1) * PlayerInfo.PowerUpsPrice;
+        if (PowerUps.PowerUpsPrice < (PlayerInfo.PowerUpsInShop * PlayerInfo.PowerUpsPrice))
+        {
+            PowerUps.PowerUpsPrice = (PlayerInfo.PowerUpsInUse + 1) * PlayerInfo.PowerUpsPrice;
+        }
+        else
+        {
+            PowerUps.PowerUpsPrice = PlayerInfo.PowerUpsInShop * PlayerInfo.PowerUpsPrice;
+        }
+
     }
 }

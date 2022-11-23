@@ -7,11 +7,13 @@ public class PowerUpManagement : MonoBehaviour
     public int upDashPrice;
     public int sideDashPrice;
     public int powerUpsPrice;
+    public int numberOfPowerUpsInShop;
     // public int antiBirdPrice;
     // public int antiWebPrice;
     void Awake()
     {
         PlayerInfo.PowerUpsPrice = powerUpsPrice;
+        PlayerInfo.PowerUpsInShop = numberOfPowerUpsInShop;
         UpdatePowerUpPrices();
         // PowerUps.AntiBirdPrice = antiBirdPrice;
         // PowerUps.AntiWebPrice = antiWebPrice;
@@ -22,6 +24,12 @@ public class PowerUpManagement : MonoBehaviour
         /*PowerUps.DownDashPrice = (PlayerInfo.PowerUpsInUse + 1) * downDashPrice;
         PowerUps.UpDashPrice = (PlayerInfo.PowerUpsInUse + 1) * upDashPrice;
         PowerUps.SideDashPrice = (PlayerInfo.PowerUpsInUse + 1) * sideDashPrice;*/
-        PowerUps.PowerUpsPrice = (PlayerInfo.PowerUpsInUse + 1) * PlayerInfo.PowerUpsPrice;
+        if (PowerUps.PowerUpsPrice < (PlayerInfo.PowerUpsInShop * PlayerInfo.PowerUpsPrice)) {
+            PowerUps.PowerUpsPrice = (PlayerInfo.PowerUpsInUse + 1) * PlayerInfo.PowerUpsPrice;
+        } else
+        {
+            PowerUps.PowerUpsPrice = PlayerInfo.PowerUpsInShop * PlayerInfo.PowerUpsPrice;
+        }
+        
     }
 }
