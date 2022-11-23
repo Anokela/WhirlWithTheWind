@@ -11,17 +11,8 @@ public class RenderSliderValue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (masterSlider != null)
-        {
-            masterSlider.value = PlayerInfo.MasterVolume;
-        }
-        if (musicSlider != null)
-        {
-            musicSlider.value = PlayerInfo.MusicVolume;
-        }
-        if (sFXSlider != null)
-        {
-            sFXSlider.value = PlayerInfo.SFXVolume;
-        }
+        masterSlider.value = PlayerInfo.MasterVolume;
+        musicSlider.value = PlayerInfo.MusicVolume;
+        sFXSlider.value = PlayerInfo.SFXVolume;
     }
 }

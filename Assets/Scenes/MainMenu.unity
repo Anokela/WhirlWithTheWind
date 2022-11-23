@@ -2390,6 +2390,7 @@ GameObject:
   - component: {fileID: 1612044786}
   - component: {fileID: 1612044785}
   - component: {fileID: 1612044787}
+  - component: {fileID: 1612044788}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -2521,6 +2522,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: b3862be41224364409948ba3681166c0, type: 2}
+--- !u!114 &1612044788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612044784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6e0dedb1ce1de49ad4ec8c19e31317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterSlider: {fileID: 8736416378482664543}
+  musicSlider: {fileID: 8736416378919940093}
+  sFXSlider: {fileID: 8736416378106307526}
 --- !u!1 &1698227747
 GameObject:
   m_ObjectHideFlags: 0
@@ -2675,7 +2691,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1725923583
 GameObject:
@@ -3822,7 +3838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}

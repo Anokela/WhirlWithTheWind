@@ -16,6 +16,9 @@ public class PrefsManagement : MonoBehaviour
             PlayerPrefs.SetInt("AntiWebActive", 0);
             PlayerPrefs.SetInt("CurrentSpawnPoint", 0);
             PlayerPrefs.SetInt("PowerUpsInUse", 0);
+            PlayerPrefs.SetFloat("MasterVolume", 0);
+            PlayerPrefs.SetFloat("MusicVolume", 0);
+            PlayerPrefs.SetFloat("SFXVolume", 0);
             //PlayerPrefs.SetFloat("HighScore", 0);
             PlayerPrefs.Save();
         }
