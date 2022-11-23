@@ -8,114 +8,71 @@ public class PrefsManagement : MonoBehaviour
     {
         if (resetPrefs)
         {
-            PlayerPrefs.SetInt("LightPoints", 0);
-            PlayerPrefs.SetInt("UpDashActive", 0);
-            PlayerPrefs.SetInt("DownDashActive", 0);
-            PlayerPrefs.SetInt("SideDashActive", 0);
-           // PlayerPrefs.SetInt("AntiBirdActive", 0);
+            PlayerPrefs.DeleteKey("LightPoints");
+            PlayerPrefs.DeleteKey("UpDashActive");
+            PlayerPrefs.DeleteKey("DownDashActive");
+            PlayerPrefs.DeleteKey("SideDashActive");
+            // PlayerPrefs.SetInt("AntiBirdActive", 0);
             //PlayerPrefs.SetInt("AntiWebActive", 0);
             //PlayerPrefs.SetInt("CurrentSpawnPoint", 0);
-            PlayerPrefs.SetInt("PowerUpsInUse", 0);
-            PlayerPrefs.SetFloat("MasterVolume", 0.5f);
-            PlayerPrefs.SetFloat("MusicVolume", 1f);
-            PlayerPrefs.SetFloat("SFXVolume", 1f);
-            PlayerPrefs.SetFloat("HighScore", 0);
-            PlayerPrefs.Save();
+            PlayerPrefs.DeleteKey("PowerUpsInUse");
+            PlayerPrefs.DeleteKey("MasterVolume");
+            PlayerPrefs.DeleteKey("MusicVolume");
+            PlayerPrefs.DeleteKey("SFXVolume");
+            PlayerPrefs.DeleteKey("HighScore");
         }
 
-        if (PlayerPrefs.HasKey("LightPoints"))
+        if (!PlayerPrefs.HasKey("LightPoints"))
         {
-            PlayerInfo.LightPoints = PlayerPrefs.GetInt("LightPoints");
+            PlayerPrefs.SetInt("LightPoints", 0);
         } 
-        else
+
+        if (!PlayerPrefs.HasKey("UpDashActive"))
         {
-            PlayerInfo.LightPoints = 0;
+            PlayerPrefs.SetInt("UpDashActive", 0);
         }
 
-        if (PlayerPrefs.HasKey("UpDashActive"))
+        if (!PlayerPrefs.HasKey("DownDashActive"))
         {
-            PlayerInfo.UpDashActive = PlayerPrefs.GetInt("UpDashActive");
+            PlayerPrefs.SetInt("DownDashActive", 0);
         }
-        else
+        if (!PlayerPrefs.HasKey("SideDashActive"))
         {
-            PlayerInfo.UpDashActive = 0;
+            PlayerPrefs.SetInt("SideDashActive", 0);
         }
-
-        if (PlayerPrefs.HasKey("DownDashActive"))
+        if (!PlayerPrefs.HasKey("PowerUpsInUse"))
         {
-            PlayerInfo.DownDashActive = PlayerPrefs.GetInt("DownDashActive");
+            PlayerPrefs.SetInt("PowerUpsInUse", 0);
         }
-        else
+        if (!PlayerPrefs.HasKey("MasterVolume"))
         {
-            PlayerInfo.DownDashActive = 0;
+            PlayerPrefs.SetFloat("MasterVolume", 1f);
         }
-
-        if (PlayerPrefs.HasKey("SideDashActive"))
+        if (!PlayerPrefs.HasKey("SFXVolume"))
         {
-            PlayerInfo.SideDashActive = PlayerPrefs.GetInt("SideDashActive");
+            PlayerPrefs.SetFloat("SFXVolume", 1f);
         }
-        else
+        if (!PlayerPrefs.HasKey("MusicVolume"))
         {
-            PlayerInfo.SideDashActive = 0;
+            PlayerPrefs.SetFloat("MusicVolume", 1f);
         }
-
-        if (PlayerPrefs.HasKey("PowerUpsInUse"))
+        if (!PlayerPrefs.HasKey("HighScore"))
         {
-            PlayerInfo.PowerUpsInUse = PlayerPrefs.GetInt("PowerUpsInUse");
-        }
-        else
-        {
-            PlayerInfo.PowerUpsInUse = 0;
-        }
-
-        if (PlayerPrefs.HasKey("MasterVolume"))
-        {
-            PlayerInfo.MasterVolume = PlayerPrefs.GetInt("MasterVolume");
-        }
-        else
-        {
-            PlayerInfo.MasterVolume = 0.5f;
-        }
-
-        if (PlayerPrefs.HasKey("SFXVolume"))
-        {
-            PlayerInfo.SFXVolume = PlayerPrefs.GetInt("SFXVolume");
-        }
-        else
-        {
-            PlayerInfo.SFXVolume = 1f;
-        }
-        
-        if (PlayerPrefs.HasKey("MusicVolume"))
-        {
-            PlayerInfo.MusicVolume = PlayerPrefs.GetInt("MusicVolume");
-        }
-        else
-        {
-            PlayerInfo.MusicVolume = 1f;
-        }
-
-        if (PlayerPrefs.HasKey("HighScore"))
-        {
-            PlayerInfo.HighScore = PlayerPrefs.GetInt("HighScore");
-        }
-        else
-        {
-            PlayerInfo.HighScore = 0;
+            PlayerPrefs.SetInt("HighScore", 1);
         }
 
 
-        /*PlayerInfo.UpDashActive = PlayerPrefs.GetInt("UpDashActive");
+        PlayerInfo.UpDashActive = PlayerPrefs.GetInt("UpDashActive");
         PlayerInfo.DownDashActive = PlayerPrefs.GetInt("DownDashActive");
         PlayerInfo.SideDashActive = PlayerPrefs.GetInt("SideDashActive");
-        PlayerInfo.AntiBirdActive = PlayerPrefs.GetInt("AntiBirdActive");
-        PlayerInfo.AntiWebActive = PlayerPrefs.GetInt("AntiWebActive");
-        PlayerInfo.CurrentSpawnPoint = PlayerPrefs.GetInt("CurrentSpawnPoint");
-        PlayerInfo.HighScore =  PlayerPrefs.GetFloat("HighScore");
+        // PlayerInfo.AntiBirdActive = PlayerPrefs.GetInt("AntiBirdActive");
+        // PlayerInfo.AntiWebActive = PlayerPrefs.GetInt("AntiWebActive");
+        // PlayerInfo.CurrentSpawnPoint = PlayerPrefs.GetInt("CurrentSpawnPoint");
+        PlayerInfo.HighScore = PlayerPrefs.GetFloat("HighScore");
         PlayerInfo.PowerUpsInUse = PlayerPrefs.GetInt("PowerUpsInUse");
         PlayerInfo.MasterVolume = PlayerPrefs.GetFloat("MasterVolume");
         PlayerInfo.MusicVolume = PlayerPrefs.GetFloat("MusicVolume");
-        PlayerInfo.SFXVolume = PlayerPrefs.GetFloat("SFXVolume");*/
+        PlayerInfo.SFXVolume = PlayerPrefs.GetFloat("SFXVolume");
     }
 
     // Update is called once per frame
