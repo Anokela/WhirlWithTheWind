@@ -16,10 +16,7 @@ public class PowerUpShoppingManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-
     {
-        Debug.Log(PowerUps.PowerUpsPrice);
-        Debug.Log(PlayerInfo.LightPoints);
         manager = this.gameObject;
         Invoke("AreButtonsInactive", 0);
         Invoke("SetPriceTexts", 0);
