@@ -16,12 +16,10 @@ public class ShopMenuManager : MonoBehaviour
     {
         shopMenu.SetActive(false);
         Invoke("ClosePowerUpExplanationPanel", 0);
-
     }
 
     public void ClosePowerUpExplanationPanel()
     {
         explanationPanel.SetActive(false);
     }
-   
 }

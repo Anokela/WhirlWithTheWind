@@ -15,7 +15,7 @@ public class ShopButtonIconManager : MonoBehaviour
 
     public void SetShopButtonIcon()
     {
-        if (PowerUps.PowerUpsPrice <= PlayerInfo.LightPoints)
+        if (PowerUps.PowerUpsPrice <= PlayerInfo.LightPoints && PlayerInfo.PowerUpsInUse < PlayerInfo.PowerUpsInShop)
         {
             shopButton.image.sprite = newItemsButtonIcon;
         }

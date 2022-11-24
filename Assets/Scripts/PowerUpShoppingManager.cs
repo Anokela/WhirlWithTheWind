@@ -19,6 +19,13 @@ public class PowerUpShoppingManager : MonoBehaviour
     public Button sideDashButton;
     private GameObject manager;
     public GameObject explanationPanel;
+    public GameObject sideDashPriceContainer;
+    public GameObject sideDashSoldImage;
+    public GameObject upDashPriceContainer;
+    public GameObject upDashSoldImage;
+    public GameObject downDashPriceContainer;
+    public GameObject downDashSoldImage;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +33,9 @@ public class PowerUpShoppingManager : MonoBehaviour
         manager = this.gameObject;
         Invoke("AreButtonsInactive", 0);
         Invoke("SetPriceTexts", 0);
+        Invoke("IsSideDashPurchased", 0);
+        Invoke("IsUpDashPurchased", 0);
+        Invoke("IsDownDashPurchased", 0);
     }
 
     public void BuyPowerUp()
@@ -58,6 +68,9 @@ public class PowerUpShoppingManager : MonoBehaviour
             Invoke("UpdatePowerUpPrices", 0);
             Invoke("SetPriceTexts", 0);
             Invoke("AreButtonsInactive", 0);
+            Invoke("IsSideDashPurchased", 0);
+            Invoke("IsUpDashPurchased", 0);
+            Invoke("IsDownDashPurchased", 0);
             manager.SendMessage("SetShopButtonIcon");
             explanationPanel.SetActive(true);
         }
@@ -118,5 +131,45 @@ public class PowerUpShoppingManager : MonoBehaviour
             PowerUps.PowerUpsPrice = PlayerInfo.PowerUpsInShop * PlayerInfo.PowerUpsPrice;
         }
 
+    }
+
+    public void IsSideDashPurchased()
+    {
+        if (PlayerInfo.SideDashActive == 1)
+        {
+            sideDashPriceContainer.SetActive(false);
+            sideDashSoldImage.SetActive(true);
+        } else
+        {
+            sideDashPriceContainer.SetActive(true);
+            sideDashSoldImage.SetActive(false);
+        }
+    }
+
+    public void IsUpDashPurchased()
+    {
+        if (PlayerInfo.UpDashActive == 1)
+        {
+            upDashPriceContainer.SetActive(false);
+            upDashSoldImage.SetActive(true);
+        }
+        else
+        {
+            upDashPriceContainer.SetActive(true);
+            upDashSoldImage.SetActive(false);
+        }
+    }
+    public void IsDownDashPurchased()
+    {
+        if (PlayerInfo.DownDashActive == 1)
+        {
+            downDashPriceContainer.SetActive(false);
+            downDashSoldImage.SetActive(true);
+        }
+        else
+        {
+            downDashPriceContainer.SetActive(true);
+            downDashSoldImage.SetActive(false);
+        }
     }
 }
