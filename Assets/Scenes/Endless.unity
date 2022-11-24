@@ -1692,7 +1692,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 409239748}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1779564021}
+        m_TargetAssemblyTypeName: MMSoundManager, Assembly-CSharp
+        m_MethodName: MuteMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &409239748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3652,7 +3664,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 671181700}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1779564021}
+        m_TargetAssemblyTypeName: MMSoundManager, Assembly-CSharp
+        m_MethodName: MuteSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &671181700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7390,7 +7414,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1340219448}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1779564021}
+        m_TargetAssemblyTypeName: MMSoundManager, Assembly-CSharp
+        m_MethodName: MuteMaster
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1340219448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10185,6 +10221,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: b3862be41224364409948ba3681166c0, type: 2}
+  masterSlider: {fileID: 1499401768}
+  musicSlider: {fileID: 479858412}
+  sFXSlider: {fileID: 1461619698}
 --- !u!114 &1779564022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10197,9 +10236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6e0dedb1ce1de49ad4ec8c19e31317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masterSlider: {fileID: 1499401768}
-  musicSlider: {fileID: 479858412}
-  sFXSlider: {fileID: 1461619698}
 --- !u!1 &1796683088
 GameObject:
   m_ObjectHideFlags: 0
@@ -12037,7 +12073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2117854169
 RectTransform:
   m_ObjectHideFlags: 0

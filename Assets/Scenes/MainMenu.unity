@@ -958,7 +958,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07452085, y: 0.3627061}
   m_AnchorMax: {x: 0.9322499, y: 0.6465473}
-  m_AnchoredPosition: {x: -5.4976807, y: 0.33599854}
+  m_AnchoredPosition: {x: -5.4976807, y: 0.3359375}
   m_SizeDelta: {x: -17.800049, y: 14.800049}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &387677803
@@ -1372,8 +1372,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -5, y: -0.19999981}
-  m_SizeDelta: {x: 257, y: 236}
+  m_AnchoredPosition: {x: 0, y: -0.5999985}
+  m_SizeDelta: {x: 257, y: 235.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &498548028
 MonoBehaviour:
@@ -2898,7 +2898,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1362459050}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1612044787}
+        m_TargetAssemblyTypeName: MMSoundManager, Assembly-CSharp
+        m_MethodName: MuteMaster
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1362459050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4231,7 +4243,6 @@ GameObject:
   - component: {fileID: 1612044786}
   - component: {fileID: 1612044785}
   - component: {fileID: 1612044787}
-  - component: {fileID: 1612044788}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -4363,18 +4374,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: b3862be41224364409948ba3681166c0, type: 2}
---- !u!114 &1612044788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1612044784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d6e0dedb1ce1de49ad4ec8c19e31317, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   masterSlider: {fileID: 532011245}
   musicSlider: {fileID: 558948226}
   sFXSlider: {fileID: 1513382057}
@@ -5591,7 +5590,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2015694902}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1612044787}
+        m_TargetAssemblyTypeName: MMSoundManager, Assembly-CSharp
+        m_MethodName: MuteSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2015694902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5788,7 +5799,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2046088440}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1612044787}
+        m_TargetAssemblyTypeName: MMSoundManager, Assembly-CSharp
+        m_MethodName: MuteMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2046088440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6388,7 +6411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3035ed548702bf647b4ed94d53dfcc39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetPrefs: 1
+  resetPrefs: 0
 --- !u!1 &7054094176113933166
 GameObject:
   m_ObjectHideFlags: 0

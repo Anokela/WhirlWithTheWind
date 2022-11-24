@@ -13,9 +13,12 @@ public class PauseGame : MonoBehaviour
     }
     public void Pause()
     {
-        pauseMenu.SetActive(true);
-        PlayerInfo.GameStarted = false;
-        isTimeStopped = true;
+        if (PlayerInfo.GameStarted)
+        {
+            pauseMenu.SetActive(true);
+            PlayerInfo.GameStarted = false;
+            isTimeStopped = true;
+        } 
     }
 
     public void UnPause()
