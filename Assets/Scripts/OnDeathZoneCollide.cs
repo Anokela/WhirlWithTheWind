@@ -23,6 +23,9 @@ public class OnDeathZoneCollide : MonoBehaviour
             shopManager.SendMessage("SetShopButtonIcon");
             shopManager.SendMessage("SetPriceTexts");
             shopManager.SendMessage("AreButtonsInactive");
+            shopManager.SendMessage("IsSideDashPurchased");
+            shopManager.SendMessage("IsUpDashPurchased");
+            shopManager.SendMessage("IsDownDashPurchased");
             if (PlayerInfo.Distance > PlayerInfo.HighScore)
             {
                 PlayerInfo.HighScore = PlayerInfo.Distance;
