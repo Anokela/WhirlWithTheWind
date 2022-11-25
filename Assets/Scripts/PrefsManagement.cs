@@ -23,6 +23,9 @@ public class PrefsManagement : MonoBehaviour
             PlayerPrefs.DeleteKey("IsMasterMuted");
             PlayerPrefs.DeleteKey("IsMusicMuted");
             PlayerPrefs.DeleteKey("IsSFXMuted");
+            PlayerPrefs.DeleteKey("PreviousMasterVolume");
+            PlayerPrefs.DeleteKey("PreviousMusicVolume");
+            PlayerPrefs.DeleteKey("PreviousSFXVolume");
         }
 
         if (!PlayerPrefs.HasKey("LightPoints"))
@@ -79,6 +82,21 @@ public class PrefsManagement : MonoBehaviour
             PlayerPrefs.SetInt("IsSFXMuted", 0);
         }
 
+        if (!PlayerPrefs.HasKey("PreviousMasterVolume"))
+        {
+            PlayerPrefs.SetFloat("PreviousMasterVolume", 1f);
+        }
+
+        if (!PlayerPrefs.HasKey("PreviousMusicVolume"))
+        {
+            PlayerPrefs.SetFloat("PreviousMusicVolume", 1f);
+        }
+
+        if (!PlayerPrefs.HasKey("PreviousSFXVolume"))
+        {
+            PlayerPrefs.SetFloat("PreviousSFXVolume", 1f);
+        }
+
 
         PlayerInfo.UpDashActive = PlayerPrefs.GetInt("UpDashActive");
         PlayerInfo.DownDashActive = PlayerPrefs.GetInt("DownDashActive");
@@ -94,6 +112,9 @@ public class PrefsManagement : MonoBehaviour
         PlayerInfo.IsMasterMuted = PlayerPrefs.GetInt("IsMasterMuted");
         PlayerInfo.IsMusicMuted = PlayerPrefs.GetInt("IsMusicMuted");
         PlayerInfo.IsSFXMuted = PlayerPrefs.GetInt("IsSFXMuted");
+        PlayerInfo.PreviousMasterVolume = PlayerPrefs.GetFloat("PreviousMasterVolume");
+        PlayerInfo.PreviousMusicVolume = PlayerPrefs.GetFloat("PreviousMusicVolume");
+        PlayerInfo.PreviousSFXVolume = PlayerPrefs.GetFloat("PreviousSFXVolume");
     }
 
     // Update is called once per frame
@@ -115,6 +136,9 @@ public class PrefsManagement : MonoBehaviour
         PlayerPrefs.SetInt("IsMasterMuted", PlayerInfo.IsMasterMuted);
         PlayerPrefs.SetInt("IsMusicMuted", PlayerInfo.IsMusicMuted);
         PlayerPrefs.SetInt("IsSFXMuted", PlayerInfo.IsSFXMuted);
+        PlayerPrefs.SetFloat("PreviousMasterVolume", PlayerInfo.PreviousMasterVolume);
+        PlayerPrefs.SetFloat("PreviousMusicVolume", PlayerInfo.PreviousMusicVolume);
+        PlayerPrefs.SetFloat("PreviousSFXVolume", PlayerInfo.PreviousSFXVolume);
         PlayerPrefs.Save();
     }
 
@@ -135,6 +159,9 @@ public class PrefsManagement : MonoBehaviour
         PlayerPrefs.SetInt("IsMasterMuted", PlayerInfo.IsMasterMuted);
         PlayerPrefs.SetInt("IsMusicMuted", PlayerInfo.IsMusicMuted);
         PlayerPrefs.SetInt("IsSFXMuted", PlayerInfo.IsSFXMuted);
+        PlayerPrefs.SetFloat("PreviousMasterVolume", PlayerInfo.PreviousMasterVolume);
+        PlayerPrefs.SetFloat("PreviousMusicVolume", PlayerInfo.PreviousMusicVolume);
+        PlayerPrefs.SetFloat("PreviousSFXVolume", PlayerInfo.PreviousSFXVolume);
         PlayerPrefs.Save();
     }
 }

@@ -7,9 +7,6 @@ using UnityEngine.UI;
 public class MMSoundManager : MonoBehaviour
 {
     public AudioMixer audioMixer;
-    private float PreviousMasterValue;
-    private float PreviousMusicValue;
-    private float PreviousSFXValue;
     public Slider masterSlider;
     public Slider musicSlider;
     public Slider sFXSlider;
@@ -23,7 +20,7 @@ public class MMSoundManager : MonoBehaviour
         if (PlayerInfo.IsMasterMuted == 0)
         {
             audioMixer.SetFloat("MasterVol", Mathf.Log10(PlayerInfo.MasterVolume) * 20);
-            PreviousMasterValue = PlayerInfo.MasterVolume;
+            PlayerInfo.PreviousMasterVolume = PlayerInfo.MasterVolume;
         } else
         {
             audioMixer.SetFloat("MasterVol", Mathf.Log10(0.0001f) * 20);
@@ -32,7 +29,7 @@ public class MMSoundManager : MonoBehaviour
         if (PlayerInfo.IsMusicMuted == 0)
         {
             audioMixer.SetFloat("MusicVol", Mathf.Log10(PlayerInfo.MusicVolume) * 20);
-            PreviousMusicValue = PlayerInfo.MusicVolume;
+            PlayerInfo.PreviousMusicVolume = PlayerInfo.MusicVolume;
         } else
         {
             audioMixer.SetFloat("MusicVol", Mathf.Log10(0.0001f) * 20);
@@ -41,7 +38,7 @@ public class MMSoundManager : MonoBehaviour
         if (PlayerInfo.IsSFXMuted == 0)
         {
             audioMixer.SetFloat("SFXVol", Mathf.Log10(PlayerInfo.SFXVolume) * 20);
-            PreviousSFXValue = PlayerInfo.SFXVolume;
+            PlayerInfo.PreviousSFXVolume = PlayerInfo.SFXVolume;
         } else
         {
             audioMixer.SetFloat("SFXVol", Mathf.Log10(0.0001f) * 20);
@@ -86,7 +83,7 @@ public class MMSoundManager : MonoBehaviour
                 break;
             case 1:
                 PlayerInfo.IsMasterMuted = 0;
-                PlayerInfo.MasterVolume = PreviousMasterValue;
+                PlayerInfo.MasterVolume = PlayerInfo.PreviousMasterVolume;
                 break;
         }
         RenderVolume();
@@ -100,7 +97,7 @@ public class MMSoundManager : MonoBehaviour
                 break;
             case 1:
                 PlayerInfo.IsMusicMuted = 0;
-                PlayerInfo.MusicVolume = PreviousMusicValue;
+                PlayerInfo.MusicVolume = PlayerInfo.PreviousMusicVolume;
                 break;
         }
         RenderVolume();
@@ -114,7 +111,7 @@ public class MMSoundManager : MonoBehaviour
                 break;
             case 1:
                 PlayerInfo.IsSFXMuted = 0;
-                PlayerInfo.SFXVolume = PreviousSFXValue;
+                PlayerInfo.SFXVolume = PlayerInfo.PreviousSFXVolume;
                 break;
         }
         RenderVolume();

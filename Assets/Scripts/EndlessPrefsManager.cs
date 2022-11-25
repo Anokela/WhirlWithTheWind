@@ -19,6 +19,9 @@ public class EndlessPrefsManager : MonoBehaviour
         PlayerPrefs.SetInt("IsMasterMuted", PlayerInfo.IsMasterMuted);
         PlayerPrefs.SetInt("IsMusicMuted", PlayerInfo.IsMusicMuted);
         PlayerPrefs.SetInt("IsSFXMuted", PlayerInfo.IsSFXMuted);
+        PlayerPrefs.SetFloat("PreviousMasterVolume", PlayerInfo.PreviousMasterVolume);
+        PlayerPrefs.SetFloat("PreviousMusicVolume", PlayerInfo.PreviousMusicVolume);
+        PlayerPrefs.SetFloat("PreviousSFXVolume", PlayerInfo.PreviousSFXVolume);
         PlayerPrefs.Save();
     }
 
@@ -39,6 +42,9 @@ public class EndlessPrefsManager : MonoBehaviour
         PlayerPrefs.SetInt("IsMasterMuted", PlayerInfo.IsMasterMuted);
         PlayerPrefs.SetInt("IsMusicMuted", PlayerInfo.IsMusicMuted);
         PlayerPrefs.SetInt("IsSFXMuted", PlayerInfo.IsSFXMuted);
+        PlayerPrefs.SetFloat("PreviousMasterVolume", PlayerInfo.PreviousMasterVolume);
+        PlayerPrefs.SetFloat("PreviousMusicVolume", PlayerInfo.PreviousMusicVolume);
+        PlayerPrefs.SetFloat("PreviousSFXVolume", PlayerInfo.PreviousSFXVolume);
         PlayerPrefs.Save();
     }
 }

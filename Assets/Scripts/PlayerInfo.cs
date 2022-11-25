@@ -23,6 +23,9 @@ public class PlayerInfo
     private static int isMasterMuted;
     private static int isMusicMuted;
     private static int isSFXMuted;
+    private static float previousMasterVolume;
+    private static float previousMusicVolume;
+    private static float previousSFXVolume;
 
     public static int LightPoints
     {
@@ -284,6 +287,40 @@ public class PlayerInfo
         set
         {
             isSFXMuted = value;
+        }
+    }
+
+    public static float PreviousMasterVolume
+    {
+        get
+        {
+            return previousMasterVolume;
+        }
+        set
+        {
+            previousMasterVolume = value;
+        }
+    }
+    public static float PreviousMusicVolume
+    {
+        get
+        {
+            return previousMusicVolume;
+        }
+        set
+        {
+            previousMusicVolume = value;
+        }
+    }
+    public static float PreviousSFXVolume
+    {
+        get
+        {
+            return previousSFXVolume;
+        }
+        set
+        {
+            previousSFXVolume = value;
         }
     }
 
