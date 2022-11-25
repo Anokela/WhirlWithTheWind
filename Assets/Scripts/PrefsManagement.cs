@@ -64,7 +64,7 @@ public class PrefsManagement : MonoBehaviour
         }
         if (!PlayerPrefs.HasKey("HighScore"))
         {
-            PlayerPrefs.SetInt("HighScore", 1);
+            PlayerPrefs.SetFloat("HighScore", 0);
         }
 
         if (!PlayerPrefs.HasKey("IsMasterMuted"))
@@ -97,7 +97,7 @@ public class PrefsManagement : MonoBehaviour
             PlayerPrefs.SetFloat("PreviousSFXVolume", 1f);
         }
 
-
+        PlayerInfo.LightPoints = PlayerPrefs.GetInt("LightPoints");
         PlayerInfo.UpDashActive = PlayerPrefs.GetInt("UpDashActive");
         PlayerInfo.DownDashActive = PlayerPrefs.GetInt("DownDashActive");
         PlayerInfo.SideDashActive = PlayerPrefs.GetInt("SideDashActive");
