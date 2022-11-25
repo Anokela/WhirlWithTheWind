@@ -10,10 +10,15 @@ public class PowerUpShoppingManager : MonoBehaviour
     public TextMeshProUGUI upDashPrice;
     public TextMeshProUGUI downDashPrice;
     public TextMeshProUGUI lightPointAmount;
-    public TextMeshProUGUI powerUpExpalanationText;
-    public string sideDashExplanationText;
-    public string upDashExplanationText;
-    public string downDashExplanationText;
+    // public TextMeshProUGUI powerUpExpalanationText;
+    public Sprite sideDashExplanationText;
+    public Sprite upDashExplanationText;
+    public Sprite downDashExplanationText;
+    public Image powerUpExplanationText;
+    public Sprite sideDashExplanationHeader;
+    public Sprite upDashExplanationHeader;
+    public Sprite downDashExplanationHeader;
+    public Image explanationHeader;
     public Button downDashButton;
     public Button upDashButton;
     public Button sideDashButton;
@@ -25,54 +30,90 @@ public class PowerUpShoppingManager : MonoBehaviour
     public GameObject upDashSoldImage;
     public GameObject downDashPriceContainer;
     public GameObject downDashSoldImage;
+    private string currentPowerUp;
 
 
     // Start is called before the first frame update
     void Start()
     {
         manager = this.gameObject;
-        Invoke("AreButtonsInactive", 0);
+        /*Invoke("AreButtonsInactive", 0);
         Invoke("SetPriceTexts", 0);
         Invoke("IsSideDashPurchased", 0);
         Invoke("IsUpDashPurchased", 0);
-        Invoke("IsDownDashPurchased", 0);
+        Invoke("IsDownDashPurchased", 0);*/
+
+        AreButtonsInactive();
+        SetPriceTexts();
+        IsSideDashPurchased();
+        IsUpDashPurchased();
+        IsDownDashPurchased();
+    }
+
+    public void OpenExplanationPanel() 
+    {
+        if (EventSystem.current.currentSelectedGameObject.name == "UpDashPowerUp")
+        {
+            currentPowerUp = "UpDashPowerUp";
+            powerUpExplanationText.sprite = upDashExplanationText;
+            explanationHeader.sprite = upDashExplanationHeader;
+        }
+
+        if (EventSystem.current.currentSelectedGameObject.name == "DownDashPowerUp")
+        {
+            currentPowerUp = "DownDashPowerUp";
+            powerUpExplanationText.sprite = downDashExplanationText;
+            explanationHeader.sprite = downDashExplanationHeader;
+        }
+
+        if (EventSystem.current.currentSelectedGameObject.name == "SideDashPowerUp")
+        {
+            currentPowerUp = "SideDashPowerUp";
+            powerUpExplanationText.sprite = sideDashExplanationText;
+            explanationHeader.sprite = sideDashExplanationHeader;
+        }
+        explanationPanel.SetActive(true);
     }
 
     public void BuyPowerUp()
     {
         if (PlayerInfo.LightPoints >= PowerUps.PowerUpsPrice)
         {
-            if (EventSystem.current.currentSelectedGameObject.name == "UpDashPowerUp")
+            if (currentPowerUp == "UpDashPowerUp")
             {
-                powerUpExpalanationText.text = upDashExplanationText;
                 PlayerInfo.LightPoints = PlayerInfo.LightPoints - PowerUps.PowerUpsPrice;
                 PlayerInfo.UpDashActive = 1;
                 PlayerInfo.PowerUpsInUse++;
             }
 
-            if (EventSystem.current.currentSelectedGameObject.name == "DownDashPowerUp")
+            if (currentPowerUp == "DownDashPowerUp")
             {
-                powerUpExpalanationText.text = downDashExplanationText;
                 PlayerInfo.LightPoints = PlayerInfo.LightPoints - PowerUps.PowerUpsPrice;
                 PlayerInfo.DownDashActive = 1;
                 PlayerInfo.PowerUpsInUse++;
             }
 
-            if (EventSystem.current.currentSelectedGameObject.name == "SideDashPowerUp")
+            if (currentPowerUp == "SideDashPowerUp")
             {
-                powerUpExpalanationText.text = sideDashExplanationText;
                 PlayerInfo.LightPoints = PlayerInfo.LightPoints - PowerUps.PowerUpsPrice;
                 PlayerInfo.SideDashActive = 1;
                 PlayerInfo.PowerUpsInUse++;
             }
-            Invoke("UpdatePowerUpPrices", 0);
-            Invoke("SetPriceTexts", 0);
-            Invoke("AreButtonsInactive", 0);
-            Invoke("IsSideDashPurchased", 0);
-            Invoke("IsUpDashPurchased", 0);
-            Invoke("IsDownDashPurchased", 0);
+            // Invoke("UpdatePowerUpPrices", 0);
+            UpdatePowerUpPrices();
+            SetPriceTexts();
+            //Invoke("SetPriceTexts", 0);
+            AreButtonsInactive();
+            //Invoke("AreButtonsInactive", 0);
+            IsSideDashPurchased();
+            //Invoke("IsSideDashPurchased", 0);
+            //Invoke("IsUpDashPurchased", 0);
+            IsUpDashPurchased();
+            //Invoke("IsDownDashPurchased", 0);
+            IsDownDashPurchased();
+            explanationPanel.SetActive(false);
             manager.SendMessage("SetShopButtonIcon");
-            explanationPanel.SetActive(true);
+            
         }
     }
 
