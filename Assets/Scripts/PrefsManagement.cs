@@ -196,4 +196,44 @@ public class PrefsManagement : MonoBehaviour
         PlayerPrefs.SetInt("IsSeedFallFreshStart", PlayerInfo.IsSeedFallFreshStart);
 
     }
+
+    public void ResetPrefs()
+    {
+        string sinceLastPlayed = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds().ToString();
+        PlayerPrefs.SetInt("LightPoints", 0);
+        PlayerPrefs.SetInt("UpDashActive", 0);
+        PlayerPrefs.SetInt("DownDashActive", 0);
+        PlayerPrefs.SetInt("SideDashActive", 0);
+        PlayerPrefs.SetFloat("MasterVolume", 1f);
+        PlayerPrefs.SetFloat("SFXVolume", 1f);
+        PlayerPrefs.SetFloat("MusicVolume", 1f);
+        PlayerPrefs.SetFloat("HighScore", 0);
+        PlayerPrefs.SetInt("IsMasterMuted", 0);
+        PlayerPrefs.SetInt("IsMusicMuted", 0);
+        PlayerPrefs.SetInt("IsSFXMuted", 0);
+        PlayerPrefs.SetFloat("PreviousMasterVolume", 1f);
+        PlayerPrefs.SetFloat("PreviousMusicVolume", 1f);
+        PlayerPrefs.SetFloat("PreviousSFXVolume", 1f);
+        PlayerPrefs.SetString("TimeSinceLastPlayedSeedFall", sinceLastPlayed);
+        PlayerPrefs.SetInt("IsSeedFallFreshStart", 1);
+        PlayerPrefs.Save();
+
+        PlayerInfo.LightPoints = PlayerPrefs.GetInt("LightPoints");
+        PlayerInfo.UpDashActive = PlayerPrefs.GetInt("UpDashActive");
+        PlayerInfo.DownDashActive = PlayerPrefs.GetInt("DownDashActive");
+        PlayerInfo.SideDashActive = PlayerPrefs.GetInt("SideDashActive");
+        PlayerInfo.HighScore = PlayerPrefs.GetFloat("HighScore");
+        PlayerInfo.MasterVolume = PlayerPrefs.GetFloat("MasterVolume");
+        PlayerInfo.MusicVolume = PlayerPrefs.GetFloat("MusicVolume");
+        PlayerInfo.SFXVolume = PlayerPrefs.GetFloat("SFXVolume");
+        PlayerInfo.IsMasterMuted = PlayerPrefs.GetInt("IsMasterMuted");
+        PlayerInfo.IsMusicMuted = PlayerPrefs.GetInt("IsMusicMuted");
+        PlayerInfo.IsSFXMuted = PlayerPrefs.GetInt("IsSFXMuted");
+        PlayerInfo.PreviousMasterVolume = PlayerPrefs.GetFloat("PreviousMasterVolume");
+        PlayerInfo.PreviousMusicVolume = PlayerPrefs.GetFloat("PreviousMusicVolume");
+        PlayerInfo.PreviousSFXVolume = PlayerPrefs.GetFloat("PreviousSFXVolume");
+        long lng = Convert.ToInt64(PlayerPrefs.GetString("TimeSinceLastPlayedSeedFall"));
+        PlayerInfo.LastPlayingTime = lng;
+        PlayerInfo.IsSeedFallFreshStart = PlayerPrefs.GetInt("IsSeedFallFreshStart");
+    }
 }
