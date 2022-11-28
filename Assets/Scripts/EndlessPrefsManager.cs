@@ -1,9 +1,11 @@
 using UnityEngine;
+using System;
 
 public class EndlessPrefsManager : MonoBehaviour
 {
     private void OnApplicationPause()
     {
+        string sinceLastPlayed = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds().ToString();
         PlayerPrefs.SetInt("LightPoints", PlayerInfo.LightPoints);
         PlayerPrefs.SetInt("UpDashActive", PlayerInfo.UpDashActive);
         PlayerPrefs.SetInt("DownDashActive", PlayerInfo.DownDashActive);
@@ -22,6 +24,7 @@ public class EndlessPrefsManager : MonoBehaviour
         PlayerPrefs.SetFloat("PreviousMasterVolume", PlayerInfo.PreviousMasterVolume);
         PlayerPrefs.SetFloat("PreviousMusicVolume", PlayerInfo.PreviousMusicVolume);
         PlayerPrefs.SetFloat("PreviousSFXVolume", PlayerInfo.PreviousSFXVolume);
+        PlayerPrefs.SetString("TimeSinceLastPlayedSeedFall", sinceLastPlayed);
         PlayerPrefs.Save();
     }
 
@@ -46,5 +49,12 @@ public class EndlessPrefsManager : MonoBehaviour
         PlayerPrefs.SetFloat("PreviousMusicVolume", PlayerInfo.PreviousMusicVolume);
         PlayerPrefs.SetFloat("PreviousSFXVolume", PlayerInfo.PreviousSFXVolume);
         PlayerPrefs.Save();
+    }
+
+    // This function is for testing with computer
+    private void OnApplicationQuit()
+    {
+        string sinceLastPlayed = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds().ToString();
+        PlayerPrefs.SetString("TimeSinceLastPlayedSeedFall", sinceLastPlayed);
     }
 }

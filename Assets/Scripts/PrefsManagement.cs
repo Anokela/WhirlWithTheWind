@@ -1,11 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PrefsManagement : MonoBehaviour
 {
     public bool resetPrefs = false;
     void Awake()
     {
+        string sinceLastPlayed = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds().ToString();
+        Debug.Log(new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
+        Debug.Log(System.DateTime.Now);
         if (resetPrefs)
         {
             PlayerPrefs.DeleteKey("LightPoints");
@@ -26,6 +30,7 @@ public class PrefsManagement : MonoBehaviour
             PlayerPrefs.DeleteKey("PreviousMasterVolume");
             PlayerPrefs.DeleteKey("PreviousMusicVolume");
             PlayerPrefs.DeleteKey("PreviousSFXVolume");
+            PlayerPrefs.DeleteKey("TimeSinceLastPlayOfSeedFall");
         }
 
         if (!PlayerPrefs.HasKey("LightPoints"))
@@ -97,6 +102,11 @@ public class PrefsManagement : MonoBehaviour
             PlayerPrefs.SetFloat("PreviousSFXVolume", 1f);
         }
 
+        if (!PlayerPrefs.HasKey("TimeSinceLastPlayedSeedFall"))
+        {
+            PlayerPrefs.SetString("TimeSinceLastPlayedSeedFall", sinceLastPlayed);
+        }
+
         PlayerInfo.LightPoints = PlayerPrefs.GetInt("LightPoints");
         PlayerInfo.UpDashActive = PlayerPrefs.GetInt("UpDashActive");
         PlayerInfo.DownDashActive = PlayerPrefs.GetInt("DownDashActive");
@@ -115,12 +125,15 @@ public class PrefsManagement : MonoBehaviour
         PlayerInfo.PreviousMasterVolume = PlayerPrefs.GetFloat("PreviousMasterVolume");
         PlayerInfo.PreviousMusicVolume = PlayerPrefs.GetFloat("PreviousMusicVolume");
         PlayerInfo.PreviousSFXVolume = PlayerPrefs.GetFloat("PreviousSFXVolume");
+        long lng = Convert.ToInt64(PlayerPrefs.GetString("TimeSinceLastPlayedSeedFall"));
+        PlayerInfo.LastPlayingTime = lng;
     }
 
     // Update is called once per frame
 
     private void OnApplicationPause()
     {
+        string sinceLastPlayed = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds().ToString();
         PlayerPrefs.SetInt("LightPoints", PlayerInfo.LightPoints);
         PlayerPrefs.SetInt("UpDashActive", PlayerInfo.UpDashActive);
         PlayerPrefs.SetInt("DownDashActive", PlayerInfo.DownDashActive);
@@ -139,6 +152,7 @@ public class PrefsManagement : MonoBehaviour
         PlayerPrefs.SetFloat("PreviousMasterVolume", PlayerInfo.PreviousMasterVolume);
         PlayerPrefs.SetFloat("PreviousMusicVolume", PlayerInfo.PreviousMusicVolume);
         PlayerPrefs.SetFloat("PreviousSFXVolume", PlayerInfo.PreviousSFXVolume);
+        PlayerPrefs.SetString("TimeSinceLastPlayedSeedFall", sinceLastPlayed);
         PlayerPrefs.Save();
     }
 
@@ -163,5 +177,12 @@ public class PrefsManagement : MonoBehaviour
         PlayerPrefs.SetFloat("PreviousMusicVolume", PlayerInfo.PreviousMusicVolume);
         PlayerPrefs.SetFloat("PreviousSFXVolume", PlayerInfo.PreviousSFXVolume);
         PlayerPrefs.Save();
+    }
+
+    // This function is for testing with computer
+    private void OnApplicationQuit()
+    {
+        string sinceLastPlayed = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds().ToString();
+        PlayerPrefs.SetString("TimeSinceLastPlayedSeedFall", sinceLastPlayed);
     }
 }

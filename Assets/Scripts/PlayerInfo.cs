@@ -26,6 +26,7 @@ public class PlayerInfo
     private static float previousMasterVolume;
     private static float previousMusicVolume;
     private static float previousSFXVolume;
+    private static long lastPlayingTime;
 
     public static int LightPoints
     {
@@ -321,6 +322,18 @@ public class PlayerInfo
         set
         {
             previousSFXVolume = value;
+        }
+    }
+
+    public static long LastPlayingTime
+    {
+        get
+        {
+            return lastPlayingTime;
+        }
+        set
+        {
+            lastPlayingTime = value;
         }
     }
 
