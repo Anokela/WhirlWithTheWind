@@ -27,6 +27,7 @@ public class PlayerInfo
     private static float previousMusicVolume;
     private static float previousSFXVolume;
     private static long lastPlayingTime;
+    private static int isSeedFallFreshStart;
 
     public static int LightPoints
     {
@@ -334,6 +335,18 @@ public class PlayerInfo
         set
         {
             lastPlayingTime = value;
+        }
+    }
+
+    public static int IsSeedFallFreshStart
+    {
+        get
+        {
+            return isSeedFallFreshStart;
+        }
+        set
+        {
+            isSeedFallFreshStart = value;
         }
     }
 

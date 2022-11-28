@@ -25,6 +25,7 @@ public class EndlessPrefsManager : MonoBehaviour
         PlayerPrefs.SetFloat("PreviousMusicVolume", PlayerInfo.PreviousMusicVolume);
         PlayerPrefs.SetFloat("PreviousSFXVolume", PlayerInfo.PreviousSFXVolume);
         PlayerPrefs.SetString("TimeSinceLastPlayedSeedFall", sinceLastPlayed);
+        PlayerPrefs.SetInt("IsSeedFallFreshStart", PlayerInfo.IsSeedFallFreshStart);
         PlayerPrefs.Save();
     }
 
@@ -48,6 +49,7 @@ public class EndlessPrefsManager : MonoBehaviour
         PlayerPrefs.SetFloat("PreviousMasterVolume", PlayerInfo.PreviousMasterVolume);
         PlayerPrefs.SetFloat("PreviousMusicVolume", PlayerInfo.PreviousMusicVolume);
         PlayerPrefs.SetFloat("PreviousSFXVolume", PlayerInfo.PreviousSFXVolume);
+        PlayerPrefs.SetInt("IsSeedFallFreshStart", PlayerInfo.IsSeedFallFreshStart);
         PlayerPrefs.Save();
     }
 
@@ -56,5 +58,6 @@ public class EndlessPrefsManager : MonoBehaviour
     {
         string sinceLastPlayed = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds().ToString();
         PlayerPrefs.SetString("TimeSinceLastPlayedSeedFall", sinceLastPlayed);
+        PlayerPrefs.SetInt("IsSeedFallFreshStart", PlayerInfo.IsSeedFallFreshStart);
     }
 }

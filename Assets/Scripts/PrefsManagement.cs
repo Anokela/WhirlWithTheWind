@@ -8,17 +8,15 @@ public class PrefsManagement : MonoBehaviour
     void Awake()
     {
         string sinceLastPlayed = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds().ToString();
-        Debug.Log(new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
-        Debug.Log(System.DateTime.Now);
         if (resetPrefs)
         {
             PlayerPrefs.DeleteKey("LightPoints");
             PlayerPrefs.DeleteKey("UpDashActive");
             PlayerPrefs.DeleteKey("DownDashActive");
             PlayerPrefs.DeleteKey("SideDashActive");
-            PlayerPrefs.SetInt("AntiBirdActive", 0);
-            PlayerPrefs.SetInt("AntiWebActive", 0);
-            PlayerPrefs.SetInt("CurrentSpawnPoint", 0);
+            PlayerPrefs.DeleteKey("AntiBirdActive");
+            PlayerPrefs.DeleteKey("AntiWebActive");
+            PlayerPrefs.DeleteKey("CurrentSpawnPoint");
             PlayerPrefs.DeleteKey("PowerUpsInUse");
             PlayerPrefs.DeleteKey("MasterVolume");
             PlayerPrefs.DeleteKey("MusicVolume");
@@ -31,6 +29,8 @@ public class PrefsManagement : MonoBehaviour
             PlayerPrefs.DeleteKey("PreviousMusicVolume");
             PlayerPrefs.DeleteKey("PreviousSFXVolume");
             PlayerPrefs.DeleteKey("TimeSinceLastPlayOfSeedFall");
+            PlayerPrefs.DeleteKey("IsSeedFallFreshStart");
+            PlayerPrefs.Save();
         }
 
         if (!PlayerPrefs.HasKey("LightPoints"))
@@ -40,16 +40,16 @@ public class PrefsManagement : MonoBehaviour
 
         if (!PlayerPrefs.HasKey("UpDashActive"))
         {
-            PlayerPrefs.SetInt("UpDashActive", 1);
+            PlayerPrefs.SetInt("UpDashActive", 0);
         }
 
         if (!PlayerPrefs.HasKey("DownDashActive"))
         {
-            PlayerPrefs.SetInt("DownDashActive", 1);
+            PlayerPrefs.SetInt("DownDashActive", 0);
         }
         if (!PlayerPrefs.HasKey("SideDashActive"))
         {
-            PlayerPrefs.SetInt("SideDashActive", 1);
+            PlayerPrefs.SetInt("SideDashActive", 0);
         }
        /* if (!PlayerPrefs.HasKey("PowerUpsInUse"))
         {
@@ -107,6 +107,12 @@ public class PrefsManagement : MonoBehaviour
             PlayerPrefs.SetString("TimeSinceLastPlayedSeedFall", sinceLastPlayed);
         }
 
+        if (!PlayerPrefs.HasKey("IsSeedFallFreshStart"))
+        {
+            PlayerPrefs.SetInt("IsSeedFallFreshStart", 1);
+        }
+        PlayerPrefs.Save();
+
         PlayerInfo.LightPoints = PlayerPrefs.GetInt("LightPoints");
         PlayerInfo.UpDashActive = PlayerPrefs.GetInt("UpDashActive");
         PlayerInfo.DownDashActive = PlayerPrefs.GetInt("DownDashActive");
@@ -127,6 +133,7 @@ public class PrefsManagement : MonoBehaviour
         PlayerInfo.PreviousSFXVolume = PlayerPrefs.GetFloat("PreviousSFXVolume");
         long lng = Convert.ToInt64(PlayerPrefs.GetString("TimeSinceLastPlayedSeedFall"));
         PlayerInfo.LastPlayingTime = lng;
+        PlayerInfo.IsSeedFallFreshStart = PlayerPrefs.GetInt("IsSeedFallFreshStart");
     }
 
     // Update is called once per frame
@@ -153,6 +160,7 @@ public class PrefsManagement : MonoBehaviour
         PlayerPrefs.SetFloat("PreviousMusicVolume", PlayerInfo.PreviousMusicVolume);
         PlayerPrefs.SetFloat("PreviousSFXVolume", PlayerInfo.PreviousSFXVolume);
         PlayerPrefs.SetString("TimeSinceLastPlayedSeedFall", sinceLastPlayed);
+        PlayerPrefs.SetInt("IsSeedFallFreshStart", PlayerInfo.IsSeedFallFreshStart);
         PlayerPrefs.Save();
     }
 
@@ -176,6 +184,7 @@ public class PrefsManagement : MonoBehaviour
         PlayerPrefs.SetFloat("PreviousMasterVolume", PlayerInfo.PreviousMasterVolume);
         PlayerPrefs.SetFloat("PreviousMusicVolume", PlayerInfo.PreviousMusicVolume);
         PlayerPrefs.SetFloat("PreviousSFXVolume", PlayerInfo.PreviousSFXVolume);
+        PlayerPrefs.SetInt("IsSeedFallFreshStart", PlayerInfo.IsSeedFallFreshStart);
         PlayerPrefs.Save();
     }
 
@@ -184,5 +193,7 @@ public class PrefsManagement : MonoBehaviour
     {
         string sinceLastPlayed = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds().ToString();
         PlayerPrefs.SetString("TimeSinceLastPlayedSeedFall", sinceLastPlayed);
+        PlayerPrefs.SetInt("IsSeedFallFreshStart", PlayerInfo.IsSeedFallFreshStart);
+
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TapToPlay : MonoBehaviour
 {
-    private GameObject Panel;
+    public GameObject Panel;
     public GameObject pc;
     private Animator m_anim;
     public GameObject speedManager;
@@ -19,7 +19,6 @@ public class TapToPlay : MonoBehaviour
         PlayerInfo.RunLightPoints = 0;
         PlayerInfo.Distance = 0f;
         PlayerInfo.BoxSpeed = 0.5f;
-        Panel = GameObject.Find("TapToPlay");
     }
 
     public void StartScene()
