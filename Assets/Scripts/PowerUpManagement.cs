@@ -10,13 +10,25 @@ public class PowerUpManagement : MonoBehaviour
     public int numberOfPowerUpsInShop;
     // public int antiBirdPrice;
     // public int antiWebPrice;
-    void Awake()
+
+    void Start()
     {
+        PlayerInfo.PowerUpsInUse = 0;
+        if (PlayerInfo.SideDashActive == 1)
+        {
+            PlayerInfo.PowerUpsInUse = PlayerInfo.PowerUpsInUse + 1;
+        }
+        if (PlayerInfo.UpDashActive == 1)
+        {
+            PlayerInfo.PowerUpsInUse = PlayerInfo.PowerUpsInUse + 1;
+        }
+        if (PlayerInfo.DownDashActive == 1)
+        {
+            PlayerInfo.PowerUpsInUse = PlayerInfo.PowerUpsInUse + 1;
+        }
         PlayerInfo.PowerUpsPrice = powerUpsPrice;
         PlayerInfo.PowerUpsInShop = numberOfPowerUpsInShop;
         UpdatePowerUpPrices();
-        // PowerUps.AntiBirdPrice = antiBirdPrice;
-        // PowerUps.AntiWebPrice = antiWebPrice;
     }
 
     public void UpdatePowerUpPrices()

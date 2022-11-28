@@ -12,9 +12,9 @@ public class PrefsManagement : MonoBehaviour
             PlayerPrefs.DeleteKey("UpDashActive");
             PlayerPrefs.DeleteKey("DownDashActive");
             PlayerPrefs.DeleteKey("SideDashActive");
-            // PlayerPrefs.SetInt("AntiBirdActive", 0);
-            //PlayerPrefs.SetInt("AntiWebActive", 0);
-            //PlayerPrefs.SetInt("CurrentSpawnPoint", 0);
+            PlayerPrefs.SetInt("AntiBirdActive", 0);
+            PlayerPrefs.SetInt("AntiWebActive", 0);
+            PlayerPrefs.SetInt("CurrentSpawnPoint", 0);
             PlayerPrefs.DeleteKey("PowerUpsInUse");
             PlayerPrefs.DeleteKey("MasterVolume");
             PlayerPrefs.DeleteKey("MusicVolume");
@@ -35,21 +35,21 @@ public class PrefsManagement : MonoBehaviour
 
         if (!PlayerPrefs.HasKey("UpDashActive"))
         {
-            PlayerPrefs.SetInt("UpDashActive", 0);
+            PlayerPrefs.SetInt("UpDashActive", 1);
         }
 
         if (!PlayerPrefs.HasKey("DownDashActive"))
         {
-            PlayerPrefs.SetInt("DownDashActive", 0);
+            PlayerPrefs.SetInt("DownDashActive", 1);
         }
         if (!PlayerPrefs.HasKey("SideDashActive"))
         {
-            PlayerPrefs.SetInt("SideDashActive", 0);
+            PlayerPrefs.SetInt("SideDashActive", 1);
         }
-        if (!PlayerPrefs.HasKey("PowerUpsInUse"))
+       /* if (!PlayerPrefs.HasKey("PowerUpsInUse"))
         {
             PlayerPrefs.SetInt("PowerUpsInUse", 0);
-        }
+        }*/
         if (!PlayerPrefs.HasKey("MasterVolume"))
         {
             PlayerPrefs.SetFloat("MasterVolume", 1f);
@@ -105,7 +105,7 @@ public class PrefsManagement : MonoBehaviour
         // PlayerInfo.AntiWebActive = PlayerPrefs.GetInt("AntiWebActive");
         // PlayerInfo.CurrentSpawnPoint = PlayerPrefs.GetInt("CurrentSpawnPoint");
         PlayerInfo.HighScore = PlayerPrefs.GetFloat("HighScore");
-        PlayerInfo.PowerUpsInUse = PlayerPrefs.GetInt("PowerUpsInUse");
+        // PlayerInfo.PowerUpsInUse = PlayerPrefs.GetInt("PowerUpsInUse");
         PlayerInfo.MasterVolume = PlayerPrefs.GetFloat("MasterVolume");
         PlayerInfo.MusicVolume = PlayerPrefs.GetFloat("MusicVolume");
         PlayerInfo.SFXVolume = PlayerPrefs.GetFloat("SFXVolume");
@@ -129,7 +129,7 @@ public class PrefsManagement : MonoBehaviour
         //PlayerPrefs.SetInt("AntiWebActive", PlayerInfo.AntiWebActive);
         //PlayerPrefs.SetInt("CurrentSpawnPoint", PlayerInfo.CurrentSpawnPoint);
         PlayerPrefs.SetFloat("HighScore", PlayerInfo.HighScore);
-        PlayerPrefs.SetInt("PowerUpsInUse", PlayerInfo.PowerUpsInUse);
+        // PlayerPrefs.SetInt("PowerUpsInUse", PlayerInfo.PowerUpsInUse);
         PlayerPrefs.SetFloat("MasterVolume", PlayerInfo.MasterVolume);
         PlayerPrefs.SetFloat("MusicVolume", PlayerInfo.MusicVolume);
         PlayerPrefs.SetFloat("SFXVolume", PlayerInfo.SFXVolume);
@@ -152,7 +152,7 @@ public class PrefsManagement : MonoBehaviour
         //PlayerPrefs.SetInt("AntiWebActive", PlayerInfo.AntiWebActive);
         //PlayerPrefs.SetInt("CurrentSpawnPoint", PlayerInfo.CurrentSpawnPoint);
         PlayerPrefs.SetFloat("HighScore", PlayerInfo.HighScore);
-        PlayerPrefs.SetInt("PowerUpsInUse", PlayerInfo.PowerUpsInUse);
+        // PlayerPrefs.SetInt("PowerUpsInUse", PlayerInfo.PowerUpsInUse);
         PlayerPrefs.SetFloat("MasterVolume", PlayerInfo.MasterVolume);
         PlayerPrefs.SetFloat("MusicVolume", PlayerInfo.MusicVolume);
         PlayerPrefs.SetFloat("SFXVolume", PlayerInfo.SFXVolume);
