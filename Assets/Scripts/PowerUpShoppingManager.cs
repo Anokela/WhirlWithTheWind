@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
+using Firebase.Analytics;
 
 public class PowerUpShoppingManager : MonoBehaviour
 {
@@ -113,6 +113,7 @@ public class PowerUpShoppingManager : MonoBehaviour
                     PlayerInfo.LightPoints = PlayerInfo.LightPoints - PowerUps.PowerUpsPrice;
                     PlayerInfo.UpDashActive = 1;
                     PlayerInfo.PowerUpsInUse++;
+                    FirebaseAnalytics.LogEvent(name:"Power_up_management", parameterName:"Power_up_bought", parameterValue: "UpDashPowerUp");
                 }
 
                 if (currentPowerUp == "DownDashPowerUp")
@@ -120,6 +121,7 @@ public class PowerUpShoppingManager : MonoBehaviour
                     PlayerInfo.LightPoints = PlayerInfo.LightPoints - PowerUps.PowerUpsPrice;
                     PlayerInfo.DownDashActive = 1;
                     PlayerInfo.PowerUpsInUse++;
+                    FirebaseAnalytics.LogEvent(name:"Power_up_management", parameterName:"Power_up_bought", parameterValue: "DownDashPowerUp");
                 }
 
                 if (currentPowerUp == "SideDashPowerUp")
@@ -127,7 +129,9 @@ public class PowerUpShoppingManager : MonoBehaviour
                     PlayerInfo.LightPoints = PlayerInfo.LightPoints - PowerUps.PowerUpsPrice;
                     PlayerInfo.SideDashActive = 1;
                     PlayerInfo.PowerUpsInUse++;
+                    FirebaseAnalytics.LogEvent(name:"Power_up_management", parameterName:"Power_up_bought", parameterValue: "SideDashPowerUp");
                 }
+                FirebaseAnalytics.LogEvent(name:"Power_up_management", parameterName:"Power_ups_in_use", parameterValue: PlayerInfo.PowerUpsInUse);
                 UpdatePowerUpPrices();
                 SetPriceTexts();
                 //AreButtonsInactive();
