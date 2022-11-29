@@ -16298,13 +16298,13 @@ MonoBehaviour:
   upDashExplanationText: {fileID: 21300000, guid: b1fbe2f511d372544a0ccf5fa117407a, type: 3}
   downDashExplanationText: {fileID: 21300000, guid: 38fd1784734a18d4fbc6a2f14f3fa888, type: 3}
   powerUpExplanationText: {fileID: 1072678550}
-  sideDashExplanationHeader: {fileID: 21300000, guid: 393cc1e76bf8196489188d43655da2c0, type: 3}
-  upDashExplanationHeader: {fileID: 21300000, guid: ec60aa087cadd9f4fab9ca98079c232c, type: 3}
-  downDashExplanationHeader: {fileID: 21300000, guid: 2e4b6cd8447e7a54eabf239c3c0a6bb1, type: 3}
+  sideDashBoughtExplanationHeader: {fileID: 21300000, guid: 393cc1e76bf8196489188d43655da2c0, type: 3}
+  upDashBoughtExplanationHeader: {fileID: 21300000, guid: ec60aa087cadd9f4fab9ca98079c232c, type: 3}
+  downDashBoughtExplanationHeader: {fileID: 21300000, guid: 2e4b6cd8447e7a54eabf239c3c0a6bb1, type: 3}
+  sideDashExplanationHeader: {fileID: 21300000, guid: 188a6d3427cc114488b1d3aaa64d088d, type: 3}
+  upDashExplanationHeader: {fileID: 21300000, guid: 1c316ba64ac6cec4093ece9301189513, type: 3}
+  downDashExplanationHeader: {fileID: 21300000, guid: 982ad8a1fbe06f0429a66406495af70e, type: 3}
   explanationHeader: {fileID: 852426513}
-  downDashButton: {fileID: 984713476}
-  upDashButton: {fileID: 484057924}
-  sideDashButton: {fileID: 414181967}
   explanationPanel: {fileID: 177517981}
   sideDashPriceContainer: {fileID: 2115654262}
   sideDashSoldImage: {fileID: 941722229}
@@ -16312,6 +16312,7 @@ MonoBehaviour:
   upDashSoldImage: {fileID: 194053131}
   downDashPriceContainer: {fileID: 572079684}
   downDashSoldImage: {fileID: 1491727588}
+  confirmBuyButton: {fileID: 1410667178}
 --- !u!114 &6482248420431312725
 MonoBehaviour:
   m_ObjectHideFlags: 0

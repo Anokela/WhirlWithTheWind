@@ -2017,7 +2017,7 @@ MonoBehaviour:
   downDashPrice: 0
   upDashPrice: 0
   sideDashPrice: 0
-  powerUpsPrice: 50
+  powerUpsPrice: 0
   numberOfPowerUpsInShop: 3
 --- !u!1 &558295675
 GameObject:
@@ -2046,8 +2046,8 @@ RectTransform:
   m_GameObject: {fileID: 558295675}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 2.15, y: 2.5, z: 2.5}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1708822158}
   m_RootOrder: 3
@@ -6319,13 +6319,13 @@ MonoBehaviour:
   upDashExplanationText: {fileID: 21300000, guid: b1fbe2f511d372544a0ccf5fa117407a, type: 3}
   downDashExplanationText: {fileID: 21300000, guid: 38fd1784734a18d4fbc6a2f14f3fa888, type: 3}
   powerUpExplanationText: {fileID: 124080641}
-  sideDashExplanationHeader: {fileID: 21300000, guid: 393cc1e76bf8196489188d43655da2c0, type: 3}
-  upDashExplanationHeader: {fileID: 21300000, guid: ec60aa087cadd9f4fab9ca98079c232c, type: 3}
-  downDashExplanationHeader: {fileID: 21300000, guid: 2e4b6cd8447e7a54eabf239c3c0a6bb1, type: 3}
+  sideDashBoughtExplanationHeader: {fileID: 21300000, guid: 393cc1e76bf8196489188d43655da2c0, type: 3}
+  upDashBoughtExplanationHeader: {fileID: 21300000, guid: ec60aa087cadd9f4fab9ca98079c232c, type: 3}
+  downDashBoughtExplanationHeader: {fileID: 21300000, guid: 2e4b6cd8447e7a54eabf239c3c0a6bb1, type: 3}
+  sideDashExplanationHeader: {fileID: 21300000, guid: 188a6d3427cc114488b1d3aaa64d088d, type: 3}
+  upDashExplanationHeader: {fileID: 21300000, guid: 1c316ba64ac6cec4093ece9301189513, type: 3}
+  downDashExplanationHeader: {fileID: 21300000, guid: 982ad8a1fbe06f0429a66406495af70e, type: 3}
   explanationHeader: {fileID: 558295677}
-  downDashButton: {fileID: 801706924}
-  upDashButton: {fileID: 699441125}
-  sideDashButton: {fileID: 944180530}
   explanationPanel: {fileID: 372971648}
   sideDashPriceContainer: {fileID: 387785236}
   sideDashSoldImage: {fileID: 1329256428}
@@ -6333,6 +6333,7 @@ MonoBehaviour:
   upDashSoldImage: {fileID: 1321996490}
   downDashPriceContainer: {fileID: 733381122}
   downDashSoldImage: {fileID: 193857136}
+  confirmBuyButton: {fileID: 600483466}
 --- !u!114 &1723508725
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ public class OnDeathZoneCollide : MonoBehaviour
             Invoke("showPanel", 0);
             shopManager.SendMessage("SetShopButtonIcon");
             shopManager.SendMessage("SetPriceTexts");
-            shopManager.SendMessage("AreButtonsInactive");
+            //shopManager.SendMessage("AreButtonsInactive");
             shopManager.SendMessage("IsSideDashPurchased");
             shopManager.SendMessage("IsUpDashPurchased");
             shopManager.SendMessage("IsDownDashPurchased");
