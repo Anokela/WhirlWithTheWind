@@ -18,7 +18,7 @@ public class TapToPlay : MonoBehaviour
         PlayerInfo.GameStarted = false;
         PlayerInfo.RunLightPoints = 0;
         PlayerInfo.Distance = 0f;
-        PlayerInfo.BoxSpeed = 0.5f;
+        PlayerInfo.BoxSpeed = 0.7f;
     }
 
     public void StartScene()
