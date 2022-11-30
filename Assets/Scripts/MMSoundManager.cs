@@ -10,7 +10,11 @@ public class MMSoundManager : MonoBehaviour
     public Slider masterSlider;
     public Slider musicSlider;
     public Slider sFXSlider;
-
+    public Image masterMuteIcon;
+    public Image musicMuteIcon;
+    public Image sFXMuteIcon;
+    public Sprite mutedIcon;
+    public Sprite unMutedIcon;
     void Start()
     {
         RenderVolume();
@@ -42,6 +46,33 @@ public class MMSoundManager : MonoBehaviour
         } else
         {
             audioMixer.SetFloat("SFXVol", Mathf.Log10(0.0001f) * 20);
+        }
+
+        // Mute Icon change based on volume
+        if (PlayerInfo.MasterVolume > 0.0001f)
+        {
+            masterMuteIcon.sprite = unMutedIcon;
+        } else
+        {
+            masterMuteIcon.sprite = mutedIcon;
+        }
+
+        if (PlayerInfo.MusicVolume > 0.0001f)
+        {
+            musicMuteIcon.sprite = unMutedIcon;
+        }
+        else
+        {
+            musicMuteIcon.sprite = mutedIcon;
+        }
+
+        if (PlayerInfo.SFXVolume > 0.0001f)
+        {
+            sFXMuteIcon.sprite = unMutedIcon;
+        }
+        else
+        {
+            sFXMuteIcon.sprite = mutedIcon;
         }
     }
 
