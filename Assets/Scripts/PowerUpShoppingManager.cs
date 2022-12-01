@@ -131,7 +131,7 @@ public class PowerUpShoppingManager : MonoBehaviour
                     PlayerInfo.PowerUpsInUse++;
                     FirebaseAnalytics.LogEvent(name:"Power_up_management", parameterName:"Power_up_bought", parameterValue: "SideDashPowerUp");
                 }
-                FirebaseAnalytics.LogEvent(name:"Power_up_management", parameterName:"Power_ups_in_use", parameterValue: PlayerInfo.PowerUpsInUse);
+                FirebaseAnalytics.LogEvent(name:"Power_up_per_user", parameterName:"Power_ups_in_use", parameterValue: PlayerInfo.PowerUpsInUse);
                 UpdatePowerUpPrices();
                 SetPriceTexts();
                 //AreButtonsInactive();

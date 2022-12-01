@@ -10,6 +10,7 @@ public class TutorialManager : MonoBehaviour
     public GameObject joystickImg;
     public GameObject goalText;
     public GameObject tapToPlay;
+    public GameObject JoystickProtector;
     private long currentTime;
 
     // Start is called before the first frame update
@@ -20,6 +21,7 @@ public class TutorialManager : MonoBehaviour
         {
             tutorialPanel.SetActive(true);
             tapToPlay.SetActive(false);
+            JoystickProtector.SetActive(false);
         } 
     }
 
@@ -39,6 +41,7 @@ public class TutorialManager : MonoBehaviour
     {
         tutorialPanel.SetActive(false);
         tapToPlay.SetActive(true);
+        JoystickProtector.SetActive(true);
         PlayerInfo.IsSeedFallFreshStart = 0;
     }
 }
