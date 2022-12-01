@@ -2071,7 +2071,7 @@ MonoBehaviour:
   downDashPrice: 0
   upDashPrice: 0
   sideDashPrice: 0
-  powerUpsPrice: 0
+  powerUpsPrice: 150
   numberOfPowerUpsInShop: 3
 --- !u!1 &555773130
 GameObject:
@@ -2206,7 +2206,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 339}
-  m_SizeDelta: {x: 534, y: 108}
+  m_SizeDelta: {x: 669, y: 115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &558295677
 MonoBehaviour:
@@ -6842,12 +6842,12 @@ MonoBehaviour:
   upDashExplanationText: {fileID: 21300000, guid: 13dc28dd7754b914a9c6bf6d617c6147, type: 3}
   downDashExplanationText: {fileID: 21300000, guid: c548182527ba63d4aab5e6b3f754bf2b, type: 3}
   powerUpExplanationText: {fileID: 124080641}
-  sideDashBoughtExplanationHeader: {fileID: 21300000, guid: 721a7abe3f459684c93ce7146884061e, type: 3}
-  upDashBoughtExplanationHeader: {fileID: 21300000, guid: cdedd4a3597a9114ebb59afc4fe19ad9, type: 3}
-  downDashBoughtExplanationHeader: {fileID: 21300000, guid: 44679c3c9981aef44a8c32a08ce2c6d9, type: 3}
-  sideDashExplanationHeader: {fileID: 21300000, guid: acb990a14314fba43902518fee82519e, type: 3}
-  upDashExplanationHeader: {fileID: 21300000, guid: 3bdb02857fe14cf4dac783edefbbc810, type: 3}
-  downDashExplanationHeader: {fileID: 21300000, guid: 1d543e77619b4454093f9746e7a81b80, type: 3}
+  sideDashBoughtExplanationHeader: {fileID: 21300000, guid: 8d9afe4207287c145b3c69e26698aae0, type: 3}
+  upDashBoughtExplanationHeader: {fileID: 21300000, guid: 1df0a8d159cfeb147b9fd2a6317ab02d, type: 3}
+  downDashBoughtExplanationHeader: {fileID: 21300000, guid: e94d11b28832b4b45b44e79efe1416aa, type: 3}
+  sideDashExplanationHeader: {fileID: 21300000, guid: d5bcf44000eb6e14db01bfbc1d8b5a57, type: 3}
+  upDashExplanationHeader: {fileID: 21300000, guid: 4aae629b6047c48479101672a9dc0a44, type: 3}
+  downDashExplanationHeader: {fileID: 21300000, guid: 391320a47e607174da542af657911de2, type: 3}
   explanationHeader: {fileID: 558295677}
   explanationPanel: {fileID: 372971648}
   sideDashPriceContainer: {fileID: 387785236}
