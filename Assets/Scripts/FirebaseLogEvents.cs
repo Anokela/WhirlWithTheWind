@@ -5,7 +5,7 @@ using Firebase.Analytics;
 
 public class FirebaseLogEvents : MonoBehaviour
 {
-    private bool hasLogged10
+    private bool hasLogged10;
     private bool hasLogged25;
     private bool hasLogged50;
     private bool hasLogged75;
