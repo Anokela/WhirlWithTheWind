@@ -2071,7 +2071,7 @@ MonoBehaviour:
   downDashPrice: 0
   upDashPrice: 0
   sideDashPrice: 0
-  powerUpsPrice: 150
+  powerUpsPrice: 0
   numberOfPowerUpsInShop: 3
 --- !u!1 &555773130
 GameObject:

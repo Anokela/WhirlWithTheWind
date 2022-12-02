@@ -28,6 +28,7 @@ public class PlayerInfo
     private static float previousSFXVolume;
     private static long lastPlayingTime;
     private static int isSeedFallFreshStart;
+    private static bool isSwiping;
 
     public static int LightPoints
     {
@@ -350,4 +351,15 @@ public class PlayerInfo
         }
     }
 
+    public static bool IsSwiping
+    {
+        get
+        {
+            return isSwiping;
+        }
+        set
+        {
+            isSwiping = value;
+        }
+    }
 }

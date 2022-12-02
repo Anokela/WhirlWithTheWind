@@ -17345,6 +17345,7 @@ MonoBehaviour:
   bounceForce: 0.0002
   movementDelay: 0.1
   joyStick: {fileID: 468477012}
+  deathZone: {fileID: 456144371}
 --- !u!114 &6821600754661774817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17360,7 +17361,6 @@ MonoBehaviour:
   dashSpeed: 0.01
   swipeMinLength: 100
   swipeAxisRestricor: 200
-  swipeMaxLength: 400
 --- !u!70 &6821600754661774818
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class SwipePowerUps : MonoBehaviour
     public float dashSpeed;
     public float swipeMinLength;
     public float swipeAxisRestricor;
-    public float swipeMaxLength;
+    //public float swipeMaxLength;
     private Animator m_anim;
     private bool screenTouchStarted;
     private float screenTouchTime;
@@ -29,7 +29,7 @@ public class SwipePowerUps : MonoBehaviour
         isLeftCoolDown = false;
         isUpCoolDown = false;
         isDownCoolDown = false;
-
+        PlayerInfo.IsSwiping = false;
     }
 
     void Update()
@@ -81,7 +81,7 @@ public class SwipePowerUps : MonoBehaviour
 
                     // Report that a direction has been chosen when the finger is lifted.
                     case TouchPhase.Ended:
-                        if (screenTouchTime < 0.5f)
+                        if (screenTouchTime < 0.75f)
                         {
                             directionChosen = true;
                         }
@@ -100,8 +100,9 @@ public class SwipePowerUps : MonoBehaviour
                 //Debug.Log("x: " + direction.x);
                 // absolute value of the reduction, if y > 100, horizontal swipe doesn't happen
                 // makes sure of the intended direction of the swipe
-                if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x > swipeMinLength && Mathf.Abs(direction.x) < swipeMaxLength && PlayerInfo.SideDashActive == 1 && !isRightCoolDown)
+                if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x > swipeMinLength && PlayerInfo.SideDashActive == 1 && !isRightCoolDown)
                 {
+                    PlayerInfo.IsSwiping = true;
                     rb.gravityScale = 0;
                     rb.AddForce(Vector3.right * dashSpeed, ForceMode2D.Impulse);
                     directionChosen = false;
@@ -111,8 +112,9 @@ public class SwipePowerUps : MonoBehaviour
                     isRightCoolDown = true;
                     Invoke("ResetRightCoolDown", 0.5f);
                 }
-                if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x < -swipeMinLength && Mathf.Abs(direction.x) < swipeMaxLength && PlayerInfo.SideDashActive == 1 && !isLeftCoolDown)
+                if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x < -swipeMinLength && PlayerInfo.SideDashActive == 1 && !isLeftCoolDown)
                 {
+                    PlayerInfo.IsSwiping = true;
                     rb.gravityScale = 0;
                     rb.AddForce(Vector3.left * dashSpeed, ForceMode2D.Impulse);
                     directionChosen = false;
@@ -124,6 +126,7 @@ public class SwipePowerUps : MonoBehaviour
                 }
                 if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y < -swipeMinLength && PlayerInfo.DownDashActive == 1 && !isDownCoolDown)
                 {
+                    PlayerInfo.IsSwiping = true;
                     rb.gravityScale = 0;
                     rb.AddForce(Vector3.down * dashSpeed, ForceMode2D.Impulse);
                     directionChosen = false;
@@ -135,6 +138,7 @@ public class SwipePowerUps : MonoBehaviour
                 }
                 if (Mathf.Abs(direction.x) < swipeAxisRestricor && direction.y > swipeMinLength && PlayerInfo.UpDashActive == 1 && !isUpCoolDown)
                 {
+                    PlayerInfo.IsSwiping = true;
                     rb.gravityScale = 0;
                     rb.AddForce(Vector3.up * dashSpeed, ForceMode2D.Impulse);
                     directionChosen = false;
@@ -155,6 +159,7 @@ public class SwipePowerUps : MonoBehaviour
         m_anim.SetBool("DashDown", false);
         m_anim.SetBool("DashUp", false);
         maxVelocity = 1.5f;
+        PlayerInfo.IsSwiping = false;
     }
 
     private void ResetRightCoolDown ()
@@ -174,5 +179,10 @@ public class SwipePowerUps : MonoBehaviour
     private void ResetDownCoolDown()
     {
         isDownCoolDown = false;
+    }
+
+    private void ResetIFramesAfterSwipe()
+    {
+        PlayerInfo.IsSwiping = false;
     }
 }  

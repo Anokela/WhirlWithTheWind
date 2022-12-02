@@ -15,32 +15,32 @@ public class OnDeathZoneCollide : MonoBehaviour
     void OnTriggerEnter2D(Collider2D c2d)
     {
         if (c2d.CompareTag("Player"))
-        {
-            joystickProtector.SetActive(false);
-            PlayerInfo.GameStarted = false;
-            PlayerInfo.StopLoopingAudio = true;
-            counter.SetActive(false);
-            joystick.SetActive(false);
-            Invoke("showPanel", 0);
-            shopManager.SendMessage("SetShopButtonIcon");
-            shopManager.SendMessage("SetPriceTexts");
-            //shopManager.SendMessage("AreButtonsInactive");
-            shopManager.SendMessage("IsSideDashPurchased");
-            shopManager.SendMessage("IsUpDashPurchased");
-            shopManager.SendMessage("IsDownDashPurchased");
-            if (PlayerInfo.Distance > PlayerInfo.HighScore)
-            {
-                PlayerInfo.HighScore = PlayerInfo.Distance;
-            }
-            manager.SendMessage("SavePrefs");
-            FirebaseAnalytics.LogEvent(name:"player_distance", parameterName:"distance_travelled", parameterValue: PlayerInfo.Distance);
-            FirebaseAnalytics.LogEvent(name: "player_lightpoint_in_one_run", parameterName: "player_lightpoint_in_one_run", parameterValue: PlayerInfo.RunLightPoints);
+        { 
+            OnPlayerDeath();
         }
     }
 
-    public void showPanel()
+    public void OnPlayerDeath()
     {
+        joystickProtector.SetActive(false);
+        PlayerInfo.GameStarted = false;
+        PlayerInfo.StopLoopingAudio = true;
+        counter.SetActive(false);
+        joystick.SetActive(false);
         Panel.SetActive(true);
         pc.SetActive(false);
+        shopManager.SendMessage("SetShopButtonIcon");
+        shopManager.SendMessage("SetPriceTexts");
+        //shopManager.SendMessage("AreButtonsInactive");
+        shopManager.SendMessage("IsSideDashPurchased");
+        shopManager.SendMessage("IsUpDashPurchased");
+        shopManager.SendMessage("IsDownDashPurchased");
+        if (PlayerInfo.Distance > PlayerInfo.HighScore)
+        {
+            PlayerInfo.HighScore = PlayerInfo.Distance;
+        }
+        manager.SendMessage("SavePrefs");
+        FirebaseAnalytics.LogEvent(name: "player_distance", parameterName: "distance_travelled", parameterValue: PlayerInfo.Distance);
+        FirebaseAnalytics.LogEvent(name: "player_lightpoint_in_one_run", parameterName: "player_lightpoint_in_one_run", parameterValue: PlayerInfo.RunLightPoints);
     }
 }

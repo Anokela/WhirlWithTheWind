@@ -12,12 +12,12 @@ public class PlayerMovement : MonoBehaviour
     public  float movementDelay;
     private float movementStartTime = 0.1f;
     public FixedJoystick joyStick;
+    public GameObject deathZone;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
- 
     }
 
     void Update()
@@ -88,6 +88,23 @@ public class PlayerMovement : MonoBehaviour
             controlsDisabled = true;
             rb.AddForce(Vector3.up * bounceForce, ForceMode2D.Impulse);
             Invoke("ActivateControls", 0.5f);
+        }
+
+        if (c2d.CompareTag("Bird"))
+        {
+            
+            if(!PlayerInfo.IsSwiping)
+            {
+                deathZone.SendMessage("OnPlayerDeath");
+            } 
+        }
+
+        if (c2d.CompareTag("Beetle"))
+        {
+            if (!PlayerInfo.IsSwiping)
+            {
+                deathZone.SendMessage("OnPlayerDeath");
+            }
         }
     }
 
