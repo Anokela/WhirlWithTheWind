@@ -17,7 +17,7 @@ public class PauseGame : MonoBehaviour
         {
             pauseMenu.SetActive(true);
             PlayerInfo.GameStarted = false;
-            isTimeStopped = true;
+            //isTimeStopped = true;
         } 
     }
 
