@@ -23,12 +23,15 @@ public class LightPoint : MonoBehaviour
         //Destroy the ligtPoint if Object tagged Player comes in contact with it
         if (c2d.CompareTag("Player"))
         {
-            //Add lightPoint to counter
-            PlayerInfo.RunLightPoints++;
-            PlayerInfo.LightPoints++;
-            soundManager.SendMessage("PlayLightPointSound");
-            lightPoint.SetActive(false);
-            Invoke("ActivateLightPoint", 4/PlayerInfo.BoxSpeed);   
+            if(PlayerInfo.GameStarted)
+            {
+                //Add lightPoint to counter
+                PlayerInfo.RunLightPoints++;
+                PlayerInfo.LightPoints++;
+                soundManager.SendMessage("PlayLightPointSound");
+                lightPoint.SetActive(false);
+                Invoke("ActivateLightPoint", 4 / PlayerInfo.BoxSpeed);
+            }
         }
     }
 

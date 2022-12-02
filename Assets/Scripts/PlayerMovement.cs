@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
         if (c2d.CompareTag("Bird"))
         {
             
-            if(!PlayerInfo.IsSwiping)
+            if(!PlayerInfo.IsSwiping && PlayerInfo.GameStarted)
             {
                 deathZone.SendMessage("OnPlayerDeath");
             } 
@@ -101,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (c2d.CompareTag("Beetle"))
         {
-            if (!PlayerInfo.IsSwiping)
+            if (!PlayerInfo.IsSwiping && PlayerInfo.GameStarted)
             {
                 deathZone.SendMessage("OnPlayerDeath");
             }
