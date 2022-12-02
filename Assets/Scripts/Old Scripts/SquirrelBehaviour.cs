@@ -37,10 +37,10 @@ public class SquirrelBehaviour : MonoBehaviour
     {
         coroutineAllowed = false;
 
-        Vector2 p0 = routes[routeNumber].GetChild(0).position;
-        Vector2 p1 = routes[routeNumber].GetChild(1).position;
-        Vector2 p2 = routes[routeNumber].GetChild(2).position;
-        Vector2 p3 = routes[routeNumber].GetChild(3).position;
+        Vector2 p0 = routes[routeNumber].GetChild(0).localPosition;
+        Vector2 p1 = routes[routeNumber].GetChild(1).localPosition;
+        Vector2 p2 = routes[routeNumber].GetChild(2).localPosition;
+        Vector2 p3 = routes[routeNumber].GetChild(3).localPosition;
 
         while (tParam < 1)
         {
@@ -51,7 +51,7 @@ public class SquirrelBehaviour : MonoBehaviour
                 3 * (1 - tParam) * Mathf.Pow(tParam, 2) * p2 +
                 Mathf.Pow(tParam, 3) * p3;
 
-            transform.position = squirrelPosition;
+            transform.localPosition = squirrelPosition;
             yield return new WaitForEndOfFrame();
         }
 

@@ -29,29 +29,29 @@ public class BgManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerInfo.Distance > 600)
+        if (PlayerInfo.Distance > 200)
         {
             skyToCanopyTrans.SetActive(true);
             skyBg.SetActive(false);
             canopyBg.SetActive(true);
         }
         
-        if (PlayerInfo.Distance > 635)
+        if (PlayerInfo.Distance > 245)
         {
             skyToCanopyTrans.SetActive(false);
         }
-        if (PlayerInfo.Distance > 1000)
+        if (PlayerInfo.Distance > 375)
         {
             cloudsBg.SetActive(false);
         }
-        if (PlayerInfo.Distance > 1115.1f)
+        if (PlayerInfo.Distance > 540)
         {
             
             canopyToForestTrans.SetActive(true);
             forestBg.SetActive(true);
             canopyBg.SetActive(false);
         }
-        if (PlayerInfo.Distance > 1200)
+        if (PlayerInfo.Distance > 590)
         {
             treeTrunksBg.SetActive(true);
             canopyToForestTrans.SetActive(false);

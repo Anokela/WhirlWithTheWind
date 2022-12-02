@@ -73,7 +73,7 @@ public class SoundManager : MonoBehaviour
             loopingAudio.Play();
             isLooping = true;
         }
-        if (PlayerInfo.Distance > 600 && !isLooping2)
+        if (PlayerInfo.Distance > 200 && !isLooping2)
         {
             loopingAudio.loop = false;
             if(!loopingAudio.isPlaying )
@@ -86,7 +86,7 @@ public class SoundManager : MonoBehaviour
             }
             
         }
-        if (PlayerInfo.Distance > 1100 && !isLooping3)
+        if (PlayerInfo.Distance > 590 && !isLooping3)
         {
             loopingAudio.loop = false;
             if (!loopingAudio.isPlaying)

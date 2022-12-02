@@ -10,11 +10,13 @@ public class OnDeathZoneCollide : MonoBehaviour
     public GameObject joystick;
     public GameObject shopButtonIconSetter;
     public GameObject shopManager;
+    public GameObject joystickProtector;
 
     void OnTriggerEnter2D(Collider2D c2d)
     {
         if (c2d.CompareTag("Player"))
         {
+            joystickProtector.SetActive(false);
             PlayerInfo.GameStarted = false;
             PlayerInfo.StopLoopingAudio = true;
             counter.SetActive(false);
