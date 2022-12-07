@@ -6,11 +6,15 @@ using System;
 public class TutorialManager : MonoBehaviour
 {
     public GameObject tutorialPanel;
-    public GameObject pcImg;
-    public GameObject joystickImg;
-    public GameObject goalText;
+    public GameObject pcTutorial;
+    public GameObject joystickTutorial;
+    public GameObject creatureTutorial;
+    public GameObject deathZoneTutorial;
+    public GameObject lightPointTutorial;
+    public GameObject goalTutorial;
     public GameObject tapToPlay;
     public GameObject JoystickProtector;
+    public GameObject Joystick;
     private long currentTime;
 
     // Start is called before the first frame update
@@ -22,26 +26,46 @@ public class TutorialManager : MonoBehaviour
             tutorialPanel.SetActive(true);
             tapToPlay.SetActive(false);
             JoystickProtector.SetActive(false);
+            Joystick.SetActive(false);
         } 
     }
 
     public void showJoystickTutorial()
     {
-        pcImg.SetActive(false);
-        joystickImg.SetActive(true);
+        pcTutorial.SetActive(false);
+        joystickTutorial.SetActive(true);
     }
 
-    public void showGoalTutorial()
+   
+
+    public void showCreatureTutorial()
     {
-        joystickImg.SetActive(false);
-        goalText.SetActive(true);
+        joystickTutorial.SetActive(false);
+        creatureTutorial.SetActive(true);
     }
 
+    public void showDeathZoneTutorial()
+    {
+        creatureTutorial.SetActive(false);
+        deathZoneTutorial.SetActive(true);
+    }
+
+    public void showLightPointTutorial()
+    {
+        deathZoneTutorial.SetActive(false);
+        lightPointTutorial.SetActive(true);
+    }
+    public void showLastTutorial()
+    {
+        lightPointTutorial.SetActive(false);
+        goalTutorial.SetActive(true);
+    }
     public void endTutorial()
     {
         tutorialPanel.SetActive(false);
         tapToPlay.SetActive(true);
         JoystickProtector.SetActive(true);
+        Joystick.SetActive(true);
         PlayerInfo.IsSeedFallFreshStart = 0;
     }
 }
