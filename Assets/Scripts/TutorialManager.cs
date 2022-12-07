@@ -6,7 +6,7 @@ using System;
 public class TutorialManager : MonoBehaviour
 {
     public GameObject tutorialPanel;
-    public GameObject pcTutorial;
+    //public GameObject pcTutorial;
     public GameObject joystickTutorial;
     public GameObject creatureTutorial;
     public GameObject deathZoneTutorial;
@@ -30,34 +30,31 @@ public class TutorialManager : MonoBehaviour
         } 
     }
 
-    public void showJoystickTutorial()
+    /*public void showJoystickTutorial()
     {
         pcTutorial.SetActive(false);
         joystickTutorial.SetActive(true);
-    }
-
-   
-
-    public void showCreatureTutorial()
-    {
-        joystickTutorial.SetActive(false);
-        creatureTutorial.SetActive(true);
-    }
+    }*/
 
     public void showDeathZoneTutorial()
     {
-        creatureTutorial.SetActive(false);
+        joystickTutorial.SetActive(false);
         deathZoneTutorial.SetActive(true);
     }
-
     public void showLightPointTutorial()
     {
         deathZoneTutorial.SetActive(false);
         lightPointTutorial.SetActive(true);
     }
-    public void showLastTutorial()
+
+    public void showCreatureTutorial()
     {
         lightPointTutorial.SetActive(false);
+        creatureTutorial.SetActive(true);
+    }
+    public void showLastTutorial()
+    {
+        creatureTutorial.SetActive(false);
         goalTutorial.SetActive(true);
     }
     public void endTutorial()
