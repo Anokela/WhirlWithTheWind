@@ -3,6 +3,7 @@ using UnityEngine;
 public class SwipePowerUps : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private SpriteRenderer m_SpriteRenderer;
     private Vector2 startPos;
     private Vector2 direction;
     private bool directionChosen;
@@ -19,10 +20,14 @@ public class SwipePowerUps : MonoBehaviour
     private bool isUpCoolDown;
     private bool isDownCoolDown;
 
+    private Color freezeColor = new Color(0, 242, 255, 1);
+    private Color unFreezeColor = new Color(255, 255, 255, 1);
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        m_SpriteRenderer = GetComponent<SpriteRenderer>();
         m_anim = GetComponent<Animator>();
         screenTouchTime = 0;
         isRightCoolDown = false;
@@ -152,6 +157,17 @@ public class SwipePowerUps : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D c2d)
+    {
+        if (c2d.CompareTag("ColdPoint"))
+        {
+            maxVelocity = 0.25f;
+            m_SpriteRenderer.color = freezeColor;
+            m_anim.speed = 0.25f;
+            Invoke("ResetFreeze", 1.5f);
+        }
+    }
+    
     private void resetAnimation()
     {
         m_anim.SetBool("DashRight", false);
@@ -184,5 +200,11 @@ public class SwipePowerUps : MonoBehaviour
     private void ResetIFramesAfterSwipe()
     {
         PlayerInfo.IsSwiping = false;
+    }
+    private void ResetFreeze()
+    {
+        maxVelocity = 1.5f;
+        m_anim.speed = 1f;
+        m_SpriteRenderer.color = unFreezeColor;
     }
 }  
