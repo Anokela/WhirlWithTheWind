@@ -14,4 +14,9 @@ public class SettingsMenu : MonoBehaviour
     {
         settingsMenu.SetActive(true);
     }
+
+    public void StartTutorial()
+    {
+
+    }
 }
