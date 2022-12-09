@@ -109,7 +109,7 @@ public class PrefsManagement : MonoBehaviour
 
         if (!PlayerPrefs.HasKey("IsSeedFallFreshStart"))
         {
-            PlayerPrefs.SetInt("IsSeedFallFreshStart", 1);
+            PlayerPrefs.SetInt("IsSeedFallFreshStart", 0);
         }
         PlayerPrefs.Save();
 
@@ -215,7 +215,7 @@ public class PrefsManagement : MonoBehaviour
         PlayerPrefs.SetFloat("PreviousMusicVolume", 1f);
         PlayerPrefs.SetFloat("PreviousSFXVolume", 1f);
         PlayerPrefs.SetString("TimeSinceLastPlayedSeedFall", sinceLastPlayed);
-        PlayerPrefs.SetInt("IsSeedFallFreshStart", 1);
+        PlayerPrefs.SetInt("IsSeedFallFreshStart", 0);
         PlayerPrefs.Save();
 
         PlayerInfo.LightPoints = PlayerPrefs.GetInt("LightPoints");

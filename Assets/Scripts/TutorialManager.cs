@@ -25,7 +25,7 @@ public class TutorialManager : MonoBehaviour
         if(scene.name == "Endless")
         {
             currentTime = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
-            if (PlayerInfo.IsSeedFallFreshStart == 1 || currentTime > PlayerInfo.LastPlayingTime + 2592000000)
+            if (PlayerInfo.IsSeedFallFreshStart == 0 || currentTime > PlayerInfo.LastPlayingTime + 2592000000)
             {
                 tutorialPanel.SetActive(true);
                 tapToPlay.SetActive(false);
@@ -61,7 +61,7 @@ public class TutorialManager : MonoBehaviour
         tapToPlay.SetActive(true);
         JoystickProtector.SetActive(true);
         Joystick.SetActive(true);
-        PlayerInfo.IsSeedFallFreshStart = 0;
+        PlayerInfo.IsSeedFallFreshStart = 1;
     }
     public void openMMTutorial()
     {

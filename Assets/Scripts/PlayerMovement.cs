@@ -94,6 +94,8 @@ public class PlayerMovement : MonoBehaviour
 
         
     }
+
+    //Death animations activation
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bird"))
@@ -101,10 +103,9 @@ public class PlayerMovement : MonoBehaviour
 
             if (!PlayerInfo.IsSwiping && PlayerInfo.GameStarted)
             {
-                //controlsDisabled = true;
                 collision.gameObject.SetActive(false);
                 m_anim.SetBool("HitBird", true);
-                Invoke("sendDeathMessage", 2);
+                Invoke("sendDeathMessage", 2f);
                 PlayerInfo.GameStarted = false;
             }
         }
@@ -113,8 +114,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!PlayerInfo.IsSwiping && PlayerInfo.GameStarted)
             {
+                collision.gameObject.SetActive(false);
                 m_anim.SetBool("HitBeetle", true);
-                //controlsDisabled = true;
                 Invoke("sendDeathMessage", 2);
                 PlayerInfo.GameStarted = false;
             }
