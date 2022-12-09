@@ -21,7 +21,6 @@ public class BirdBehaviour : MonoBehaviour
     {
         nextPos = Positions[0];
         Bird = GameObject.FindWithTag("Bird");
-
     }
 
     // Update is called once per frame
@@ -46,6 +45,6 @@ public class BirdBehaviour : MonoBehaviour
         {
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, nextPos.localPosition, objectSpeed * Time.deltaTime);
         }
-        this.spriteRenderer.flipX = Bird.transform.localPosition.x < nextPos.transform.localPosition.x;
+        this.spriteRenderer.flipX = Bird.transform.localPosition.x > nextPos.transform.localPosition.x;
     }
 }
