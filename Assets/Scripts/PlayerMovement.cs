@@ -13,10 +13,12 @@ public class PlayerMovement : MonoBehaviour
     private float movementStartTime = 0.1f;
     public FixedJoystick joyStick;
     public GameObject deathZone;
+    private Animator m_anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        m_anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -90,24 +92,47 @@ public class PlayerMovement : MonoBehaviour
             Invoke("ActivateControls", 0.5f);
         }
 
-        if (c2d.CompareTag("Bird"))
+        
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Bird"))
         {
-            
-            if(!PlayerInfo.IsSwiping && PlayerInfo.GameStarted)
+
+            if (!PlayerInfo.IsSwiping && PlayerInfo.GameStarted)
             {
-                deathZone.SendMessage("OnPlayerDeath");
-            } 
+                //controlsDisabled = true;
+                collision.gameObject.SetActive(false);
+                m_anim.SetBool("HitBird", true);
+                Invoke("sendDeathMessage", 2);
+                PlayerInfo.GameStarted = false;
+            }
         }
 
-        if (c2d.CompareTag("Beetle"))
+        if (collision.CompareTag("Beetle"))
         {
             if (!PlayerInfo.IsSwiping && PlayerInfo.GameStarted)
             {
-                deathZone.SendMessage("OnPlayerDeath");
+                m_anim.SetBool("HitBeetle", true);
+                //controlsDisabled = true;
+                Invoke("sendDeathMessage", 2);
+                PlayerInfo.GameStarted = false;
             }
+        }
+
+        if (collision.CompareTag("DeathZone"))
+        {
+            m_anim.SetBool("HitRoof", true);
+            //controlsDisabled = true;
+            Invoke("sendDeathMessage", 2);
+            PlayerInfo.GameStarted = false;
         }
     }
 
+    void sendDeathMessage()
+    {
+        deathZone.SendMessage("OnPlayerDeath");
+    }
 
     void ActivateControls()
     {
