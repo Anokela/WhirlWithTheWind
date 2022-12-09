@@ -1,0 +1,7 @@
+Framerates:
+Last 6 frames - 100ms
+The rest       - 50ms
+
+
+
+
