@@ -36,11 +36,15 @@ public class PowerUpShoppingManager : MonoBehaviour
     public Button confirmBuyButton;
     private bool isBuying;
     private string currentPowerUp;
+    private AudioSource audioSrc;
+    public AudioClip buttonSound;
+    public GameObject buttonSoundManager;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSrc = buttonSoundManager.GetComponent<AudioSource>();
         manager = this.gameObject;
         //AreButtonsInactive();
         SetPriceTexts();
@@ -51,6 +55,7 @@ public class PowerUpShoppingManager : MonoBehaviour
 
     public void OpenExplanationPanel() 
     {
+        audioSrc.PlayOneShot(buttonSound);
         if (EventSystem.current.currentSelectedGameObject.name == "UpDashPowerUp")
         {
             if(PlayerInfo.UpDashActive == 0) 
@@ -104,7 +109,8 @@ public class PowerUpShoppingManager : MonoBehaviour
 
     public void BuyPowerUp()
     {
-        if(isBuying)
+        audioSrc.PlayOneShot(buttonSound);
+        if (isBuying)
         {
             if (PlayerInfo.LightPoints >= PowerUps.PowerUpsPrice)
             {
