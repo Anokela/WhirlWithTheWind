@@ -70,7 +70,6 @@ public class TutorialManager : MonoBehaviour
         tapToPlay.SetActive(true);
         JoystickProtector.SetActive(true);
         Joystick.SetActive(true);
-        PlayerInfo.IsSeedFallFreshStart = 1;
     }
     public void openMMTutorial()
     {
