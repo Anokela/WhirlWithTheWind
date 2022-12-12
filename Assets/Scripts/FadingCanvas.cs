@@ -10,9 +10,17 @@ public class FadingCanvas : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject prefManager;
     private bool isFadingIn = false;
+    private AudioSource audioSrc;
+    public AudioClip buttonSound;
+    public GameObject buttonSoundManager;
 
+    private void Start()
+    {
+        audioSrc = buttonSoundManager.GetComponent<AudioSource>();
+    }
     public void FadeIn()
     {
+        audioSrc.PlayOneShot(buttonSound);
         isFadingIn = true;
     }
 
