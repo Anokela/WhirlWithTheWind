@@ -11,6 +11,8 @@ public class SquirrelBehaviour : MonoBehaviour
     private float speedModifier;
     private float acceleration;
     private bool coroutineAllowed;
+    private Animator animator;
+    private float timeElapsed;
 
     void Start()
     {
@@ -19,13 +21,28 @@ public class SquirrelBehaviour : MonoBehaviour
         speedModifier = 0.05f;
         acceleration = 0.025f;
         coroutineAllowed = true;
-
+        animator = GetComponent<Animator>();
         InvokeRepeating("IncreaseSpeed", 1f, 1f);
     }
     void Update()
     {
         if (coroutineAllowed)
             StartCoroutine(GoByTheRoute(routeToGo));
+
+        timeElapsed += Time.deltaTime;
+
+        switch (timeElapsed)
+        {
+            case float n when (n > 0 && n <= 4):
+                animator.Play("Climbing");
+                break;
+            case float n when (n > 4 && n <= 5):
+                animator.Play("JumpPrep");
+                break;
+            case float n when (n > 5):
+                animator.Play("SQfly");
+                break;
+        }
     }
     public void IncreaseSpeed()
     {
