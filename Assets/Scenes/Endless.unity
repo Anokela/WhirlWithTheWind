@@ -2516,6 +2516,7 @@ GameObject:
   - component: {fileID: 390063336}
   - component: {fileID: 390063338}
   - component: {fileID: 390063337}
+  - component: {fileID: 390063339}
   m_Layer: 5
   m_Name: DistanceBg
   m_TagString: Untagged
@@ -2581,6 +2582,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390063335}
   m_CullTransparentMesh: 1
+--- !u!114 &390063339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390063335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b9924dc7eed73f48a9f9aab06b97dcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceBg: {fileID: 390063337}
 --- !u!1 &397345496
 GameObject:
   m_ObjectHideFlags: 0
