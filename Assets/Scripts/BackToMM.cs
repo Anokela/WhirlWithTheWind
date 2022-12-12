@@ -8,10 +8,19 @@ public class BackToMM : MonoBehaviour
 
     private bool isFadingIn = false;
     public GameObject successMenu;
+    private AudioSource audioSrc;
+    public AudioClip buttonSound;
+    public GameObject buttonSoundManager;
 
+
+    private void Start()
+    {
+        audioSrc = buttonSoundManager.GetComponent<AudioSource>();
+    }
     public void FadeIn()
     {
         isFadingIn = true;
+        audioSrc.PlayOneShot(buttonSound);
         successMenu.SetActive(false);
     }
     private void Update()
