@@ -25,7 +25,7 @@ public class OnDeathZoneCollide : MonoBehaviour
 
     public void OnPlayerDeath()
     {
-        PlayerInfo.IsSeedFallFreshStart = 1;
+        PlayerInfo.HasPlayedSeedFall = 1;
         joystickProtector.SetActive(false);
         PlayerInfo.GameStarted = false;
         PlayerInfo.StopLoopingAudio = true;

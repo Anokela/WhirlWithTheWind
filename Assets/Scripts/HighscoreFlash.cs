@@ -22,7 +22,7 @@ public class HighscoreFlash : MonoBehaviour
     {
         if (PlayerInfo.GameStarted)
         {
-            if (PlayerInfo.Distance >= PlayerInfo.HighScore && PlayerInfo.IsSeedFallFreshStart==1)
+            if (PlayerInfo.Distance >= PlayerInfo.HighScore && PlayerInfo.HasPlayedSeedFall == 1)
             {
                 //BgAlphaControl();
                 BgSizeController();

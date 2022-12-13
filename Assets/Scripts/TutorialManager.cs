@@ -29,7 +29,7 @@ public class TutorialManager : MonoBehaviour
         if(scene.name == "Endless")
         {
             currentTime = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
-            if (PlayerInfo.IsSeedFallFreshStart == 0 || currentTime > PlayerInfo.LastPlayingTime + 2592000000)
+            if (PlayerInfo.HasPlayedSeedFall == 0 || currentTime > PlayerInfo.LastPlayingTime + 2592000000)
             {
                 tutorialPanel.SetActive(true);
                 tapToPlay.SetActive(false);

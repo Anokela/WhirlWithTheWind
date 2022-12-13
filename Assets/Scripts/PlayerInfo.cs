@@ -27,7 +27,7 @@ public class PlayerInfo
     private static float previousMusicVolume;
     private static float previousSFXVolume;
     private static long lastPlayingTime;
-    private static int isSeedFallFreshStart;
+    private static int hasPlayedSeedFall;
     private static bool isSwiping;
 
     public static int LightPoints
@@ -339,15 +339,15 @@ public class PlayerInfo
         }
     }
 
-    public static int IsSeedFallFreshStart
+    public static int HasPlayedSeedFall
     {
         get
         {
-            return isSeedFallFreshStart;
+            return hasPlayedSeedFall;
         }
         set
         {
-            isSeedFallFreshStart = value;
+            hasPlayedSeedFall = value;
         }
     }
 
