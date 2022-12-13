@@ -65,8 +65,8 @@ public class PlayerInfo
             isDownDashActive = value;
         }
     }
-    public static int SideDashActive
 
+    public static int SideDashActive
     {
         get
         {
@@ -79,7 +79,6 @@ public class PlayerInfo
     }
 
     public static int AntiBirdActive
-
     {
         get
         {
@@ -92,7 +91,6 @@ public class PlayerInfo
     }
 
     public static int AntiWebActive
-
     {
         get
         {
@@ -151,6 +149,7 @@ public class PlayerInfo
             highScore = value;
         }
     }
+
     public static int RunLightPoints
     {
         get
@@ -234,6 +233,7 @@ public class PlayerInfo
             masterVolume = value;
         }
     }
+
     public static float MusicVolume
     {
         get
@@ -245,6 +245,7 @@ public class PlayerInfo
             musicVolume = value;
         }
     }
+
     public static float SFXVolume
     {
         get
@@ -304,6 +305,7 @@ public class PlayerInfo
             previousMasterVolume = value;
         }
     }
+
     public static float PreviousMusicVolume
     {
         get
@@ -315,6 +317,7 @@ public class PlayerInfo
             previousMusicVolume = value;
         }
     }
+
     public static float PreviousSFXVolume
     {
         get

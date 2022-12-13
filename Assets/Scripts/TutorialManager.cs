@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
@@ -7,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class TutorialManager : MonoBehaviour
 {
     public GameObject tutorialPanel;
-    //public GameObject pcTutorial;
     public GameObject joystickTutorial;
     public GameObject creatureTutorial;
     public GameObject deathZoneTutorial;
@@ -38,12 +35,14 @@ public class TutorialManager : MonoBehaviour
             }
         } 
     }
+
     public void showDeathZoneTutorial()
     {
         audioSrc.PlayOneShot(buttonSound);
         joystickTutorial.SetActive(false);
         deathZoneTutorial.SetActive(true);
     }
+
     public void showLightPointTutorial()
     {
         audioSrc.PlayOneShot(buttonSound);
@@ -57,12 +56,14 @@ public class TutorialManager : MonoBehaviour
         lightPointTutorial.SetActive(false);
         creatureTutorial.SetActive(true);
     }
+
     public void showLastTutorial()
     {
         audioSrc.PlayOneShot(buttonSound);
         creatureTutorial.SetActive(false);
         goalTutorial.SetActive(true);
     }
+
     public void endTutorial()
     {
         audioSrc.PlayOneShot(buttonSound);
@@ -71,12 +72,14 @@ public class TutorialManager : MonoBehaviour
         JoystickProtector.SetActive(true);
         Joystick.SetActive(true);
     }
+
     public void openMMTutorial()
     {
         audioSrc.PlayOneShot(buttonSound);
         joystickTutorial.SetActive(true);
         tutorialPanel.SetActive(true);
     }
+
     public void closeMMTutorial()
     {
         audioSrc.PlayOneShot(buttonSound);

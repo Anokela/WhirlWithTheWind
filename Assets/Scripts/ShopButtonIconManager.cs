@@ -6,8 +6,8 @@ public class ShopButtonIconManager : MonoBehaviour
     public Sprite normalButtonIcon;
     public Sprite newItemsButtonIcon;
     public Button shopButton;
-    // Start is called before the first frame update
 
+    // Start is called before the first frame update
     private void Start()
     {
         SetShopButtonIcon();

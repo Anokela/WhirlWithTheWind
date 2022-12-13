@@ -28,7 +28,8 @@ public class MainMenu : MonoBehaviour
                 myUIGroup.alpha += 0.1f;
                 if (myUIGroup.alpha >= 1)
                 {
-                    SceneManager.LoadScene("Endless");                }
+                    SceneManager.LoadScene("Endless");                
+                }
             }
         }
     }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SettingsMenu : MonoBehaviour
@@ -19,6 +17,7 @@ public class SettingsMenu : MonoBehaviour
         settingsMenu.SetActive(false);
         audioSrc.PlayOneShot(buttonClickSound);
     }
+
     public void OpenMenu()
     {
         settingsMenu.SetActive(true);

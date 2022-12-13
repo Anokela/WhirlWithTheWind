@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Branch : MonoBehaviour
@@ -13,16 +11,12 @@ public class Branch : MonoBehaviour
         soundManager = GameObject.Find("EndlessSoundManager");
         branch = this.gameObject;
     }
-
     void OnCollisionEnter2D(Collision2D c2d)
     {
-
         if (c2d.gameObject.tag == ("Player"))
         {
             soundManager.SendMessage("LeafSound");
-
         }
-        
     }
 
 
@@ -39,5 +33,4 @@ public class Branch : MonoBehaviour
             soundShouldStop = false;
         }
     }
-
 }

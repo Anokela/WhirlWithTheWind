@@ -11,7 +11,6 @@ public class SwipePowerUps : MonoBehaviour
     public float dashSpeed;
     public float swipeMinLength;
     public float swipeAxisRestricor;
-    //public float swipeMaxLength;
     private Animator m_anim;
     private bool screenTouchStarted;
     private float screenTouchTime;
@@ -19,7 +18,6 @@ public class SwipePowerUps : MonoBehaviour
     private bool isRightCoolDown;
     private bool isUpCoolDown;
     private bool isDownCoolDown;
-
     private Color freezeColor = new Color(0, 242, 255, 1);
     private Color unFreezeColor = new Color(255, 255, 255, 1);
 
@@ -45,8 +43,6 @@ public class SwipePowerUps : MonoBehaviour
             {
                 screenTouchTime = screenTouchTime + Time.fixedDeltaTime;
             }
-
-
             if (rb.velocity.x > maxVelocity)
             {
                 rb.velocity = new(maxVelocity, rb.velocity.y);
@@ -76,7 +72,6 @@ public class SwipePowerUps : MonoBehaviour
                         startPos = touch.position;
                         screenTouchStarted = true;
                         directionChosen = false;
-                        //Debug.Log(Time.fixedDeltaTime);
                         break;
 
                     // Determine direction by comparing the current touch position with the initial one.
@@ -100,9 +95,6 @@ public class SwipePowerUps : MonoBehaviour
             {
                 maxVelocity = 5f;
                 // Something that uses the chosen direction...
-                // reduction values for x and y start and end
-                //Debug.Log("y: "+ direction.y);
-                //Debug.Log("x: " + direction.x);
                 // absolute value of the reduction, if y > 100, horizontal swipe doesn't happen
                 // makes sure of the intended direction of the swipe
                 if (Mathf.Abs(direction.y) < swipeAxisRestricor && direction.x > swipeMinLength && PlayerInfo.SideDashActive == 1 && !isRightCoolDown)
@@ -201,6 +193,7 @@ public class SwipePowerUps : MonoBehaviour
     {
         PlayerInfo.IsSwiping = false;
     }
+
     private void ResetFreeze()
     {
         maxVelocity = 1.5f;
