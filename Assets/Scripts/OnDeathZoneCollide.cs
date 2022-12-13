@@ -12,7 +12,8 @@ public class OnDeathZoneCollide : MonoBehaviour
     public GameObject shopManager;
     public GameObject joystickProtector;
     public GameObject newHighScoreImage;
-    public GameObject fireWorksAnimation;
+    public GameObject fireWorksAnimation1;
+    public GameObject fireWorksAnimation2;
 
 /*    void OnTriggerEnter2D(Collider2D c2d)
     {
@@ -41,7 +42,8 @@ public class OnDeathZoneCollide : MonoBehaviour
         if (PlayerInfo.Distance > PlayerInfo.HighScore)
         {
             newHighScoreImage.SetActive(true);
-            fireWorksAnimation.SetActive(true);
+            fireWorksAnimation1.SetActive(true);
+            fireWorksAnimation2.SetActive(true);
             PlayerInfo.HighScore = PlayerInfo.Distance;
         }
         manager.SendMessage("SavePrefs");
