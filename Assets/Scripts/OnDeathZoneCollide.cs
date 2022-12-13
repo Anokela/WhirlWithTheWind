@@ -11,6 +11,9 @@ public class OnDeathZoneCollide : MonoBehaviour
     public GameObject shopButtonIconSetter;
     public GameObject shopManager;
     public GameObject joystickProtector;
+    public GameObject newHighScoreImage;
+    public GameObject fireWorksAnimation1;
+    public GameObject fireWorksAnimation2;
 
 /*    void OnTriggerEnter2D(Collider2D c2d)
     {
@@ -22,7 +25,7 @@ public class OnDeathZoneCollide : MonoBehaviour
 
     public void OnPlayerDeath()
     {
-        PlayerInfo.IsSeedFallFreshStart = 1;
+        PlayerInfo.HasPlayedSeedFall = 1;
         joystickProtector.SetActive(false);
         PlayerInfo.GameStarted = false;
         PlayerInfo.StopLoopingAudio = true;
@@ -38,6 +41,9 @@ public class OnDeathZoneCollide : MonoBehaviour
         shopManager.SendMessage("IsDownDashPurchased");
         if (PlayerInfo.Distance > PlayerInfo.HighScore)
         {
+            newHighScoreImage.SetActive(true);
+            fireWorksAnimation1.SetActive(true);
+            fireWorksAnimation2.SetActive(true);
             PlayerInfo.HighScore = PlayerInfo.Distance;
         }
         manager.SendMessage("SavePrefs");

@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HighscoreFlash : MonoBehaviour
+public class BlinkingNewHighScore : MonoBehaviour
 {
     public Image distanceBg;
     //private Color tempBgAlpha;
@@ -20,40 +19,33 @@ public class HighscoreFlash : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (PlayerInfo.GameStarted)
-        {
-            if (PlayerInfo.Distance >= PlayerInfo.HighScore && PlayerInfo.HasPlayedSeedFall == 1)
-            {
-                //BgAlphaControl();
-                BgSizeController();
-            }
-        }
+        BgSizeController();
     }
 
     //control images alpha value
-/*    void BgAlphaControl()
-    {
-        if (!isAlphaZero)
+    /*    void BgAlphaControl()
         {
-            tempBgAlpha = distanceBg.color;
-            tempBgAlpha.a -= 0.05f;
-            distanceBg.color = tempBgAlpha;
-            if(tempBgAlpha.a <= 0f)
+            if (!isAlphaZero)
             {
-                isAlphaZero = true;
+                tempBgAlpha = distanceBg.color;
+                tempBgAlpha.a -= 0.05f;
+                distanceBg.color = tempBgAlpha;
+                if(tempBgAlpha.a <= 0f)
+                {
+                    isAlphaZero = true;
+                }
             }
-        }
-        if (isAlphaZero)
-        {
-            tempBgAlpha = distanceBg.color;
-            tempBgAlpha.a += 0.05f;
-            distanceBg.color = tempBgAlpha;
-            if (tempBgAlpha.a >= 1f)
+            if (isAlphaZero)
             {
-                isAlphaZero = false;
+                tempBgAlpha = distanceBg.color;
+                tempBgAlpha.a += 0.05f;
+                distanceBg.color = tempBgAlpha;
+                if (tempBgAlpha.a >= 1f)
+                {
+                    isAlphaZero = false;
+                }
             }
-        }
-    }*/
+        }*/
 
     void BgSizeController()
     {
