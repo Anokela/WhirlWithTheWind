@@ -30,13 +30,11 @@ public class LeafDrag : MonoBehaviour
         if (collision.gameObject.tag == "Branch" && rb.velocity.x > 0)
         {
             animator.SetBool("LeafDragRight", true);
-            Debug.Log("toimii");
         }
         // Check if the collision is with a branch
         if (collision.gameObject.tag == "Branch" && rb.velocity.x < 0)
         {
             animator.SetBool("LeafDragLeft", true);
-            Debug.Log("toimii2");
         }
     }
     void OnCollisionExit2D(Collision2D collision)
