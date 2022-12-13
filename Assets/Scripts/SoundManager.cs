@@ -1,13 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
     public List<AudioClip> lightPointSoundList;
     private List<AudioClip> lightPointSounds;
-    
     public  AudioSource lightPointAudioSource;
     private AudioClip lightPointHitSound;
     private int index;
@@ -23,10 +20,6 @@ public class SoundManager : MonoBehaviour
     private bool isLooping2;
     private bool isLooping3;
     private bool isEndingPlaying;
-
-
-    // public AudioMixerSnapshot gameSnapshot;
-    // public AudioMixerSnapshot pauseSnapshot;
     public AudioSource AudioSrc;
     public List<AudioClip> LeafHitSoundList;
     private List<AudioClip> LeafHitSounds;
@@ -50,13 +43,7 @@ public class SoundManager : MonoBehaviour
         {
             LeafHitSounds.Add(LeafHitSoundList[i]);
         }
-
-
     }
-
-
-
-    // Update is called once per frame
 
     public void PlayLightPointSound()
     {
@@ -84,7 +71,6 @@ public class SoundManager : MonoBehaviour
                 loopingAudio.loop = true;
                 isLooping2 = true;
             }
-            
         }
         if (PlayerInfo.Distance > 590 && !isLooping3)
         {
@@ -96,7 +82,6 @@ public class SoundManager : MonoBehaviour
                 loopingAudio.loop = true;
                 isLooping3 = true;
             }
-
         }
         if (PlayerInfo.StopLoopingAudio && !isEndingPlaying)
         {
@@ -122,5 +107,4 @@ public class SoundManager : MonoBehaviour
     {
         AudioSrc.Stop();
     }
-
 }

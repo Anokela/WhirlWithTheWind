@@ -10,7 +10,6 @@ public class PowerUpShoppingManager : MonoBehaviour
     public TextMeshProUGUI upDashPrice;
     public TextMeshProUGUI downDashPrice;
     public TextMeshProUGUI lightPointAmount;
-    // public TextMeshProUGUI powerUpExpalanationText;
     public Sprite sideDashExplanationText;
     public Sprite upDashExplanationText;
     public Sprite downDashExplanationText;
@@ -22,9 +21,6 @@ public class PowerUpShoppingManager : MonoBehaviour
     public Sprite upDashExplanationHeader;
     public Sprite downDashExplanationHeader;
     public Image explanationHeader;
-/*    public Button downDashButton;
-    public Button upDashButton;
-    public Button sideDashButton;*/
     private GameObject manager;
     public GameObject explanationPanel;
     public GameObject sideDashPriceContainer;
@@ -40,13 +36,11 @@ public class PowerUpShoppingManager : MonoBehaviour
     public AudioClip buttonSound;
     public GameObject buttonSoundManager;
 
-
     // Start is called before the first frame update
     void Start()
     {
         audioSrc = buttonSoundManager.GetComponent<AudioSource>();
         manager = this.gameObject;
-        //AreButtonsInactive();
         SetPriceTexts();
         IsSideDashPurchased();
         IsUpDashPurchased();
@@ -121,7 +115,6 @@ public class PowerUpShoppingManager : MonoBehaviour
                     PlayerInfo.PowerUpsInUse++;
                     FirebaseAnalytics.LogEvent(name:"Power_up_management", parameterName:"Power_up_bought", parameterValue: "UpDashPowerUp");
                 }
-
                 if (currentPowerUp == "DownDashPowerUp")
                 {
                     PlayerInfo.LightPoints = PlayerInfo.LightPoints - PowerUps.PowerUpsPrice;
@@ -129,7 +122,6 @@ public class PowerUpShoppingManager : MonoBehaviour
                     PlayerInfo.PowerUpsInUse++;
                     FirebaseAnalytics.LogEvent(name:"Power_up_management", parameterName:"Power_up_bought", parameterValue: "DownDashPowerUp");
                 }
-
                 if (currentPowerUp == "SideDashPowerUp")
                 {
                     PlayerInfo.LightPoints = PlayerInfo.LightPoints - PowerUps.PowerUpsPrice;
@@ -140,7 +132,6 @@ public class PowerUpShoppingManager : MonoBehaviour
                 FirebaseAnalytics.LogEvent(name:"Power_up_per_user", parameterName:"Power_ups_in_use", parameterValue: PlayerInfo.PowerUpsInUse);
                 UpdatePowerUpPrices();
                 SetPriceTexts();
-                //AreButtonsInactive();
                 IsSideDashPurchased();
                 IsUpDashPurchased();
                 IsDownDashPurchased();
@@ -168,47 +159,12 @@ public class PowerUpShoppingManager : MonoBehaviour
                 {
                     confirmBuyButton.GetComponent<Button>().interactable = true;
                 }
-
             }
             else
             {
                 confirmBuyButton.GetComponent<Button>().interactable = true;
             }
         }
-       
-        /*
-        if (upDashButton)
-        {
-            if (PlayerInfo.UpDashActive == 1 || PlayerInfo.LightPoints < PowerUps.PowerUpsPrice)
-            {
-                upDashButton.GetComponent<Button>().interactable = false;
-            } else
-            {
-                upDashButton.GetComponent<Button>().interactable = true;
-            }
-        }
-
-        if (downDashButton)
-        {
-            if (PlayerInfo.DownDashActive == 1 || PlayerInfo.LightPoints < PowerUps.PowerUpsPrice)
-            {
-                downDashButton.GetComponent<Button>().interactable = false;
-            } else
-            {
-                downDashButton.GetComponent<Button>().interactable = true;
-            }
-        }
-
-        if (sideDashButton)
-        {
-            if (PlayerInfo.SideDashActive == 1 || PlayerInfo.LightPoints < PowerUps.PowerUpsPrice)
-            {
-                sideDashButton.GetComponent<Button>().interactable = false;
-            } else
-            {
-                sideDashButton.GetComponent<Button>().interactable = true;
-            }
-        }*/
     }
 
     public void SetPriceTexts()

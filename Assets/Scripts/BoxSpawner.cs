@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Pool;
-using UnityEngine.UIElements;
 
 public class BoxSpawner : MonoBehaviour
 {
@@ -12,7 +8,6 @@ public class BoxSpawner : MonoBehaviour
         CreateBox();
     }
 
-    // Update is called once per frame
     public void CreateBox()
     {
         box = BoxPool.SharedInstance.GetPooledObject();

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -23,7 +21,6 @@ public class DistanceCalculator : MonoBehaviour
         if (PlayerInfo.GameStarted)
         {
             timer = timer + Time.fixedDeltaTime*3;
-            // PlayerInfo.Distance = Mathf.Round(10 * (PlayerInfo.BoxSpeed * Time.timeSinceLevelLoad));
             PlayerInfo.Distance = Mathf.Round(PlayerInfo.BoxSpeed * timer);
         }
     }

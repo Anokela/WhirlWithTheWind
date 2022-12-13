@@ -5,13 +5,12 @@ using UnityEngine.UI;
 public class BlinkingNewHighScore : MonoBehaviour
 {
     public Image distanceBg;
-    //private Color tempBgAlpha;
     private bool isAlphaZero;
     private Vector2 bgScale;
+
     // Start is called before the first frame update
     void Start()
     {
-        //tempBgAlpha = distanceBg.color;
         bgScale = distanceBg.transform.localScale;
         isAlphaZero = false;
     }
@@ -21,31 +20,6 @@ public class BlinkingNewHighScore : MonoBehaviour
     {
         BgSizeController();
     }
-
-    //control images alpha value
-    /*    void BgAlphaControl()
-        {
-            if (!isAlphaZero)
-            {
-                tempBgAlpha = distanceBg.color;
-                tempBgAlpha.a -= 0.05f;
-                distanceBg.color = tempBgAlpha;
-                if(tempBgAlpha.a <= 0f)
-                {
-                    isAlphaZero = true;
-                }
-            }
-            if (isAlphaZero)
-            {
-                tempBgAlpha = distanceBg.color;
-                tempBgAlpha.a += 0.05f;
-                distanceBg.color = tempBgAlpha;
-                if (tempBgAlpha.a >= 1f)
-                {
-                    isAlphaZero = false;
-                }
-            }
-        }*/
 
     void BgSizeController()
     {

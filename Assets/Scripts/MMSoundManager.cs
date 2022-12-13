@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -15,10 +13,12 @@ public class MMSoundManager : MonoBehaviour
     public Image sFXMuteIcon;
     public Sprite mutedIcon;
     public Sprite unMutedIcon;
+
     void Start()
     {
         RenderVolume();
     }
+
     void FixedUpdate()
     {
         if (PlayerInfo.IsMasterMuted == 0)
@@ -88,6 +88,7 @@ public class MMSoundManager : MonoBehaviour
         }
        
     }
+
     public void SetMusicLevel(float sliderValue)
     {
         PlayerInfo.MusicVolume = sliderValue;
@@ -147,6 +148,7 @@ public class MMSoundManager : MonoBehaviour
         }
         RenderVolume();
     }
+
     // Render the sliders to show current volume
     public void RenderVolume()
     {

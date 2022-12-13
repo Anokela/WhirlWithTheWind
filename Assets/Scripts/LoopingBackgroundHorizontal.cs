@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LoopingBackgroundHorizontal : MonoBehaviour
@@ -26,8 +24,7 @@ public class LoopingBackgroundHorizontal : MonoBehaviour
             {
                 tempColor.a = tempColor.a - 0.001f;
                 backgroundRenderer.material.color = tempColor;
-            }
-            
+            }   
         }
     }
 }

@@ -15,14 +15,6 @@ public class OnDeathZoneCollide : MonoBehaviour
     public GameObject fireWorksAnimation1;
     public GameObject fireWorksAnimation2;
 
-/*    void OnTriggerEnter2D(Collider2D c2d)
-    {
-        if (c2d.CompareTag("Player"))
-        { 
-            OnPlayerDeath();
-        }
-    }*/
-
     public void OnPlayerDeath()
     {
         PlayerInfo.HasPlayedSeedFall = 1;
@@ -35,7 +27,6 @@ public class OnDeathZoneCollide : MonoBehaviour
         pc.SetActive(false);
         shopManager.SendMessage("SetShopButtonIcon");
         shopManager.SendMessage("SetPriceTexts");
-        //shopManager.SendMessage("AreButtonsInactive");
         shopManager.SendMessage("IsSideDashPurchased");
         shopManager.SendMessage("IsUpDashPurchased");
         shopManager.SendMessage("IsDownDashPurchased");

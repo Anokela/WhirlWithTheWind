@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LightPoint : MonoBehaviour
@@ -20,12 +18,10 @@ public class LightPoint : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D c2d)
     {
-        //Destroy the ligtPoint if Object tagged Player comes in contact with it
         if (c2d.CompareTag("Player"))
         {
             if(PlayerInfo.GameStarted)
             {
-                //Add lightPoint to counter
                 PlayerInfo.RunLightPoints++;
                 PlayerInfo.LightPoints++;
                 soundManager.SendMessage("PlayLightPointSound");

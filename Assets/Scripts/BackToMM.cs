@@ -5,13 +5,11 @@ public class BackToMM : MonoBehaviour
 {
     [SerializeField] private CanvasGroup myUIGroup;
     public GameObject endlessPrefsManager;
-
     private bool isFadingIn = false;
     public GameObject successMenu;
     private AudioSource audioSrc;
     public AudioClip buttonSound;
     public GameObject buttonSoundManager;
-
 
     private void Start()
     {

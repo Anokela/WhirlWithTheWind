@@ -4,7 +4,7 @@ public class BoxBehavior : MonoBehaviour
 {
     private GameObject box;
     private GameObject BoxSpawner;
-    // Start is called before the first frame update
+
     void Awake()
     {
         BoxSpawner = GameObject.Find("BoxSpawner");
