@@ -16,13 +16,14 @@ public class BirdBehaviour : MonoBehaviour
         this.spriteRenderer = this.GetComponent<SpriteRenderer>();
 
     }
-    
+    // Start is called before the first frame update
     void Start()
     {
         nextPos = Positions[0];
         Bird = GameObject.FindWithTag("Bird");
     }
 
+    // Update is called once per frame
     void Update()
     {
         MoveGameObject();
