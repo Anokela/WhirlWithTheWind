@@ -81,7 +81,7 @@ public class SwipePowerUps : MonoBehaviour
 
                     // Report that a direction has been chosen when the finger is lifted.
                     case TouchPhase.Ended:
-                        if (screenTouchTime < 0.76f)
+                        if (screenTouchTime < 0.75f)
                         {
                             directionChosen = true;
                         }
