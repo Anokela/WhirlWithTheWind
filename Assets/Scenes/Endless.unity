@@ -19106,6 +19106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6841f82c853c2dd4ab7e88a45d7535e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathZone: {fileID: 456144371}
 --- !u!4 &7397001579815152929
 Transform:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class LeafDrag : MonoBehaviour
     // The animator component that controls the object's animations
     private Animator animator;
     private Rigidbody2D rb;
+    public GameObject deathZone;
 
     void Start()
     {
@@ -44,5 +45,40 @@ public class LeafDrag : MonoBehaviour
             animator.SetBool("LeafDragRight", false);
             animator.SetBool("LeafDragLeft", false);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Bird"))
+        {
+            if (!PlayerInfo.IsSwiping && PlayerInfo.GameStarted)
+            {
+                collision.gameObject.SetActive(false);
+                animator.SetBool("HitBird", true);
+                Invoke("sendDeathMessage", 2f);
+                PlayerInfo.GameStarted = false;
+            }
+        }
+        if (collision.CompareTag("Beetle"))
+        {
+            if (!PlayerInfo.IsSwiping && PlayerInfo.GameStarted)
+            {
+                collision.gameObject.SetActive(false);
+                animator.SetBool("HitBeetle", true);
+                Invoke("sendDeathMessage", 2);
+                PlayerInfo.GameStarted = false;
+            }
+        }
+        if (collision.CompareTag("DeathZone"))
+        {
+            animator.SetBool("HitRoof", true);
+            Invoke("sendDeathMessage", 2);
+            PlayerInfo.GameStarted = false;
+        }
+    }
+
+    void sendDeathMessage()
+    {
+        deathZone.SendMessage("OnPlayerDeath");
     }
 }
