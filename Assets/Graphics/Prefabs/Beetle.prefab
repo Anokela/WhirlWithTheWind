@@ -183,13 +183,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c2f0a680c45b54bba2705fff3e52e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 0.7
   startWaitTime: 1
   moveSpot: {fileID: 4593412871669286850}
-  minX: -1.5
-  maxX: 1.5
-  minY: -2
-  maxY: 2
+  minX: -1
+  maxX: 1
+  minY: -1.5
+  maxY: 1.5
 --- !u!61 &7567187446590996550
 BoxCollider2D:
   m_ObjectHideFlags: 0
